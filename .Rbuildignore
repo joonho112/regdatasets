@@ -1,0 +1,6 @@
+^LICENSE\.md$
+^data-raw$
+^README\.Rmd$
+^README\.html$
+^\.DS_Store$
+^man/figures/logo\.png$

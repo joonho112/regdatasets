@@ -1,0 +1,131 @@
+url: https://joonho112.github.io/regdatasets/
+
+template:
+  bootstrap: 5
+  bootswatch: cosmo
+  bslib:
+    primary: "#2C3E50"
+    base_font: {google: "Source Sans Pro"}
+    heading_font: {google: "Source Sans Pro"}
+    code_font: {google: "Fira Code"}
+
+home:
+  title: "regdatasets: Datasets for Teaching Regression Analysis"
+  description: >
+    A curated collection of 25 datasets for teaching introductory and
+    intermediate regression analysis in education and social science contexts.
+
+navbar:
+  structure:
+    left: [intro, reference, articles]
+    right: [search, github]
+  components:
+    intro:
+      text: Home
+      href: index.html
+    reference:
+      text: Datasets
+      href: reference/index.html
+    articles:
+      text: Guides
+      menu:
+        - text: Getting Started
+          href: articles/getting-started.html
+        - text: Dataset Overview
+          href: articles/dataset-overview.html
+    github:
+      icon: fab fa-github
+      href: https://github.com/joonho112/regdatasets
+      aria-label: GitHub
+
+reference:
+  - title: "Simple Linear Regression (Chapters 1–2)"
+    desc: >
+      Datasets for introducing simple linear regression, ANCOVA, and
+      the fundamental concepts of controlling for covariates.
+    contents:
+      - gcse
+      - civic_ed
+      - classdata_07
+
+  - title: "One-way ANOVA (Chapter 3)"
+    desc: >
+      Datasets for teaching categorical predictors, dummy variable coding,
+      and group comparisons via ANOVA as a special case of regression.
+    contents:
+      - reading
+      - instruction
+
+  - title: "Multiple Regression: Continuous Predictors (Chapter 4)"
+    desc: >
+      Datasets for partial regression, standardized coefficients, and
+      the confounding/sign-reversal phenomenon.
+    contents:
+      - crime
+
+  - title: "Interactions (Chapter 5)"
+    desc: >
+      Datasets for teaching interaction effects between dummy variables,
+      between continuous and dummy variables, and between two continuous
+      predictors.
+    contents:
+      - individuals
+      - faculty
+
+  - title: "Nonlinear Relationships & Model Building (Chapters 6–7)"
+    desc: >
+      Datasets for log transformations, polynomial regression, and
+      model selection strategies.
+    contents:
+      - naep
+      - nels_data
+      - hsb_sub
+
+  - title: "Model Diagnostics (Chapter 8)"
+    desc: >
+      Datasets for residual analysis, normality checks, heteroscedasticity
+      detection, influence diagnostics, and collinearity assessment.
+    contents:
+      - hsbs1
+
+  - title: "Logistic Regression (Chapters 9–11)"
+    desc: >
+      Datasets for binary outcomes, odds ratios, Simpson's paradox,
+      maximum likelihood estimation, and model fit diagnostics.
+    contents:
+      - gss_1
+      - berkeley
+      - berk_sub
+      - penalty
+      - titanic
+      - disc
+      - disc2
+
+  - title: "Latent Response & GLM (Chapter 12)"
+    desc: >
+      Datasets for understanding latent variable formulations, probit
+      vs. logit models, and the generalized linear model framework.
+    contents:
+      - lambert
+      - grades
+
+  - title: "Ordinal Response Models (Chapter 13)"
+    desc: >
+      Datasets for ordinal logistic/probit regression, threshold models,
+      and the proportional odds assumption.
+    contents:
+      - womenlf
+      - satisfaction
+      - alcohol1_pp
+
+  - title: "Large-Scale Assessment Data"
+    desc: >
+      Comprehensive survey datasets with complex sampling designs,
+      plausible values, and replicate weights. Useful for advanced topics.
+    contents:
+      - pisa2000
+
+footer:
+  structure:
+    left: developed_by
+    right: built_with

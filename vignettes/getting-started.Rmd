@@ -1,0 +1,142 @@
+---
+title: "Getting Started with regdatasets"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Getting Started with regdatasets}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.width = 7,
+  fig.height = 4,
+  message = FALSE,
+  warning = FALSE
+)
+```
+
+## Installation
+
+Install the development version of **regdatasets** from GitHub:
+
+```{r, eval = FALSE}
+# install.packages("devtools")
+devtools::install_github("joonho112/regdatasets")
+```
+
+## Loading Datasets
+
+All 25 datasets are available via the standard `data()` function:
+
+```{r}
+library(regdatasets)
+
+# Load a single dataset
+data(gcse)
+head(gcse)
+```
+
+Every dataset is stored as a **tibble**, so it prints cleanly and works
+seamlessly with the tidyverse:
+
+```{r}
+class(gcse)
+```
+
+## Exploring a Dataset
+
+Use `?dataset_name` to view the full documentation, including variable
+descriptions, sources, and example analyses:
+
+```{r, eval = FALSE}
+?gcse
+?berkeley
+?crime
+```
+
+## Example: Simple Linear Regression
+
+The `gcse` dataset is the primary running example for Chapters 1–2.
+It contains GCSE exam scores and London Reading Test (LRT) scores for
+4,059 students in 65 London secondary schools:
+
+```{r}
+# Fit a simple linear regression
+model <- lm(gcse ~ lrt, data = gcse)
+summary(model)
+```
+
+```{r fig-gcse-scatter, fig.cap = "GCSE scores vs. LRT scores with fitted regression line."}
+library(ggplot2)
+
+ggplot(gcse, aes(x = lrt, y = gcse)) +
+  geom_point(alpha = 0.3, size = 1) +
+  geom_smooth(method = "lm", color = "#E74C3C", se = TRUE) +
+  labs(
+    title = "GCSE vs. London Reading Test",
+    x = "London Reading Test Score (Age 11)",
+    y = "GCSE Score (Age 16)"
+  ) +
+  theme_minimal(base_size = 13)
+```
+
+## Example: Logistic Regression
+
+The `berkeley` dataset demonstrates Simpson's paradox — the reversal of
+an apparent gender bias after controlling for department:
+
+```{r}
+data(berkeley)
+
+# Unadjusted model
+crude <- glm(admitted ~ female, family = binomial, data = berkeley)
+
+# Adjusted model (controlling for department)
+adjusted <- glm(admitted ~ female + factor(departme),
+                family = binomial, data = berkeley)
+
+# Compare odds ratios
+exp(coef(crude)["female"])    # Crude OR
+exp(coef(adjusted)["female"]) # Adjusted OR
+```
+
+The crude odds ratio suggests female applicants are disadvantaged, but
+after adjusting for department the effect essentially disappears —
+a classic example of confounding.
+
+## Example: One-way ANOVA
+
+The `reading` dataset compares three reading instruction methods:
+
+```{r}
+data(reading)
+
+# ANOVA via regression with dummy variables
+model_anova <- lm(post1 ~ factor(group), data = reading)
+anova(model_anova)
+```
+
+```{r fig-reading-box, fig.cap = "Post-test scores by instruction group."}
+ggplot(reading, aes(x = factor(group), y = post1, fill = factor(group))) +
+  geom_boxplot(alpha = 0.7, show.legend = FALSE) +
+  scale_fill_manual(values = c("#2C3E50", "#E74C3C", "#3498DB")) +
+  labs(
+    title = "Reading Comprehension by Instruction Method",
+    x = "Instruction Group",
+    y = "Post-test Score (post1)"
+  ) +
+  theme_minimal(base_size = 13)
+```
+
+## Available Datasets
+
+For a complete list of all 25 datasets and their chapter mappings, see the
+[Dataset Overview](dataset-overview.html) article.
+
+```{r}
+# List all datasets in the package
+data(package = "regdatasets")$results[, c("Item", "Title")]
+```
