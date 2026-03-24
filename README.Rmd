@@ -88,9 +88,9 @@ The datasets in this package span the following regression topics:
 - **Simple Linear Regression**: `gcse`, `classdata_07`, `civic_ed`
 - **ANCOVA**: `gcse` (with school grouping)
 - **One-way ANOVA**: `instruction`, `reading`
-- **Multiple Regression**: `crime`, `naep`, `nels_data`
+- **Multiple Regression**: `crime`, `nels_data`
 - **Interactions**: `gcse`, `faculty`, `individuals`, `crime`
-- **Nonlinear Relationships**: `grades`, `naep`
+- **Nonlinear Relationships**: `grades`, `nels_data`
 - **Model Diagnostics**: `hsbs1`, `nels_data`
 - **Simple Logistic Regression**: `gss_1`, `disc`
 - **Multiple Logistic Regression**: `berkeley`, `disc2`, `titanic`

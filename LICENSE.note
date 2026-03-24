@@ -1,0 +1,147 @@
+LICENSE.note for regdatasets
+============================
+
+The R code, documentation, and package infrastructure in this package are
+released under the MIT License (see LICENSE and LICENSE.md files).
+
+The datasets bundled in this package originate from various sources, each
+with their own terms of use. The package author has made good-faith efforts
+to include only datasets that are legally redistributable. Below is a
+summary of each dataset's provenance and redistribution basis.
+
+If you believe any dataset has been included in error, please contact the
+package maintainer at jlee296@ua.edu.
+
+Dataset-Level Provenance
+========================
+
+alcohol1_pp
+  Source: Singer, J. D., & Willett, J. B. (2003). Applied Longitudinal
+         Data Analysis. Oxford University Press.
+  Basis: Companion data freely distributed by authors via UCLA OARC
+         and Harvard ALDA website.
+
+berk_sub, berkeley
+  Source: Bickel, P. J., Hammel, E. A., & O'Connell, J. W. (1975).
+         Sex bias in graduate admissions. Science, 187(4175), 398-404.
+  Basis: Canonical public dataset widely redistributed in statistics
+         textbooks and R packages (including base R's UCBAdmissions).
+
+civic_ed
+  Source: Tolo, K. W. (1999). The Civic Education of American Youth.
+         Lyndon B. Johnson School of Public Affairs, University of Texas.
+  Basis: Academic research data. Contact author/institution for
+         redistribution confirmation.
+
+classdata_07
+  Source: Class survey data collected by the package author in 2007.
+  Basis: Author-owned data. Anonymized (N=44).
+
+crime
+  Source: Florida Department of Law Enforcement. County-level crime
+         statistics.
+  Basis: US state government public records.
+
+disc, disc2
+  Source: National Center for Education Statistics (1988). National
+         Education Longitudinal Study of 1988 (NELS:88).
+  Basis: NELS:88 public-use data files. Subsets of NELS:88 public-use
+         data are redistributed in multiple CRAN packages (CMatching,
+         copulaData, faraway).
+
+faculty
+  Source: University faculty compensation study (specific source to be
+         determined).
+  Basis: Academic teaching dataset. Original source under investigation.
+
+gcse
+  Source: Goldstein, H., Rasbash, J., Yang, M., et al. (1993). A
+         multilevel analysis of school examination results. Oxford Review
+         of Education, 19(4), 425-433.
+  Basis: Academic research data widely used in multilevel modeling
+         textbooks. Available from University of Bristol CMM.
+
+grades
+  Source: Essay grading data from a writing assessment study (specific
+         source to be determined).
+  Basis: Academic teaching dataset. Original source under investigation.
+
+gss_1
+  Source: Smith, T. W., et al. General Social Survey. NORC at the
+         University of Chicago.
+  Basis: GSS public-use data is freely available from NORC for research
+         use. The gssr R package (MIT license) bundles the full GSS
+         cumulative data file. This package is not associated with or
+         endorsed by NORC or the GSS.
+
+hsb_sub, hsbs1
+  Source: National Center for Education Statistics. High School and
+         Beyond (HS&B) survey. Also: Raudenbush, S. W., & Bryk, A. S.
+         (2002). Hierarchical Linear Models (2nd ed.). Sage.
+  Basis: HS&B public-use data files. Subsets widely available in
+         multilevel modeling textbooks and software.
+
+individuals
+  Source: U.S. Bureau of Labor Statistics. Current Population Survey,
+         March 2000.
+  Basis: US federal government data (public domain).
+
+instruction
+  Source: Hill, H. C., Rowan, B., & Ball, D. L. (2005). Effects of
+         teachers' mathematical knowledge for teaching on student
+         achievement. American Educational Research Journal, 42(2),
+         371-406.
+  Basis: Published academic research data.
+
+lambert
+  Source: Lambert, N. M. (1988). Adolescent outcomes for hyperactive
+         children. American Psychologist, 43(10), 786-799.
+  Basis: Published academic research data. Individual-level
+         redistribution rights to be confirmed with original author
+         or institution.
+
+nels_data
+  Source: National Center for Education Statistics (1988). National
+         Education Longitudinal Study of 1988 (NELS:88).
+  Basis: NELS:88 public-use data files. Confirm all 299 variables
+         are from public-use (not restricted-use) files.
+
+penalty
+  Source: Agresti, A. (2002). Categorical Data Analysis (2nd ed.).
+         Wiley. Original data: Radelet, M. L. (1981). Racial
+         characteristics and the imposition of the death penalty.
+         American Sociological Review, 46(6), 918-927.
+  Basis: Widely redistributed in statistics textbooks.
+
+pisa2000
+  Source: OECD (2002). PISA 2000 Technical Report. Paris: OECD
+         Publishing.
+  Basis: OECD PISA public-use files. Multiple CRAN packages
+         (learningtower, pisa) redistribute PISA data. The OECD
+         Product License permits redistribution with proper
+         attribution. This package is not associated with or
+         endorsed by the OECD.
+
+reading
+  Source: Schmitt, M. C. (1987). The effects of an elaborated directed
+         reading activity on the metacomprehension skills of third
+         graders. Doctoral dissertation, Purdue University.
+         Also in: Raudenbush & Bryk (2002).
+  Basis: Published academic research data.
+
+satisfaction
+  Source: Simulated survey data for pedagogical purposes.
+  Basis: Author-generated. No redistribution restrictions.
+
+titanic
+  Source: British Board of Trade (1990). Report on the Loss of the
+         "Titanic" (S.S.). Historical public records.
+  Basis: Historical public domain data. Widely redistributed.
+
+womenlf
+  Source: Fox, J. (2003). Applied Regression Analysis and Generalized
+         Linear Models. Sage. Original data from the 1977 Canadian
+         Social Change in Canada Project, York Institute for Social
+         Research.
+  Basis: Also available as carData::Womenlf on CRAN (GPL >= 2).
+         A version of this dataset also appears in the carData package.

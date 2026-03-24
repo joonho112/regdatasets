@@ -124,15 +124,15 @@ data(disc2)
 head(disc2)
 #> # A tibble: 6 × 15
 #>    male notengl bedroom osentoff     ses reading1 math1 reading2 fath_coll
-#>   <dbl>   <dbl>   <dbl>    <dbl>   <dbl>    <dbl> <dbl>    <dbl>     <dbl>
+#>   <int>   <int>   <int>    <int>   <dbl>    <dbl> <dbl>    <dbl>     <int>
 #> 1     0       0       1        0 -0.601      66.8  58.6     50.2         0
 #> 2     1       0       1        0 -0.0700     58.6  59.8     61.6         0
 #> 3     1       0       1        0  0.0960     49.5  49.7     44           0
 #> 4     1       0       1        0 -0.715      55.6  49.1     40.7         0
 #> 5     0       0       0        1  0.205      56.3  44.5     53.7         0
 #> 6     1       0       1        0  0.355      52.2  54.8     43.3         0
-#> # ℹ 6 more variables: fath_ed <dbl>, moth_coll <dbl>, moth_ed <dbl>,
-#> #   minority <dbl>, race <dbl>, sentoff <dbl>
+#> # ℹ 6 more variables: fath_ed <int>, moth_coll <int>, moth_ed <int>,
+#> #   minority <int>, race <fct>, sentoff <int>
 
 # Logistic regression: SES effect on office referral
 glm(sentoff ~ ses, data = disc2, family = binomial)

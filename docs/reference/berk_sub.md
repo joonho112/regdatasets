@@ -64,7 +64,7 @@ data(berk_sub)
 head(berk_sub)
 #> # A tibble: 6 × 3
 #>   admitted  male engineering
-#>      <dbl> <dbl>       <dbl>
+#>      <int> <int>       <int>
 #> 1        0     1           1
 #> 2        0     0           1
 #> 3        0     1           0

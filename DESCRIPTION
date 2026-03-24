@@ -1,6 +1,6 @@
 Package: regdatasets
 Title: Datasets for Teaching Regression Analysis
-Version: 0.1.0
+Version: 0.2.0
 Authors@R:
     person("JoonHo", "Lee", , "jlee296@ua.edu", role = c("aut", "cre"),
            comment = c(ORCID = "0009-0006-4019-8703"))
@@ -9,7 +9,7 @@ Description: A curated collection of datasets for teaching introductory
     contexts. Includes datasets for simple and multiple linear regression,
     ANOVA/ANCOVA, logistic regression, and ordinal response models.
     Datasets are sourced from published textbooks and research studies,
-    covering topics such as student achievement (GCSE, PISA, NAEP),
+    covering topics such as student achievement (GCSE, PISA),
     crime rates, faculty salaries, and survey data.
 License: MIT + file LICENSE
 URL: https://joonho112.github.io/regdatasets/,
@@ -17,6 +17,8 @@ URL: https://joonho112.github.io/regdatasets/,
 BugReports: https://github.com/joonho112/regdatasets/issues
 Depends:
     R (>= 3.5.0)
+Imports:
+    tibble
 Encoding: UTF-8
 LazyData: true
 LazyDataCompression: xz

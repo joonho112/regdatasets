@@ -73,7 +73,7 @@ data(crime)
 head(crime)
 #> # A tibble: 6 × 5
 #>   county       c     i    hs     u
-#>   <chr>    <dbl> <dbl> <dbl> <dbl>
+#>   <chr>    <int> <dbl> <dbl> <dbl>
 #> 1 ALACHUA    104  22.1  82.7  73.2
 #> 2 BAKER       20  25.8  64.1  21.5
 #> 3 BAY         64  24.7  74.7  85  

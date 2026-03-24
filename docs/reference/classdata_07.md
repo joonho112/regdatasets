@@ -97,15 +97,15 @@ data(classdata_07)
 head(classdata_07)
 #> # A tibble: 6 × 12
 #>   actual_study desired_study actual_work desired_work gender height
-#>          <dbl>         <dbl>       <dbl>        <dbl>  <dbl>  <dbl>
+#>          <int>         <int>       <int>        <int>  <int>  <dbl>
 #> 1           50            65           0            0      0   64  
 #> 2           40            25          10           20      0   63  
 #> 3           16            25          20           20      0   67  
 #> 4           30            30           0            0      0   67  
 #> 5           25            15          13            5      0   65  
 #> 6           20            10          10           10      0   63.5
-#> # ℹ 6 more variables: desired_weight <dbl>, exer <dbl>, sleep <dbl>,
-#> #   alcohol <dbl>, overage <chr>, age <dbl>
+#> # ℹ 6 more variables: desired_weight <int>, exer <dbl>, sleep <dbl>,
+#> #   alcohol <int>, overage <chr>, age <int>
 
 # Simple regression: actual vs. desired study hours
 lm(actual_study ~ desired_study, data = classdata_07)

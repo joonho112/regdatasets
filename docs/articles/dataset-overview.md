@@ -11,7 +11,7 @@ datasets <- c(
   "alcohol1_pp", "berk_sub", "berkeley", "civic_ed", "classdata_07",
   "crime", "disc", "disc2", "faculty", "gcse", "grades", "gss_1",
   "hsb_sub", "hsbs1", "individuals", "instruction", "lambert",
-  "naep", "nels_data", "penalty", "pisa2000", "reading",
+  "nels_data", "penalty", "pisa2000", "reading",
   "satisfaction", "titanic", "womenlf"
 )
 
@@ -45,7 +45,7 @@ knitr::kable(summary_df, format = "html",
 | disc         |         2000 |        15 |
 | disc2        |         2000 |        15 |
 | faculty      |          514 |        10 |
-| gcse         |         4059 |         9 |
+| gcse         |         4059 |         6 |
 | grades       |          198 |         8 |
 | gss_1        |         2832 |        16 |
 | hsb_sub      |          188 |         7 |
@@ -53,7 +53,6 @@ knitr::kable(summary_df, format = "html",
 | individuals  |        55899 |         6 |
 | instruction  |         1190 |        12 |
 | lambert      |          492 |       109 |
-| naep         |        17606 |       301 |
 | nels_data    |         2000 |       299 |
 | penalty      |          674 |         3 |
 | pisa2000     |         4528 |        15 |
@@ -76,7 +75,7 @@ companion textbook.
 | 3 | One-way ANOVA | `reading`, `instruction` |
 | 4 | Continuous Predictors | `crime` |
 | 5 | Interactions | `gcse`, `individuals`, `faculty`, `crime` |
-| 6 | Nonlinear Relationships | `naep` |
+| 6 | Nonlinear Relationships | `nels_data`, `crime` |
 | 7 | Model Building | `nels_data`, `hsb_sub`, `civic_ed` |
 | 8 | Model Diagnostics | `hsbs1`, `nels_data` |
 | 9 | Simple Logistic Regression | `gss_1`, `disc`, `titanic` |

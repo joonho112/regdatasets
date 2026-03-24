@@ -121,14 +121,14 @@ data(hsbs1)
 head(hsbs1)
 #> # A tibble: 6 × 16
 #>      id gender  race   ses   sch  prog  locus concept   mot career  read write
-#>   <dbl>  <dbl> <dbl> <dbl> <dbl> <dbl>  <dbl>   <dbl> <dbl>  <dbl> <dbl> <dbl>
+#>   <int>  <int> <int> <int> <int> <int>  <dbl>   <dbl> <dbl>  <int> <dbl> <dbl>
 #> 1   303      2     4     1     1     1 -0.840 -0.240  1          4  54.8  64.5
 #> 2   404      2     4     2     1     1 -0.380 -0.470  0.670      4  62.7  43.7
 #> 3   225      1     4     2     1     2  0.890  0.590  0.670      6  60.6  56.7
 #> 4   553      1     4     2     2     2  0.710  0.280  0.670     16  62.7  56.7
 #> 5   433      2     4     2     1     3 -0.640  0.0300 1          4  41.6  46.3
 #> 6   189      2     4     3     1     2  1.11   0.900  0.330      6  62.7  64.5
-#> # ℹ 4 more variables: math <dbl>, sci <dbl>, ss <dbl>, sample <dbl>
+#> # ℹ 4 more variables: math <dbl>, sci <dbl>, ss <dbl>, sample <int>
 # Multiple regression of writing on reading and math
 fit <- lm(write ~ read + math, data = hsbs1)
 summary(fit)

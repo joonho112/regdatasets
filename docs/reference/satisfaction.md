@@ -54,7 +54,7 @@ data(satisfaction)
 head(satisfaction)
 #> # A tibble: 6 × 3
 #>   gender income satisfaction
-#>   <chr>   <dbl>        <dbl>
+#>   <chr>   <int>        <int>
 #> 1 F           1            1
 #> 2 F           2            1
 #> 3 F           3            1

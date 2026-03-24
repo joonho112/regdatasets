@@ -1,11 +1,11 @@
 # UC Berkeley Graduate Admissions Data (Five Departments)
 
 Data from UC Berkeley's 1973 graduate admissions across five
-departments, with 3,593 individual applicant records. This is the
+departmentnts, with 3,593 individual applicant records. This is the
 classic dataset used to demonstrate Simpson's paradox in the context of
 logistic regression: the overall association between gender and
 admission appears to show bias against women, but this effect reverses
-or disappears when controlling for department. The department
+or disappears when controlling for departmentnt. The departmentnt
 identifiers are anonymized.
 
 ## Usage
@@ -18,11 +18,11 @@ berkeley
 
 A tibble with 3,593 rows and 3 columns:
 
-- departme:
+- department:
 
   Department identifier. Type: numeric. Values: 1, 2, 3, 4, 5. Five
-  anonymized departments that differ in their admission rates and gender
-  composition of applicants.
+  anonymized departmentnts that differ in their admission rates and
+  gender composition of applicants.
 
 - female:
 
@@ -45,14 +45,14 @@ Original data file: `berkeley.dta`
 This dataset is used in Chapters 10-11 (Multiple Logistic Regression and
 Model Fit/Diagnostics) to illustrate confounding in logistic regression
 and Simpson's paradox. Key analyses include: computing odds ratios for
-admission by gender within and across departments, fitting multiple
-logistic regression models with department as a control variable,
+admission by gender within and across departmentnts, fitting multiple
+logistic regression models with departmentnt as a control variable,
 performing likelihood ratio tests, and chi-squared goodness-of-fit
 tests.
 
 Note that this dataset uses `female` as the gender indicator (1 =
-female), whereas `berk_sub` uses `male` (1 = male). The department
-variable is coded numerically (1-5) rather than by department name.
+female), whereas `berk_sub` uses `male` (1 = male). The departmentnt
+variable is coded numerically (1-5) rather than by departmentnt name.
 
 ## Examples
 
@@ -60,14 +60,14 @@ variable is coded numerically (1-5) rather than by department name.
 data(berkeley)
 head(berkeley)
 #> # A tibble: 6 × 3
-#>   departme female admitted
-#>      <dbl>  <dbl>    <dbl>
-#> 1        1      0        0
-#> 2        1      1        0
-#> 3        2      0        0
-#> 4        2      1        0
-#> 5        3      0        0
-#> 6        3      1        0
+#>   department female admitted
+#>        <int>  <int>    <int>
+#> 1          1      0        0
+#> 2          1      1        0
+#> 3          2      0        0
+#> 4          2      1        0
+#> 5          3      0        0
+#> 6          3      1        0
 
 # Unadjusted model: gender only
 glm(admitted ~ female, data = berkeley, family = binomial)
@@ -82,17 +82,17 @@ glm(admitted ~ female, data = berkeley, family = binomial)
 #> Null Deviance:       4511 
 #> Residual Deviance: 4472  AIC: 4476
 
-# Adjusted model: controlling for department
-glm(admitted ~ female + factor(departme), data = berkeley, family = binomial)
+# Adjusted model: controlling for departmentnt
+glm(admitted ~ female + factor(department), data = berkeley, family = binomial)
 #> 
-#> Call:  glm(formula = admitted ~ female + factor(departme), family = binomial, 
+#> Call:  glm(formula = admitted ~ female + factor(department), family = binomial, 
 #>     data = berkeley)
 #> 
 #> Coefficients:
-#>       (Intercept)             female  factor(departme)2  factor(departme)3  
-#>           0.54418           -0.03069           -1.14008           -1.19456  
-#> factor(departme)4  factor(departme)5  
-#>          -1.61308           -3.20527  
+#>         (Intercept)               female  factor(department)2  
+#>             0.54418             -0.03069             -1.14008  
+#> factor(department)3  factor(department)4  factor(department)5  
+#>            -1.19456             -1.61308             -3.20527  
 #> 
 #> Degrees of Freedom: 3592 Total (i.e. Null);  3587 Residual
 #> Null Deviance:       4511 

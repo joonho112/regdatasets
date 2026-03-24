@@ -83,7 +83,7 @@ data(hsb_sub)
 head(hsb_sub)
 #> # A tibble: 6 × 7
 #>   minority female     ses mathach  size sector schoolid
-#>      <dbl>  <dbl>   <dbl>   <dbl> <dbl>  <dbl>    <dbl>
+#>      <int>  <int>   <dbl>   <dbl> <int>  <int>    <int>
 #> 1        0      1 -1.53      5.88   842      0     1224
 #> 2        0      1 -0.588    19.7    842      0     1224
 #> 3        0      0 -0.528    20.3    842      0     1224

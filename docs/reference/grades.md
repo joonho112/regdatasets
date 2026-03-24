@@ -85,7 +85,7 @@ data(grades)
 head(grades)
 #> # A tibble: 6 × 8
 #>   essay grade wordlength sqrtwords commas errors prepos sentlength
-#>   <dbl> <dbl>      <dbl>     <dbl>  <dbl>  <dbl>  <dbl>      <dbl>
+#>   <int> <int>      <dbl>     <dbl>  <dbl>  <dbl>  <dbl>      <dbl>
 #> 1     1     3       4.76     15.5    5.60   5.55    8         19.5
 #> 2     2     3       4.24      9.06   3.60   1.27    9.5       16.4
 #> 3     3     1       4.09     16.2    1.10   2.61   14         18.4

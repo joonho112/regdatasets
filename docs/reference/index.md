@@ -1,21 +1,23 @@
 # Package index
 
-## Simple Linear Regression (Chapters 1–2)
+## Simple Linear Regression & ANCOVA (Chapters 1–2)
 
 Datasets for introducing simple linear regression, ANCOVA, and the
 fundamental concepts of controlling for covariates.
 
 - [`gcse`](https://joonho112.github.io/regdatasets/reference/gcse.md) :
   GCSE and London Reading Test Data
-- [`civic_ed`](https://joonho112.github.io/regdatasets/reference/civic_ed.md)
-  : Civic Education Study: Pre-Post Survey Data
 - [`classdata_07`](https://joonho112.github.io/regdatasets/reference/classdata_07.md)
   : Class Survey Data (2007)
+- [`pisa2000`](https://joonho112.github.io/regdatasets/reference/pisa2000.md)
+  : PISA 2000 International Reading Assessment Data
+- [`civic_ed`](https://joonho112.github.io/regdatasets/reference/civic_ed.md)
+  : Civic Education Study: Pre-Post Survey Data
 
 ## One-way ANOVA (Chapter 3)
 
-Datasets for teaching categorical predictors, dummy variable coding, and
-group comparisons via ANOVA as a special case of regression.
+Datasets for categorical predictors, dummy variable coding, and group
+comparisons via ANOVA as a special case of regression.
 
 - [`reading`](https://joonho112.github.io/regdatasets/reference/reading.md)
   : Reading Comprehension Instruction Experiment
@@ -32,9 +34,8 @@ confounding/sign-reversal phenomenon.
 
 ## Interactions (Chapter 5)
 
-Datasets for teaching interaction effects between dummy variables,
-between continuous and dummy variables, and between two continuous
-predictors.
+Datasets for interaction effects between dummy variables, continuous and
+dummy variables, and two continuous predictors.
 
 - [`individuals`](https://joonho112.github.io/regdatasets/reference/individuals.md)
   : Bureau of Labor Statistics March 2000 CPS Individual Data
@@ -46,8 +47,6 @@ predictors.
 Datasets for log transformations, polynomial regression, and model
 selection strategies.
 
-- [`naep`](https://joonho112.github.io/regdatasets/reference/naep.md) :
-  National Assessment of Educational Progress (NAEP) Mathematics Data
 - [`nels_data`](https://joonho112.github.io/regdatasets/reference/nels_data.md)
   : National Education Longitudinal Study of 1988 (NELS:88)
 - [`hsb_sub`](https://joonho112.github.io/regdatasets/reference/hsb_sub.md)
@@ -55,8 +54,8 @@ selection strategies.
 
 ## Model Diagnostics (Chapter 8)
 
-Datasets for residual analysis, normality checks, heteroscedasticity
-detection, influence diagnostics, and collinearity assessment.
+Datasets for residual analysis, normality checks, influence diagnostics,
+and collinearity assessment.
 
 - [`hsbs1`](https://joonho112.github.io/regdatasets/reference/hsbs1.md)
   : High School and Beyond Survey (Full Sample)
@@ -83,8 +82,8 @@ likelihood estimation, and model fit diagnostics.
 
 ## Latent Response & GLM (Chapter 12)
 
-Datasets for understanding latent variable formulations, probit
-vs. logit models, and the generalized linear model framework.
+Datasets for latent variable formulations, probit vs. logit models, and
+the generalized linear model framework.
 
 - [`lambert`](https://joonho112.github.io/regdatasets/reference/lambert.md)
   : Lambert Longitudinal Study Data
@@ -103,10 +102,9 @@ the proportional odds assumption.
 - [`alcohol1_pp`](https://joonho112.github.io/regdatasets/reference/alcohol1_pp.md)
   : Adolescent Alcohol Use Person-Period Data
 
-## Large-Scale Assessment Data
+## Utility Functions
 
-Comprehensive survey datasets with complex sampling designs, plausible
-values, and replicate weights. Useful for advanced topics.
+Helper functions for exploring the package.
 
-- [`pisa2000`](https://joonho112.github.io/regdatasets/reference/pisa2000.md)
-  : PISA 2000 International Reading Assessment Data
+- [`list_datasets()`](https://joonho112.github.io/regdatasets/reference/list_datasets.md)
+  : List All Datasets in regdatasets

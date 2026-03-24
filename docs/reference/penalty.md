@@ -59,7 +59,7 @@ data(penalty)
 head(penalty)
 #> # A tibble: 6 × 3
 #>   def_bl vic_bl death_pe
-#>    <dbl>  <dbl>    <dbl>
+#>    <int>  <int>    <int>
 #> 1      0      0        0
 #> 2      0      1        0
 #> 3      0      0        0

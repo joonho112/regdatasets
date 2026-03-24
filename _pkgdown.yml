@@ -12,12 +12,12 @@ template:
 home:
   title: "regdatasets: Datasets for Teaching Regression Analysis"
   description: >
-    A curated collection of 25 datasets for teaching introductory and
+    A curated collection of 24 datasets for teaching introductory and
     intermediate regression analysis in education and social science contexts.
 
 navbar:
   structure:
-    left: [intro, reference, articles]
+    left: [intro, reference, articles, news]
     right: [search, github]
   components:
     intro:
@@ -33,24 +33,28 @@ navbar:
           href: articles/getting-started.html
         - text: Dataset Overview
           href: articles/dataset-overview.html
+    news:
+      text: Changelog
+      href: news/index.html
     github:
       icon: fab fa-github
       href: https://github.com/joonho112/regdatasets
       aria-label: GitHub
 
 reference:
-  - title: "Simple Linear Regression (Chapters 1–2)"
+  - title: "Simple Linear Regression & ANCOVA (Chapters 1–2)"
     desc: >
       Datasets for introducing simple linear regression, ANCOVA, and
       the fundamental concepts of controlling for covariates.
     contents:
       - gcse
-      - civic_ed
       - classdata_07
+      - pisa2000
+      - civic_ed
 
   - title: "One-way ANOVA (Chapter 3)"
     desc: >
-      Datasets for teaching categorical predictors, dummy variable coding,
+      Datasets for categorical predictors, dummy variable coding,
       and group comparisons via ANOVA as a special case of regression.
     contents:
       - reading
@@ -65,9 +69,8 @@ reference:
 
   - title: "Interactions (Chapter 5)"
     desc: >
-      Datasets for teaching interaction effects between dummy variables,
-      between continuous and dummy variables, and between two continuous
-      predictors.
+      Datasets for interaction effects between dummy variables,
+      continuous and dummy variables, and two continuous predictors.
     contents:
       - individuals
       - faculty
@@ -77,14 +80,13 @@ reference:
       Datasets for log transformations, polynomial regression, and
       model selection strategies.
     contents:
-      - naep
       - nels_data
       - hsb_sub
 
   - title: "Model Diagnostics (Chapter 8)"
     desc: >
-      Datasets for residual analysis, normality checks, heteroscedasticity
-      detection, influence diagnostics, and collinearity assessment.
+      Datasets for residual analysis, normality checks, influence
+      diagnostics, and collinearity assessment.
     contents:
       - hsbs1
 
@@ -103,27 +105,26 @@ reference:
 
   - title: "Latent Response & GLM (Chapter 12)"
     desc: >
-      Datasets for understanding latent variable formulations, probit
-      vs. logit models, and the generalized linear model framework.
+      Datasets for latent variable formulations, probit vs. logit
+      models, and the generalized linear model framework.
     contents:
       - lambert
       - grades
 
   - title: "Ordinal Response Models (Chapter 13)"
     desc: >
-      Datasets for ordinal logistic/probit regression, threshold models,
-      and the proportional odds assumption.
+      Datasets for ordinal logistic/probit regression, threshold
+      models, and the proportional odds assumption.
     contents:
       - womenlf
       - satisfaction
       - alcohol1_pp
 
-  - title: "Large-Scale Assessment Data"
+  - title: "Utility Functions"
     desc: >
-      Comprehensive survey datasets with complex sampling designs,
-      plausible values, and replicate weights. Useful for advanced topics.
+      Helper functions for exploring the package.
     contents:
-      - pisa2000
+      - list_datasets
 
 footer:
   structure:

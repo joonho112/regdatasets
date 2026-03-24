@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">regdatasets</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,6 +22,7 @@
   <ul class="dropdown-menu" aria-labelledby="dropdown-guides"><li><a class="dropdown-item" href="../articles/getting-started.html">Getting Started</a></li>
     <li><a class="dropdown-item" href="../articles/dataset-overview.html">Dataset Overview</a></li>
   </ul></li>
+<li class="nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
       </ul><ul class="navbar-nav"><li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json"></form></li>
 <li class="nav-item"><a class="external-link nav-link" href="https://github.com/joonho112/regdatasets" aria-label="GitHub"><span class="fa fab fa-github"></span></a></li>
@@ -36,7 +37,7 @@
     </div>
 
     <div class="section level2">
-      <h2 id="simple-linear-regression-chapters-">Simple Linear Regression (Chapters 1–2)<a class="anchor" aria-label="anchor" href="#simple-linear-regression-chapters-"></a></h2>
+      <h2 id="simple-linear-regression-ancova-chapters-">Simple Linear Regression &amp; ANCOVA (Chapters 1–2)<a class="anchor" aria-label="anchor" href="#simple-linear-regression-ancova-chapters-"></a></h2>
 
       <div class="section-desc"><p>Datasets for introducing simple linear regression, ANCOVA, and the fundamental concepts of controlling for covariates.</p></div>
 
@@ -54,21 +55,28 @@
 
         <dt>
 
-          <code><a href="civic_ed.html">civic_ed</a></code>
-
-        </dt>
-        <dd>Civic Education Study: Pre-Post Survey Data</dd>
-
-        <dt>
-
           <code><a href="classdata_07.html">classdata_07</a></code>
 
         </dt>
         <dd>Class Survey Data (2007)</dd>
+
+        <dt>
+
+          <code><a href="pisa2000.html">pisa2000</a></code>
+
+        </dt>
+        <dd>PISA 2000 International Reading Assessment Data</dd>
+
+        <dt>
+
+          <code><a href="civic_ed.html">civic_ed</a></code>
+
+        </dt>
+        <dd>Civic Education Study: Pre-Post Survey Data</dd>
       </dl></div><div class="section level2">
       <h2 id="one-way-anova-chapter-">One-way ANOVA (Chapter 3)<a class="anchor" aria-label="anchor" href="#one-way-anova-chapter-"></a></h2>
 
-      <div class="section-desc"><p>Datasets for teaching categorical predictors, dummy variable coding, and group comparisons via ANOVA as a special case of regression.</p></div>
+      <div class="section-desc"><p>Datasets for categorical predictors, dummy variable coding, and group comparisons via ANOVA as a special case of regression.</p></div>
 
       <dl></dl></div><div class="section level2">
 
@@ -107,7 +115,7 @@
       </dl></div><div class="section level2">
       <h2 id="interactions-chapter-">Interactions (Chapter 5)<a class="anchor" aria-label="anchor" href="#interactions-chapter-"></a></h2>
 
-      <div class="section-desc"><p>Datasets for teaching interaction effects between dummy variables, between continuous and dummy variables, and between two continuous predictors.</p></div>
+      <div class="section-desc"><p>Datasets for interaction effects between dummy variables, continuous and dummy variables, and two continuous predictors.</p></div>
 
       <dl></dl></div><div class="section level2">
 
@@ -139,13 +147,6 @@
 
       <dl><dt>
 
-          <code><a href="naep.html">naep</a></code>
-
-        </dt>
-        <dd>National Assessment of Educational Progress (NAEP) Mathematics Data</dd>
-
-        <dt>
-
           <code><a href="nels_data.html">nels_data</a></code>
 
         </dt>
@@ -160,7 +161,7 @@
       </dl></div><div class="section level2">
       <h2 id="model-diagnostics-chapter-">Model Diagnostics (Chapter 8)<a class="anchor" aria-label="anchor" href="#model-diagnostics-chapter-"></a></h2>
 
-      <div class="section-desc"><p>Datasets for residual analysis, normality checks, heteroscedasticity detection, influence diagnostics, and collinearity assessment.</p></div>
+      <div class="section-desc"><p>Datasets for residual analysis, normality checks, influence diagnostics, and collinearity assessment.</p></div>
 
       <dl></dl></div><div class="section level2">
 
@@ -234,7 +235,7 @@
       </dl></div><div class="section level2">
       <h2 id="latent-response-glm-chapter-">Latent Response &amp; GLM (Chapter 12)<a class="anchor" aria-label="anchor" href="#latent-response-glm-chapter-"></a></h2>
 
-      <div class="section-desc"><p>Datasets for understanding latent variable formulations, probit vs. logit models, and the generalized linear model framework.</p></div>
+      <div class="section-desc"><p>Datasets for latent variable formulations, probit vs. logit models, and the generalized linear model framework.</p></div>
 
       <dl></dl></div><div class="section level2">
 
@@ -285,9 +286,9 @@
         </dt>
         <dd>Adolescent Alcohol Use Person-Period Data</dd>
       </dl></div><div class="section level2">
-      <h2 id="large-scale-assessment-data">Large-Scale Assessment Data<a class="anchor" aria-label="anchor" href="#large-scale-assessment-data"></a></h2>
+      <h2 id="utility-functions">Utility Functions<a class="anchor" aria-label="anchor" href="#utility-functions"></a></h2>
 
-      <div class="section-desc"><p>Comprehensive survey datasets with complex sampling designs, plausible values, and replicate weights. Useful for advanced topics.</p></div>
+      <div class="section-desc"><p>Helper functions for exploring the package.</p></div>
 
       <dl></dl></div><div class="section level2">
 
@@ -296,10 +297,10 @@
 
       <dl><dt>
 
-          <code><a href="pisa2000.html">pisa2000</a></code>
+          <code><a href="list_datasets.html">list_datasets()</a></code>
 
         </dt>
-        <dd>PISA 2000 International Reading Assessment Data</dd>
+        <dd>List All Datasets in regdatasets</dd>
       </dl></div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>

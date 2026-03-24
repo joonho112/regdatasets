@@ -136,6 +136,10 @@
 #'
 #' # Adjusted logistic regression: controlling for department
 #' glm(admitted ~ male + engineering, data = berk_sub, family = binomial)
+#'
+#' @seealso \code{\link{berkeley}} for the full five-department version of the
+#'   Berkeley admissions data. Note that \code{berk_sub} uses \code{male}
+#'   (1 = male) while \code{berkeley} uses \code{female} (1 = female).
 "berk_sub"
 
 
@@ -154,9 +158,10 @@
 #'
 #' @format A tibble with 3,593 rows and 3 columns:
 #' \describe{
-#'   \item{departme}{Department identifier. Type: numeric.
+#'   \item{department}{Department identifier. Type: numeric.
 #'     Values: 1, 2, 3, 4, 5. Five anonymized departments that differ in
-#'     their admission rates and gender composition of applicants.}
+#'     their admission rates and gender composition of applicants.
+#'     (Renamed from \code{departme} in v0.2.0.)}
 #'   \item{female}{Sex of applicant. Type: numeric. Binary indicator
 #'     (0/1) where 1 = female, 0 = male. Approximately 48% of applicants
 #'     are female.}
@@ -190,7 +195,12 @@
 #' glm(admitted ~ female, data = berkeley, family = binomial)
 #'
 #' # Adjusted model: controlling for department
-#' glm(admitted ~ female + factor(departme), data = berkeley, family = binomial)
+#' glm(admitted ~ female + factor(department), data = berkeley, family = binomial)
+#'
+#' @seealso \code{\link{berk_sub}} for a two-department subset used to
+#'   introduce Simpson's paradox. Also compare with base R's
+#'   \code{\link[datasets]{UCBAdmissions}}, which provides the same data
+#'   in aggregate contingency table form.
 "berkeley"
 
 
@@ -550,14 +560,24 @@
 #' computing and interpreting odds ratios, likelihood ratio tests, and
 #' ordinal regression using \code{osentoff} as the outcome.
 #'
-#' Note that several variables use NELS:88 coding where 8 or 98 indicates
-#' missing/not applicable rather than NA. The derived binary and ordinal
-#' outcome variables (\code{sentoff}, \code{osentoff}) have been recoded
-#' with proper NA values.
+#' Note that original NELS:88 sentinel missing codes (8, 98) in variables
+#' \code{bys34a} and \code{bys34b} have been recoded to \code{NA} as of
+#' v0.2.0. The \code{race} variable has been converted from integer codes
+#' (1--4) to an unordered factor with levels: Asian, Hispanic, Black, White.
+#'
+#' @section Ethical context:
+#' These data involve race as a predictor of school disciplinary outcomes.
+#' Racial disparities in school discipline are a well-documented phenomenon
+#' in educational research, often discussed in the context of the
+#' "school-to-prison pipeline." The race variable categories and coding
+#' reflect the NELS:88 survey instrument from 1988 and should not be taken
+#' as exhaustive or current representations of racial/ethnic identity.
+#' Instructors are encouraged to situate analyses within the broader
+#' literature on structural inequities in school discipline practices.
 #'
 #' @source National Center for Education Statistics (1988). *National
 #'   Education Longitudinal Study of 1988 (NELS:88)*. U.S. Department of
-#'   Education. Original data file: `disc.dta`
+#'   Education. Public-use data file. Original data file: `disc.dta`
 #'
 #' @examples
 #' data(disc)
@@ -567,7 +587,10 @@
 #' glm(sentoff ~ male, data = disc, family = binomial)
 #'
 #' # Multiple logistic regression with demographics
-#' glm(sentoff ~ male + factor(race) + fath_ed, data = disc, family = binomial)
+#' glm(sentoff ~ male + race + fath_ed, data = disc, family = binomial)
+#'
+#' @seealso \code{\link{disc2}} for the same 2,000 students with SES
+#'   composite and standardized test scores as continuous predictors.
 "disc"
 
 
@@ -636,11 +659,16 @@
 #' categorical predictors; and comparing base-year and follow-up reading
 #' scores. The SES composite and standardized test scores provide continuous
 #' predictors for logistic regression, complementing the categorical
-#' predictors in \code{disc}.
+#' predictors in \code{disc}. The \code{race} variable has been converted
+#' to an unordered factor as of v0.2.0.
+#'
+#' @section Ethical context:
+#' See \code{\link{disc}} for context on racial disparities in school
+#' discipline and responsible use of race as a predictor variable.
 #'
 #' @source National Center for Education Statistics (1988). *National
 #'   Education Longitudinal Study of 1988 (NELS:88)*. U.S. Department of
-#'   Education. Original data file: `disc2.dta`
+#'   Education. Public-use data file. Original data file: `disc2.dta`
 #'
 #' @examples
 #' data(disc2)
@@ -652,6 +680,9 @@
 #' # Multiple logistic regression with achievement and demographics
 #' glm(sentoff ~ ses + reading1 + male + minority, data = disc2,
 #'     family = binomial)
+#'
+#' @seealso \code{\link{disc}} for the same 2,000 students with original
+#'   NELS:88 variable names and categorical predictors.
 "disc2"
 
 
@@ -744,7 +775,7 @@
 #' course, used from simple linear regression through interactions and
 #' model diagnostics.
 #'
-#' @format A tibble with 4,059 rows and 9 columns:
+#' @format A tibble with 4,059 rows and 6 columns:
 #' \describe{
 #'   \item{school}{School identifier. Type: numeric. Values: 1 to 65.
 #'     65 unique London secondary schools.}
@@ -761,17 +792,10 @@
 #'     (0/1) where 1 = female, 0 = male. 60% female.}
 #'   \item{pred}{Predicted GCSE score from the regression model. Type:
 #'     numeric. Range: (-1.91, 2.54). Pre-computed predicted values.}
-#'   \item{u0}{School-level random intercept. Type: numeric. Contains
-#'     large negative placeholder values (-1e30) for most schools,
-#'     indicating unestimated or filtered values. Valid range
-#'     approximately (-0.65, 0.65) for estimated schools.}
-#'   \item{u1}{School-level random slope for LRT. Type: numeric. Contains
-#'     large negative placeholder values (-1e30) for most schools.
-#'     Valid range approximately (-0.35, 0.35) for estimated schools.}
-#'   \item{filter__}{Filter variable. Type: numeric. Binary indicator
-#'     (0/1) where 1 = included in a specific analysis subset (2% of
-#'     observations), 0 = not included.}
 #' }
+#'
+#' Note: Columns \code{u0}, \code{u1}, and \code{filter__} (Stata multilevel
+#' model artifacts containing -1e30 placeholder values) were removed in v0.2.0.
 #'
 #' @details
 #' This dataset is the primary running example used throughout the course.
@@ -791,12 +815,13 @@
 #' \strong{Chapter 8 (Model Diagnostics):} Residual analysis, outlier
 #' detection, and influence diagnostics.
 #'
-#' The variables u0, u1, pred, and filter__ are pre-computed model outputs
-#' included for pedagogical purposes. For standard regression analyses,
-#' the key variables are gcse, lrt, school, and gender.
+#' The variable \code{pred} contains pre-computed predicted values from
+#' a regression model, included for pedagogical reference. For standard
+#' regression analyses, the key variables are gcse, lrt, school, and gender.
 #'
-#' @source Goldstein, H., Rasbash, J., et al. London school effectiveness
-#'   study data. Original data file: `gcse.dta`
+#' @source Goldstein, H., Rasbash, J., Yang, M., et al. (1993). A
+#'   multilevel analysis of school examination results. \emph{Oxford Review
+#'   of Education}, 19(4), 425--433. Original data file: \code{gcse.dta}
 #'
 #' @examples
 #' data(gcse)
@@ -1038,6 +1063,9 @@
 #'
 #' # ANCOVA: sector effect controlling for SES and demographics
 #' lm(mathach ~ ses + minority + female + sector, data = hsb_sub)
+#'
+#' @seealso \code{\link{hsbs1}} for a larger HS&B subset (350 students,
+#'   16 variables) used in model diagnostics (Chapter 8).
 "hsb_sub"
 # ============================================================================
 # Dataset documentation: Datasets 14-25 of the regdatasets package
@@ -1114,6 +1142,9 @@
 #' # Multiple regression of writing on reading and math
 #' fit <- lm(write ~ read + math, data = hsbs1)
 #' summary(fit)
+#'
+#' @seealso \code{\link{hsb_sub}} for a smaller HS&B subset (188 students,
+#'   7 variables) used in model building (Chapters 6--7).
 "hsbs1"
 
 
@@ -1490,154 +1521,7 @@
 
 
 # --------------------------------------------------------------------------
-# 18. naep
-# --------------------------------------------------------------------------
-
-#' National Assessment of Educational Progress (NAEP) Mathematics Data
-#'
-#' Data from the 2005 National Assessment of Educational Progress (NAEP)
-#' Grade 8 Mathematics assessment, containing 17,606 students with
-#' demographic information, student/teacher/school questionnaire responses,
-#' plausible values for mathematics proficiency, survey weights, and
-#' replicate weights for variance estimation. This large-scale assessment
-#' dataset is used in regression teaching to demonstrate analysis of complex
-#' survey data, plausible value methodology, and weighted regression.
-#'
-#' @format A tibble with 17,606 rows and 301 columns. Key variable groups:
-#'
-#' Demographic and classification variables:
-#' \describe{
-#'   \item{YEAR}{Assessment year code. Type: numeric. Constant value 36.}
-#'   \item{COHORT}{Cohort indicator. Type: numeric. Constant value 2.}
-#'   \item{SCRPSU}{Primary sampling unit identifier. Type: numeric.
-#'     Range: (5, 9903).}
-#'   \item{DSEX}{Student sex. Type: numeric. Values: 1 = male, 2 = female.}
-#'   \item{IEP}{Individualized Education Program status. Type: numeric.
-#'     Values: 1 = yes, 2 = no. 8 NA.}
-#'   \item{LEP}{Limited English Proficiency status. Type: numeric.
-#'     Values: 1 = yes, other codes for no/formerly. Range: (1, 8).}
-#'   \item{ELL3}{English Language Learner status (3-level). Type: numeric.
-#'     Values: 1 = ELL, 2 = formerly ELL, 3 = never ELL. 5 NA.}
-#'   \item{SDRACEM}{Race/ethnicity. Type: numeric. Values: 1 = White,
-#'     2 = Black, 3 = Hispanic, 4 = Asian/Pacific Islander,
-#'     5 = American Indian/Alaska Native, 6 = other.}
-#'   \item{PARED}{Highest parental education level. Type: numeric.
-#'     Range: (0, 8). Higher values indicate more education. 691 NA.}
-#' }
-#'
-#' Student questionnaire items (B-prefix, 691 NA each):
-#' \describe{
-#'   \item{B003501}{Mother's education level. Type: numeric. Range: (0, 8).}
-#'   \item{B003601}{Father's education level. Type: numeric. Range: (0, 8).}
-#'   \item{B013801}{Number of books in home. Type: numeric. Range: (0, 8).}
-#'   \item{B017001}{Frequency of reading for fun. Type: numeric. Range: (1, 8).}
-#'   \item{B017101}{Frequency of reading in school. Type: numeric. Range: (0, 8).}
-#'   \item{B018101}{Computer use at home. Type: numeric. Range: (0, 8).}
-#'   \item{B018201}{Computer use at school. Type: numeric. Range: (0, 8).}
-#'   \item{B017451}{Hours of TV watched per day. Type: numeric. Range: (0, 8).}
-#' }
-#'
-#' Mathematics-specific student items (M815-prefix, 691 NA each):
-#' \describe{
-#'   \item{M815401}{Math attitude item. Type: numeric. Range: (0, 8).}
-#'   \item{M815501}{Math attitude item. Type: numeric. Range: (0, 8).}
-#'   \item{M815601}{Math attitude item. Type: numeric. Range: (0, 8).}
-#'   \item{M815801}{Math homework hours per week. Type: numeric. Range: (0, 88).}
-#'   \item{M815701}{Math class time item. Type: numeric. Range: (0, 88).}
-#' }
-#'
-#' Survey design and weighting variables:
-#' \describe{
-#'   \item{RPTSAMP}{Reporting sample flag. Type: numeric. Values: 1 or 2.}
-#'   \item{REPGRP1}{Replicate group 1. Type: numeric. Range: (1, 62).}
-#'   \item{REPGRP2}{Replicate group 2. Type: numeric. Range: (1, 341).}
-#'   \item{JKUNIT}{Jackknife unit. Type: numeric. Values: 1 or 2.}
-#'   \item{ORIGWT}{Original sampling weight. Type: numeric. Range: (0.10, 6.03).}
-#'   \item{SMSRSWT}{Smoothed sampling weight. Type: numeric. Range: (0.27, 9.06).}
-#' }
-#'
-#' Replicate weights for variance estimation: \code{SRWT01} through \code{SRWT62}
-#' are 62 jackknife replicate weights, each numeric with range approximately
-#' (0, 9.5) and mean approximately 1.0. Used for proper standard error
-#' estimation with the complex survey design.
-#'
-#' Plausible values for mathematics proficiency (5 content strands x 5
-#' plausible values each):
-#' \describe{
-#'   \item{MRPS11 through MRPS15}{Number properties/operations, plausible
-#'     values 1-5. Type: numeric. Range approximately (93, 412). 691 NA.}
-#'   \item{MRPS21 through MRPS25}{Measurement, plausible values 1-5.
-#'     Type: numeric. Range approximately (55, 451). 691 NA.}
-#'   \item{MRPS31 through MRPS35}{Geometry, plausible values 1-5.
-#'     Type: numeric. Range approximately (114, 431). 691 NA.}
-#'   \item{MRPS41 through MRPS45}{Data analysis/probability, plausible
-#'     values 1-5. Type: numeric. Range approximately (91, 438). 691 NA.}
-#'   \item{MRPS51 through MRPS55}{Algebra, plausible values 1-5.
-#'     Type: numeric. Range approximately (100, 429). 691 NA.}
-#'   \item{MRPCM1 through MRPCM5}{Composite (overall) mathematics
-#'     proficiency, plausible values 1-5. Type: numeric.
-#'     Range approximately (115, 411). 691 NA. Mean approximately 276.}
-#' }
-#'
-#' Mathematics assessment items: Variables with the \code{M0xxxxx} and
-#' \code{M1xxxxx} prefix are individual mathematics item responses, organized
-#' into booklet-specific blocks. Each item is scored with values typically
-#' ranging from 0 to 9, where low values represent correct/partially correct
-#' responses, high values (8, 9) represent not reached or omitted, and 0
-#' may indicate incorrect. There are approximately 190 such item variables,
-#' each with approximately 14,178 to 14,284 NA values (reflecting the
-#' matrix-sampled booklet design where each student receives only a subset
-#' of items).
-#'
-#' Teacher questionnaire items (T-prefix, 2,515 NA each):
-#' \describe{
-#'   \item{YRSEXP}{Teacher years of experience. Type: numeric. Range: (1, 8).}
-#'   \item{YRSMATH}{Teacher years teaching math. Type: numeric. Range: (1, 8).}
-#'   \item{T089401}{Teacher certification item. Type: numeric. Range: (0, 8).}
-#'   \item{T088001}{Teacher education level item. Type: numeric. Range: (1, 8).}
-#' }
-#' Variables \code{T090801} through \code{T090806} are teacher practice items
-#' (rated 1-8), and \code{T087501} through \code{T091504} are additional
-#' teacher survey items. All have 2,515 NA values.
-#'
-#' School questionnaire items (C-prefix, 897 NA each):
-#' \describe{
-#'   \item{C052601}{School urbanicity. Type: numeric. Range: (1, 8).}
-#'   \item{C052701}{School type (public/private). Type: numeric. Range: (1, 8).}
-#'   \item{C046501}{School enrollment size. Type: numeric. Range: (1, 88).}
-#' }
-#' Variables \code{C052801} through \code{C052808} are school demographic
-#' composition items, and \code{C044006}, \code{C044007}, \code{C052901},
-#' \code{C053001}, \code{C053101} are additional school characteristics.
-#' All have 897 NA values.
-#'
-#' @details
-#' This dataset illustrates the analysis of large-scale educational assessment
-#' data with complex survey designs. The NAEP uses a matrix-sampled booklet
-#' design where each student responds to a subset of items, and proficiency is
-#' reported through plausible values (multiple imputations of the latent
-#' ability distribution). Proper analysis requires using all five plausible
-#' values and applying jackknife replicate weights for variance estimation.
-#' Key analyses include: weighted regression of composite math proficiency
-#' on demographic predictors, survey-weighted group comparisons, and
-#' understanding the plausible values methodology.
-#'
-#' @source National Center for Education Statistics (NCES). National Assessment
-#' of Educational Progress (NAEP), 2005 Mathematics Assessment.
-#' U.S. Department of Education.
-#' Original data file: \code{naep.dta}
-#'
-#' @examples
-#' data(naep)
-#' # Weighted mean of first plausible value for composite math
-#' weighted.mean(naep$MRPCM1, naep$ORIGWT, na.rm = TRUE)
-#' # Simple regression of composite math on sex
-#' lm(MRPCM1 ~ DSEX, data = naep)
-"naep"
-
-
-# --------------------------------------------------------------------------
-# 19. nels_data
+# 18. nels_data (formerly 19)
 # --------------------------------------------------------------------------
 
 #' National Education Longitudinal Study of 1988 (NELS:88)
@@ -1892,6 +1776,18 @@
 #' whether the main-effects model is adequate (it fits well, with Pearson
 #' X-squared = 0.20, p = 0.66).
 #'
+#' @section Ethical context:
+#' These data document racial disparities in the application of the death
+#' penalty in Florida during the late 1970s. The original study by Radelet
+#' (1981) found that cases involving White victims were significantly more
+#' likely to result in a death sentence than cases involving Black victims,
+#' after controlling for defendant race. This finding was part of a broader
+#' body of research -- including the Baldus study cited in \emph{McCleskey v.
+#' Kemp} (1987) -- that documented systemic racial bias in capital sentencing.
+#' Instructors should provide appropriate historical context when assigning
+#' analyses of this dataset and encourage students to consider the structural
+#' and institutional factors that underlie these patterns.
+#'
 #' @source Agresti, A. (2002). \emph{Categorical Data Analysis} (2nd ed.).
 #' Wiley. Based on data from Radelet, M. L. (1981). Racial characteristics
 #' and the imposition of the death penalty.
@@ -2130,6 +2026,12 @@
 #' probabilities, handling missing data in age, and model comparison using
 #' likelihood ratio tests and AIC.
 #'
+#' @section Note:
+#' This dataset represents real individuals who perished in or survived
+#' a maritime disaster. The data are used for statistical education with
+#' respect for those involved. The \code{embarked} variable contains 2
+#' missing values (converted from blank strings to \code{NA} in v0.2.0).
+#'
 #' @source British Board of Trade (1990). \emph{Report on the Loss of the
 #' "Titanic" (S.S.)}. Compiled from various historical passenger records.
 #' Original data file: \code{titanic.dta}
@@ -2193,4 +2095,7 @@
 #' table(womenlf$workstat)
 #' # Ordinal logistic regression (requires MASS package)
 #' # MASS::polr(factor(workstat) ~ husbinc + chilpres, data = womenlf)
+#'
+#' @seealso A version of this dataset also appears as \code{Womenlf} in the
+#'   \code{carData} package (GPL >= 2).
 "womenlf"

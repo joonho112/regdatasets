@@ -127,16 +127,16 @@ NA values.
 data(disc)
 head(disc)
 #> # A tibble: 6 × 15
-#>   bys55a bys12 bys31a bys34a bys34b bys35p bys36c sentoff  male  race fath_ed
-#>    <dbl> <dbl>  <dbl>  <dbl>  <dbl>  <dbl>  <dbl>   <dbl> <dbl> <dbl>   <dbl>
-#> 1      0     2      4      1      2      1      3       0     0     4       0
-#> 2      0     1      4      2      2      1      3       0     1     4       1
-#> 3      0     1      4      3      3      1      2       0     1     4       1
-#> 4      0     1      4      2      2      1      3       0     1     4       1
-#> 5      1     2      3      2      3      2      2       1     0     3       1
-#> 6      0     1      4      4      1      1      3       0     1     4       1
-#> # ℹ 4 more variables: moth_ed <dbl>, bedroom <dbl>, discuss <dbl>,
-#> #   osentoff <dbl>
+#>   bys55a bys12 bys31a bys34a bys34b bys35p bys36c sentoff  male race  fath_ed
+#>    <int> <int>  <int>  <int>  <int>  <int>  <int>   <int> <int> <fct>   <int>
+#> 1      0     2      4      1      2      1      3       0     0 White       0
+#> 2      0     1      4      2      2      1      3       0     1 White       1
+#> 3      0     1      4      3      3      1      2       0     1 White       1
+#> 4      0     1      4      2      2      1      3       0     1 White       1
+#> 5      1     2      3      2      3      2      2       1     0 Black       1
+#> 6      0     1      4      4      1      1      3       0     1 White       1
+#> # ℹ 4 more variables: moth_ed <int>, bedroom <int>, discuss <int>,
+#> #   osentoff <int>
 
 # Logistic regression: gender effect on office referral
 glm(sentoff ~ male, data = disc, family = binomial)
@@ -159,10 +159,10 @@ glm(sentoff ~ male + factor(race) + fath_ed, data = disc, family = binomial)
 #>     data = disc)
 #> 
 #> Coefficients:
-#>   (Intercept)           male  factor(race)2  factor(race)3  factor(race)4  
-#>       -1.6235         1.2178         0.3775         1.2273         0.3771  
-#>       fath_ed  
-#>       -0.5617  
+#>          (Intercept)                  male  factor(race)Hispanic  
+#>              -1.6235                1.2178                0.3775  
+#>    factor(race)Black     factor(race)White               fath_ed  
+#>               1.2273                0.3771               -0.5617  
 #> 
 #> Degrees of Freedom: 1605 Total (i.e. Null);  1600 Residual
 #>   (394 observations deleted due to missingness)

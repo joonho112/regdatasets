@@ -131,15 +131,15 @@ data(gss_1)
 head(gss_1)
 #> # A tibble: 6 × 16
 #>   abortion cohabit income conserv educat  male  maed  paed marital partnrs5
-#>      <dbl>   <dbl>  <dbl>   <dbl>  <dbl> <dbl> <dbl> <dbl>   <dbl>    <dbl>
+#>      <dbl>   <int>  <int>   <int>  <int> <int> <int> <int>   <int>    <int>
 #> 1    NA          7     18       4     12     1    12    12       3        1
 #> 2    NA          9     11       2     17     0    NA    20       5        0
 #> 3    NA          3     21       6     12     1    12    12       1        1
 #> 4     3          8     11       2     13     1    12    NA       5        7
 #> 5     7         NA     18       4     16     0    12    NA       5        2
 #> 6     5.60      NA     NA       4     16     1     6     9       3        5
-#> # ℹ 6 more variables: respage <dbl>, race <dbl>, black <dbl>, othrace <dbl>,
-#> #   relosity <dbl>, religion <dbl>
+#> # ℹ 6 more variables: respage <dbl>, race <int>, black <int>, othrace <int>,
+#> #   relosity <dbl>, religion <int>
 
 # Logistic regression: conservatism predicting abortion attitude
 gss_1$pro_abortion <- as.integer(gss_1$abortion >= 4)

@@ -85,7 +85,7 @@ data(reading)
 head(reading)
 #> # A tibble: 6 × 8
 #>   subject group  pre1  pre2 post1 post2 post3 method
-#>     <dbl> <chr> <dbl> <dbl> <dbl> <dbl> <dbl>  <dbl>
+#>     <int> <chr> <int> <int> <int> <int> <int>  <int>
 #> 1       1 Basal     4     3     5     4    41      1
 #> 2       2 Basal     6     5     9     5    41      1
 #> 3       3 Basal     9     4     5     3    43      1

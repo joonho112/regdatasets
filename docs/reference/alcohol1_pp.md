@@ -100,7 +100,7 @@ data(alcohol1_pp)
 head(alcohol1_pp)
 #> # A tibble: 6 × 9
 #>      id   age   coa  male age_14 alcuse  peer  cpeer  ccoa
-#>   <dbl> <dbl> <dbl> <dbl>  <dbl>  <dbl> <dbl>  <dbl> <dbl>
+#>   <int> <int> <int> <int>  <int>  <dbl> <dbl>  <dbl> <dbl>
 #> 1     1    14     1     0      0   1.73 1.26   0.247 0.549
 #> 2     1    15     1     0      1   2    1.26   0.247 0.549
 #> 3     1    16     1     0      2   2    1.26   0.247 0.549

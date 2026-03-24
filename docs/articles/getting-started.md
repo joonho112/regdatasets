@@ -22,13 +22,15 @@ library(regdatasets)
 # Load a single dataset
 data(gcse)
 head(gcse)
-#>   school student     gcse      lrt gender     pred       u0       u1 filter__
-#> 1      1     143   2.6132   6.1906      1  0.78545 0.374930 0.124980        0
-#> 2      1     145   1.3407   2.0580      1  0.50373 0.470210 0.164730        0
-#> 3      1     142 -17.2390 -13.6460      0 -0.56681 0.479760 0.080872        0
-#> 4      1     141   9.6759   2.0580      1  0.50373 0.035024 0.127180        0
-#> 5      1     138   5.4434   3.7110      1  0.61641 0.246280 0.072061        0
-#> 6      1     155  17.3490  21.8940      0  1.85600 0.518380 0.058629        0
+#> # A tibble: 6 × 6
+#>   school student   gcse    lrt gender   pred
+#>    <int>   <int>  <dbl>  <dbl>  <int>  <dbl>
+#> 1      1     143   2.61   6.19      1  0.785
+#> 2      1     145   1.34   2.06      1  0.504
+#> 3      1     142 -17.2  -13.6       0 -0.567
+#> 4      1     141   9.68   2.06      1  0.504
+#> 5      1     138   5.44   3.71      1  0.616
+#> 6      1     155  17.3   21.9       0  1.86
 ```
 
 Every dataset is stored as a **tibble**, so it prints cleanly and works
@@ -116,7 +118,7 @@ data(berkeley)
 crude <- glm(admitted ~ female, family = binomial, data = berkeley)
 
 # Adjusted model (controlling for department)
-adjusted <- glm(admitted ~ female + factor(departme),
+adjusted <- glm(admitted ~ female + factor(department),
                 family = binomial, data = berkeley)
 
 # Compare odds ratios
@@ -200,14 +202,13 @@ data(package = "regdatasets")$results[, c("Item", "Title")]
 #> [15,] "individuals" 
 #> [16,] "instruction" 
 #> [17,] "lambert"     
-#> [18,] "naep"        
-#> [19,] "nels_data"   
-#> [20,] "penalty"     
-#> [21,] "pisa2000"    
-#> [22,] "reading"     
-#> [23,] "satisfaction"
-#> [24,] "titanic"     
-#> [25,] "womenlf"     
+#> [18,] "nels_data"   
+#> [19,] "penalty"     
+#> [20,] "pisa2000"    
+#> [21,] "reading"     
+#> [22,] "satisfaction"
+#> [23,] "titanic"     
+#> [24,] "womenlf"     
 #>       Title                                                                
 #>  [1,] "Adolescent Alcohol Use Person-Period Data"                          
 #>  [2,] "UC Berkeley Graduate Admissions Subset (Engineering and Psychology)"
@@ -226,12 +227,11 @@ data(package = "regdatasets")$results[, c("Item", "Title")]
 #> [15,] "Bureau of Labor Statistics March 2000 CPS Individual Data"          
 #> [16,] "Reading Instruction Methods Study"                                  
 #> [17,] "Lambert Longitudinal Study Data"                                    
-#> [18,] "National Assessment of Educational Progress (NAEP) Mathematics Data"
-#> [19,] "National Education Longitudinal Study of 1988 (NELS:88)"            
-#> [20,] "Death Penalty Sentencing Data"                                      
-#> [21,] "PISA 2000 International Reading Assessment Data"                    
-#> [22,] "Reading Comprehension Instruction Experiment"                       
-#> [23,] "Satisfaction Survey Data"                                           
-#> [24,] "Titanic Passenger Survival Data"                                    
-#> [25,] "Canadian Women's Labor Force Participation"
+#> [18,] "National Education Longitudinal Study of 1988 (NELS:88)"            
+#> [19,] "Death Penalty Sentencing Data"                                      
+#> [20,] "PISA 2000 International Reading Assessment Data"                    
+#> [21,] "Reading Comprehension Instruction Experiment"                       
+#> [22,] "Satisfaction Survey Data"                                           
+#> [23,] "Titanic Passenger Survival Data"                                    
+#> [24,] "Canadian Women's Labor Force Participation"
 ```

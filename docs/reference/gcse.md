@@ -102,15 +102,15 @@ analyses, the key variables are gcse, lrt, school, and gender.
 ``` r
 data(gcse)
 head(gcse)
-#> # A tibble: 6 × 9
-#>   school student   gcse    lrt gender   pred     u0     u1 filter__
-#>    <dbl>   <dbl>  <dbl>  <dbl>  <dbl>  <dbl>  <dbl>  <dbl>    <dbl>
-#> 1      1     143   2.61   6.19      1  0.785 0.375  0.125         0
-#> 2      1     145   1.34   2.06      1  0.504 0.470  0.165         0
-#> 3      1     142 -17.2  -13.6       0 -0.567 0.480  0.0809        0
-#> 4      1     141   9.68   2.06      1  0.504 0.0350 0.127         0
-#> 5      1     138   5.44   3.71      1  0.616 0.246  0.0721        0
-#> 6      1     155  17.3   21.9       0  1.86  0.518  0.0586        0
+#> # A tibble: 6 × 6
+#>   school student   gcse    lrt gender   pred
+#>    <int>   <int>  <dbl>  <dbl>  <int>  <dbl>
+#> 1      1     143   2.61   6.19      1  0.785
+#> 2      1     145   1.34   2.06      1  0.504
+#> 3      1     142 -17.2  -13.6       0 -0.567
+#> 4      1     141   9.68   2.06      1  0.504
+#> 5      1     138   5.44   3.71      1  0.616
+#> 6      1     155  17.3   21.9       0  1.86 
 
 # Simple linear regression: GCSE on LRT
 lm(gcse ~ lrt, data = gcse)

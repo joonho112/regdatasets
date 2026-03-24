@@ -27,7 +27,7 @@ read_and_clean <- function(path) {
 datasets <- c(
   "gcse", "pisa2000", "berkeley", "crime", "instruction",
   "gss-1", "disc", "disc2", "penalty", "titanic",
-  "faculty", "reading", "civic_ed", "naep", "nels_data",
+  "faculty", "reading", "civic_ed", "nels_data",
   "hsb_sub", "womenlf", "hsbs1", "lambert", "satisfaction",
   "classdata_07", "grades", "individuals", "berk_sub", "alcohol1_pp"
 )

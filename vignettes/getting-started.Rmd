@@ -95,7 +95,7 @@ data(berkeley)
 crude <- glm(admitted ~ female, family = binomial, data = berkeley)
 
 # Adjusted model (controlling for department)
-adjusted <- glm(admitted ~ female + factor(departme),
+adjusted <- glm(admitted ~ female + factor(department),
                 family = binomial, data = berkeley)
 
 # Compare odds ratios

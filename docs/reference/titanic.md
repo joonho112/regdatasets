@@ -73,7 +73,7 @@ data(titanic)
 head(titanic)
 #> # A tibble: 6 × 6
 #>   pclass survived    age  fare embarked   sex
-#>    <dbl>    <dbl>  <dbl> <dbl> <chr>    <dbl>
+#>    <int>    <int>  <dbl> <dbl> <chr>    <int>
 #> 1      1        1 29     211.  S            1
 #> 2      1        1  0.917 152.  S            0
 #> 3      1        0  2     152.  S            1

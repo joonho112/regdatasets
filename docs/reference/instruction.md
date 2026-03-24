@@ -101,14 +101,14 @@ data(instruction)
 head(instruction)
 #> # A tibble: 6 × 12
 #>    girl minority mathkind mathgain     ses yearstea mathknow housepov mathprep
-#>   <dbl>    <dbl>    <dbl>    <dbl>   <dbl>    <dbl>    <dbl>    <dbl>    <dbl>
+#>   <int>    <int>    <int>    <int>   <dbl>    <dbl>    <dbl>    <dbl>    <dbl>
 #> 1     1        1      448       32  0.460         1   NA       0.0820     2   
 #> 2     0        1      460      109 -0.270         1   NA       0.0820     2   
 #> 3     1        1      511       56 -0.0300        1   NA       0.0820     2   
 #> 4     0        1      449       83 -0.380         2   -0.110   0.0820     3.25
 #> 5     0        1      425       53 -0.0300        2   -0.110   0.0820     3.25
 #> 6     1        1      450       65  0.760         2   -0.110   0.0820     3.25
-#> # ℹ 3 more variables: classid <dbl>, schoolid <dbl>, childid <dbl>
+#> # ℹ 3 more variables: classid <int>, schoolid <int>, childid <int>
 # ANCOVA: math gain predicted by minority status, controlling for prior math
 lm(mathgain ~ minority + mathkind, data = instruction)
 #> 

@@ -19,7 +19,7 @@ regression with binary outcomes and handling missing data."><meta property="og:i
 
     <a class="navbar-brand me-2" href="../index.html">regdatasets</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,6 +34,7 @@ regression with binary outcomes and handling missing data."><meta property="og:i
   <ul class="dropdown-menu" aria-labelledby="dropdown-guides"><li><a class="dropdown-item" href="../articles/getting-started.html">Getting Started</a></li>
     <li><a class="dropdown-item" href="../articles/dataset-overview.html">Dataset Overview</a></li>
   </ul></li>
+<li class="nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
       </ul><ul class="navbar-nav"><li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json"></form></li>
 <li class="nav-item"><a class="external-link nav-link" href="https://github.com/joonho112/regdatasets" aria-label="GitHub"><span class="fa fab fa-github"></span></a></li>
@@ -162,16 +163,16 @@ with proper NA values.</p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">disc</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">disc</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 6 × 15</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   bys55a bys12 bys31a bys34a bys34b bys35p bys36c sentoff  male  race fath_ed</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>      0     2      4      1      2      1      3       0     0     4       0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span>      0     1      4      2      2      1      3       0     1     4       1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span>      0     1      4      3      3      1      2       0     1     4       1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span>      0     1      4      2      2      1      3       0     1     4       1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span>      1     2      3      2      3      2      2       1     0     3       1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span>      0     1      4      4      1      1      3       0     1     4       1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 4 more variables: moth_ed &lt;dbl&gt;, bedroom &lt;dbl&gt;, discuss &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   osentoff &lt;dbl&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   bys55a bys12 bys31a bys34a bys34b bys35p bys36c sentoff  male race  fath_ed</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>      0     2      4      1      2      1      3       0     0 White       0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span>      0     1      4      2      2      1      3       0     1 White       1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span>      0     1      4      3      3      1      2       0     1 White       1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span>      0     1      4      2      2      1      3       0     1 White       1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span>      1     2      3      2      3      2      2       1     0 Black       1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span>      0     1      4      4      1      1      3       0     1 White       1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 4 more variables: moth_ed &lt;int&gt;, bedroom &lt;int&gt;, discuss &lt;int&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   osentoff &lt;int&gt;</span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Logistic regression: gender effect on office referral</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/stats/glm.html" class="external-link">glm</a></span><span class="op">(</span><span class="va">sentoff</span> <span class="op">~</span> <span class="va">male</span>, data <span class="op">=</span> <span class="va">disc</span>, family <span class="op">=</span> <span class="va">binomial</span><span class="op">)</span></span></span>
@@ -194,10 +195,10 @@ with proper NA values.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     data = disc)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Coefficients:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   (Intercept)           male  factor(race)2  factor(race)3  factor(race)4  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       -1.6235         1.2178         0.3775         1.2273         0.3771  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       fath_ed  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       -0.5617  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          (Intercept)                  male  factor(race)Hispanic  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>              -1.6235                1.2178                0.3775  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    factor(race)Black     factor(race)White               fath_ed  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>               1.2273                0.3771               -0.5617  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Degrees of Freedom: 1605 Total (i.e. Null);  1600 Residual</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   (394 observations deleted due to missingness)</span>

@@ -7,8 +7,8 @@
 \format{
 A tibble with 3,593 rows and 3 columns:
 \describe{
-\item{departme}{Department identifier. Type: numeric.
-Values: 1, 2, 3, 4, 5. Five anonymized departments that differ in
+\item{department}{Department identifier. Type: numeric.
+Values: 1, 2, 3, 4, 5. Five anonymized departmentnts that differ in
 their admission rates and gender composition of applicants.}
 \item{female}{Sex of applicant. Type: numeric. Binary indicator
 (0/1) where 1 = female, 0 = male. Approximately 48\% of applicants
@@ -27,24 +27,24 @@ bias in graduate admissions: Data from Berkeley. \emph{Science}, 187(4175),
 berkeley
 }
 \description{
-Data from UC Berkeley's 1973 graduate admissions across five departments,
+Data from UC Berkeley's 1973 graduate admissions across five departmentnts,
 with 3,593 individual applicant records. This is the classic dataset used
 to demonstrate Simpson's paradox in the context of logistic regression:
 the overall association between gender and admission appears to show bias
 against women, but this effect reverses or disappears when controlling
-for department. The department identifiers are anonymized.
+for departmentnt. The departmentnt identifiers are anonymized.
 }
 \details{
 This dataset is used in Chapters 10-11 (Multiple Logistic Regression and
 Model Fit/Diagnostics) to illustrate confounding in logistic regression
 and Simpson's paradox. Key analyses include: computing odds ratios for
-admission by gender within and across departments, fitting multiple
-logistic regression models with department as a control variable,
+admission by gender within and across departmentnts, fitting multiple
+logistic regression models with departmentnt as a control variable,
 performing likelihood ratio tests, and chi-squared goodness-of-fit tests.
 
 Note that this dataset uses \code{female} as the gender indicator (1 =
 female), whereas \code{berk_sub} uses \code{male} (1 = male). The
-department variable is coded numerically (1-5) rather than by department
+departmentnt variable is coded numerically (1-5) rather than by departmentnt
 name.
 }
 \examples{
@@ -54,7 +54,7 @@ head(berkeley)
 # Unadjusted model: gender only
 glm(admitted ~ female, data = berkeley, family = binomial)
 
-# Adjusted model: controlling for department
-glm(admitted ~ female + factor(departme), data = berkeley, family = binomial)
+# Adjusted model: controlling for departmentnt
+glm(admitted ~ female + factor(department), data = berkeley, family = binomial)
 }
 \keyword{datasets}

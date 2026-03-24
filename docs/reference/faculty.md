@@ -98,7 +98,7 @@ data(faculty)
 head(faculty)
 #> # A tibble: 6 × 10
 #>   salary exprior yearsbg yearsrank market termdeg admin yearsdg  rank  male
-#>    <dbl>   <dbl>   <dbl>     <dbl>  <dbl>   <dbl> <dbl>   <dbl> <dbl> <dbl>
+#>    <dbl>   <int>   <int>     <int>  <dbl>   <int> <int>   <int> <int> <int>
 #> 1 38362.       0      14         2  0.720       1     0      14     2     0
 #> 2 68906        2      29        20  1           1     0      31     3     1
 #> 3 55979        0      14         3  1.04        1     0      14     3     1

@@ -26,7 +26,7 @@ datasets <- c(
   "alcohol1_pp", "berk_sub", "berkeley", "civic_ed", "classdata_07",
   "crime", "disc", "disc2", "faculty", "gcse", "grades", "gss_1",
   "hsb_sub", "hsbs1", "individuals", "instruction", "lambert",
-  "naep", "nels_data", "penalty", "pisa2000", "reading",
+  "nels_data", "penalty", "pisa2000", "reading",
   "satisfaction", "titanic", "womenlf"
 )
 
@@ -61,7 +61,7 @@ companion textbook.
 | 3 | One-way ANOVA | `reading`, `instruction` |
 | 4 | Continuous Predictors | `crime` |
 | 5 | Interactions | `gcse`, `individuals`, `faculty`, `crime` |
-| 6 | Nonlinear Relationships | `naep` |
+| 6 | Nonlinear Relationships | `nels_data`, `crime` |
 | 7 | Model Building | `nels_data`, `hsb_sub`, `civic_ed` |
 | 8 | Model Diagnostics | `hsbs1`, `nels_data` |
 | 9 | Simple Logistic Regression | `gss_1`, `disc`, `titanic` |

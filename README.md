@@ -7,7 +7,7 @@
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 <!-- badges: end -->
 
-**regdatasets** provides a curated collection of 25 datasets for
+**regdatasets** provides a curated collection of 24 datasets for
 teaching introductory and intermediate regression analysis in education
 and social science contexts.
 
@@ -31,7 +31,6 @@ devtools::install_github("joonho112/regdatasets")
 | `pisa2000` | 4,528 | 15 | OECD PISA reading scores, 3 countries (Chapter 1) |
 | `individuals` | 55,899 | 6 | BLS wage data by gender and sector (Chapter 5) |
 | `faculty` | 514 | 10 | Faculty salaries and experience (Chapter 5) |
-| `naep` | 17,606 | 301 | NAEP Grade 8 math assessment (Chapter 6) |
 | `nels_data` | 2,000 | 299 | National Education Longitudinal Study (Chapters 7–8) |
 | `hsbs1` | 350 | 16 | High School and Beyond survey (Chapter 8) |
 | `gss_1` | 2,832 | 16 | General Social Survey 1982/1994 (Chapter 9) |
@@ -65,7 +64,7 @@ data(berkeley)
 # Unadjusted: gender appears to matter
 crude <- glm(admitted ~ female, family = binomial, data = berkeley)
 # Adjusted: gender effect disappears after controlling for department
-adjusted <- glm(admitted ~ female + factor(departme),
+adjusted <- glm(admitted ~ female + factor(department),
                 family = binomial, data = berkeley)
 exp(coef(crude)["female"])    # Crude OR ~ 0.64
 exp(coef(adjusted)["female"]) # Adjusted OR ~ 0.97
@@ -115,7 +114,7 @@ avg_slopes(model, variables = "lrt", by = "school")
 | 3 | One-way ANOVA | `reading`, `instruction` |
 | 4 | Continuous predictors | `crime` |
 | 5 | Interactions | `gcse`, `individuals`, `faculty`, `crime` |
-| 6 | Nonlinear relationships | `naep` |
+| 6 | Nonlinear relationships | `nels_data`, `crime` |
 | 7–8 | Model building & diagnostics | `nels_data`, `hsbs1`, `hsb_sub` |
 | 9–11 | Logistic regression | `gss_1`, `berkeley`, `penalty`, `titanic`, `disc` |
 | 12 | Latent response & GLM | `lambert`, `grades` |

@@ -67,7 +67,7 @@ data(womenlf)
 head(womenlf)
 #> # A tibble: 6 × 5
 #>     obs husbinc region  workstat chilpres
-#>   <dbl>   <dbl> <chr>      <dbl>    <dbl>
+#>   <int>   <int> <chr>      <int>    <int>
 #> 1     1      15 Ontario        0        1
 #> 2     2      13 Ontario        0        1
 #> 3     3      45 Ontario        0        1
