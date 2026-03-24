@@ -1,0 +1,245 @@
+# regdatasets
+
+**regdatasets** provides a curated collection of 24 datasets for
+teaching introductory and intermediate regression analysis in education
+and social science contexts.
+
+## Installation
+
+Install the development version from GitHub:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("joonho112/regdatasets")
+```
+
+## Datasets
+
+| Dataset        |      N | Variables | Topic                                                      |
+|:---------------|-------:|----------:|:-----------------------------------------------------------|
+| `gcse`         |  4,059 |         9 | GCSE exam scores and London Reading Test (Chapters 1–2, 5) |
+| `crime`        |     67 |         5 | Florida county crime rates (Chapters 4–5)                  |
+| `instruction`  |  1,190 |        12 | Math achievement gains, multilevel (Chapters 2–3)          |
+| `reading`      |     66 |         8 | Three-group reading instruction experiment (Chapter 3)     |
+| `pisa2000`     |  4,528 |        15 | OECD PISA reading scores, 3 countries (Chapter 1)          |
+| `individuals`  | 55,899 |         6 | BLS wage data by gender and sector (Chapter 5)             |
+| `faculty`      |    514 |        10 | Faculty salaries and experience (Chapter 5)                |
+| `nels_data`    |  2,000 |       299 | National Education Longitudinal Study (Chapters 7–8)       |
+| `hsbs1`        |    350 |        16 | High School and Beyond survey (Chapter 8)                  |
+| `gss_1`        |  2,832 |        16 | General Social Survey 1982/1994 (Chapter 9)                |
+| `berkeley`     |  3,593 |         3 | UC Berkeley admissions, Simpson’s paradox (Chapter 10)     |
+| `penalty`      |    674 |         3 | Death penalty sentencing by race (Chapter 11)              |
+| `titanic`      |  1,309 |         6 | Titanic passenger survival (Chapters 9–11)                 |
+| `womenlf`      |    263 |         5 | Women’s labor force participation (Chapter 13)             |
+| `satisfaction` |    110 |         3 | Ordinal satisfaction survey (Chapter 13)                   |
+| `alcohol1_pp`  |    246 |         9 | Adolescent alcohol use, person-period (Chapter 13)         |
+| `lambert`      |    492 |       109 | Canadian longitudinal child study (Chapter 12)             |
+| `civic_ed`     |    794 |       237 | Civic education pre/post study (Chapters 1, 7)             |
+| `disc`         |  2,000 |        15 | NELS:88 discipline study (Chapters 9–10)                   |
+| `disc2`        |  2,000 |        15 | NELS:88 with achievement scores (Chapters 10–11)           |
+| `berk_sub`     |  1,169 |         3 | Berkeley admissions subset (Chapter 10)                    |
+| `hsb_sub`      |    188 |         7 | High School and Beyond subset (Chapter 7)                  |
+| `classdata_07` |     44 |        12 | Classroom survey data (Chapter 1)                          |
+| `grades`       |    198 |         8 | Essay grades and writing features (Chapter 12)             |
+
+## Quick Start
+
+``` r
+library(regdatasets)
+
+# --- Simple linear regression ---
+data(gcse)
+model <- lm(gcse ~ lrt, data = gcse)
+summary(model)
+
+# --- Logistic regression: Simpson's paradox ---
+data(berkeley)
+# Unadjusted: gender appears to matter
+crude <- glm(admitted ~ female, family = binomial, data = berkeley)
+# Adjusted: gender effect disappears after controlling for department
+adjusted <- glm(admitted ~ female + factor(department),
+                family = binomial, data = berkeley)
+exp(coef(crude)["female"])    # Crude OR ~ 0.64
+exp(coef(adjusted)["female"]) # Adjusted OR ~ 0.97
+
+# --- One-way ANOVA ---
+data(reading)
+model_anova <- lm(post1 ~ factor(group), data = reading)
+anova(model_anova)
+```
+
+## Works Well With
+
+**regdatasets** is designed to work seamlessly with modern R workflows:
+
+``` r
+library(tidyverse)   # dplyr, ggplot2, tibble, ...
+library(easystats)   # parameters, performance, effectsize, see, ...
+library(gtsummary)   # publication-ready tables
+library(marginaleffects) # predictions, comparisons, slopes
+```
+
+Example using the **easystats** and **marginaleffects** ecosystem:
+
+``` r
+library(regdatasets)
+library(easystats)
+library(marginaleffects)
+
+# Fit model
+data(gcse)
+model <- lm(gcse ~ lrt * school, data = gcse)
+
+# easystats: model summary and diagnostics
+model_parameters(model)
+check_model(model)
+
+# marginaleffects: predicted values and slopes
+plot_predictions(model, condition = c("lrt", "school"))
+avg_slopes(model, variables = "lrt", by = "school")
+```
+
+## Course Coverage
+
+| Chapters | Topic                        | Datasets                                          |
+|:---------|:-----------------------------|:--------------------------------------------------|
+| 1–2      | SLR, ANCOVA                  | `gcse`, `civic_ed`, `classdata_07`, `pisa2000`    |
+| 3        | One-way ANOVA                | `reading`, `instruction`                          |
+| 4        | Continuous predictors        | `crime`                                           |
+| 5        | Interactions                 | `gcse`, `individuals`, `faculty`, `crime`         |
+| 6        | Nonlinear relationships      | `nels_data`, `crime`                              |
+| 7–8      | Model building & diagnostics | `nels_data`, `hsbs1`, `hsb_sub`                   |
+| 9–11     | Logistic regression          | `gss_1`, `berkeley`, `penalty`, `titanic`, `disc` |
+| 12       | Latent response & GLM        | `lambert`, `grades`                               |
+| 13       | Ordinal models               | `womenlf`, `satisfaction`, `alcohol1_pp`          |
+
+## Companion Textbook
+
+This package accompanies [Regression Lecture
+Notes](https://github.com/joonho112/regression-lecture-notes), a
+Quarto-based interactive textbook for graduate-level regression analysis
+in education and social science.
+
+## License
+
+MIT
+
+# Package index
+
+## Simple Linear Regression & ANCOVA (Chapters 1–2)
+
+Datasets for introducing simple linear regression, ANCOVA, and the
+fundamental concepts of controlling for covariates.
+
+- [`gcse`](https://joonho112.github.io/regdatasets/reference/gcse.md) :
+  GCSE and London Reading Test Data
+- [`classdata_07`](https://joonho112.github.io/regdatasets/reference/classdata_07.md)
+  : Class Survey Data (2007)
+- [`pisa2000`](https://joonho112.github.io/regdatasets/reference/pisa2000.md)
+  : PISA 2000 International Reading Assessment Data
+- [`civic_ed`](https://joonho112.github.io/regdatasets/reference/civic_ed.md)
+  : Civic Education Study: Pre-Post Survey Data
+
+## One-way ANOVA (Chapter 3)
+
+Datasets for categorical predictors, dummy variable coding, and group
+comparisons via ANOVA as a special case of regression.
+
+- [`reading`](https://joonho112.github.io/regdatasets/reference/reading.md)
+  : Reading Comprehension Instruction Experiment
+- [`instruction`](https://joonho112.github.io/regdatasets/reference/instruction.md)
+  : Reading Instruction Methods Study
+
+## Multiple Regression: Continuous Predictors (Chapter 4)
+
+Datasets for partial regression, standardized coefficients, and the
+confounding/sign-reversal phenomenon.
+
+- [`crime`](https://joonho112.github.io/regdatasets/reference/crime.md)
+  : Florida County Crime Rates
+
+## Interactions (Chapter 5)
+
+Datasets for interaction effects between dummy variables, continuous and
+dummy variables, and two continuous predictors.
+
+- [`individuals`](https://joonho112.github.io/regdatasets/reference/individuals.md)
+  : Bureau of Labor Statistics March 2000 CPS Individual Data
+- [`faculty`](https://joonho112.github.io/regdatasets/reference/faculty.md)
+  : Faculty Salary Data
+
+## Nonlinear Relationships & Model Building (Chapters 6–7)
+
+Datasets for log transformations, polynomial regression, and model
+selection strategies.
+
+- [`nels_data`](https://joonho112.github.io/regdatasets/reference/nels_data.md)
+  : National Education Longitudinal Study of 1988 (NELS:88)
+- [`hsb_sub`](https://joonho112.github.io/regdatasets/reference/hsb_sub.md)
+  : High School and Beyond Subset
+
+## Model Diagnostics (Chapter 8)
+
+Datasets for residual analysis, normality checks, influence diagnostics,
+and collinearity assessment.
+
+- [`hsbs1`](https://joonho112.github.io/regdatasets/reference/hsbs1.md)
+  : High School and Beyond Survey (Full Sample)
+
+## Logistic Regression (Chapters 9–11)
+
+Datasets for binary outcomes, odds ratios, Simpson’s paradox, maximum
+likelihood estimation, and model fit diagnostics.
+
+- [`gss_1`](https://joonho112.github.io/regdatasets/reference/gss_1.md)
+  : General Social Survey Data
+- [`berkeley`](https://joonho112.github.io/regdatasets/reference/berkeley.md)
+  : UC Berkeley Graduate Admissions Data (Five Departments)
+- [`berk_sub`](https://joonho112.github.io/regdatasets/reference/berk_sub.md)
+  : UC Berkeley Graduate Admissions Subset (Engineering and Psychology)
+- [`penalty`](https://joonho112.github.io/regdatasets/reference/penalty.md)
+  : Death Penalty Sentencing Data
+- [`titanic`](https://joonho112.github.io/regdatasets/reference/titanic.md)
+  : Titanic Passenger Survival Data
+- [`disc`](https://joonho112.github.io/regdatasets/reference/disc.md) :
+  NELS:88 Discipline and School Experiences Study
+- [`disc2`](https://joonho112.github.io/regdatasets/reference/disc2.md)
+  : NELS:88 Discipline Study with Achievement Scores
+
+## Latent Response & GLM (Chapter 12)
+
+Datasets for latent variable formulations, probit vs. logit models, and
+the generalized linear model framework.
+
+- [`lambert`](https://joonho112.github.io/regdatasets/reference/lambert.md)
+  : Lambert Longitudinal Study Data
+- [`grades`](https://joonho112.github.io/regdatasets/reference/grades.md)
+  : Essay Grades and Writing Features
+
+## Ordinal Response Models (Chapter 13)
+
+Datasets for ordinal logistic/probit regression, threshold models, and
+the proportional odds assumption.
+
+- [`womenlf`](https://joonho112.github.io/regdatasets/reference/womenlf.md)
+  : Canadian Women's Labor Force Participation
+- [`satisfaction`](https://joonho112.github.io/regdatasets/reference/satisfaction.md)
+  : Satisfaction Survey Data
+- [`alcohol1_pp`](https://joonho112.github.io/regdatasets/reference/alcohol1_pp.md)
+  : Adolescent Alcohol Use Person-Period Data
+
+## Utility Functions
+
+Helper functions for exploring the package.
+
+- [`list_datasets()`](https://joonho112.github.io/regdatasets/reference/list_datasets.md)
+  : List All Datasets in regdatasets
+
+# Articles
+
+### All vignettes
+
+- [Dataset Overview and Course
+  Mapping](https://joonho112.github.io/regdatasets/articles/dataset-overview.md):
+- [Getting Started with
+  regdatasets](https://joonho112.github.io/regdatasets/articles/getting-started.md):
