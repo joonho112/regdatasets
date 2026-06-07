@@ -76,6 +76,11 @@ introduction to the concepts underlying multilevel modeling, even when
 standard OLS regression is used. The sector variable allows for
 ANCOVA-style analyses comparing school types.
 
+## See also
+
+[`hsbs1`](hsbs1.html) for a larger HS&B subset (350 students, 16
+variables) used in model diagnostics (Chapter 8).
+
 ## Examples
 
 ``` r

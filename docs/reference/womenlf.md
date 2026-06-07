@@ -60,6 +60,11 @@ present as predictors, interpreting cumulative odds ratios, testing the
 proportional odds assumption, and comparing ordinal logit versus ordinal
 probit specifications.
 
+## See also
+
+A version of this dataset also appears as `Womenlf` in the `carData`
+package (GPL \>= 2).
+
 ## Examples
 
 ``` r

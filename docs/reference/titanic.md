@@ -66,6 +66,13 @@ survival on sex, multiple logistic regression with class and age, odds
 ratio interpretation, predicted probabilities, handling missing data in
 age, and model comparison using likelihood ratio tests and AIC.
 
+## Note
+
+This dataset represents real individuals who perished in or survived a
+maritime disaster. The data are used for statistical education with
+respect for those involved. The `embarked` variable contains 2 missing
+values (converted from blank strings to `NA` in v0.2.0).
+
 ## Examples
 
 ``` r

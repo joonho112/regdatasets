@@ -1,11 +1,11 @@
 # UC Berkeley Graduate Admissions Data (Five Departments)
 
 Data from UC Berkeley's 1973 graduate admissions across five
-departmentnts, with 3,593 individual applicant records. This is the
+departments, with 3,593 individual applicant records. This is the
 classic dataset used to demonstrate Simpson's paradox in the context of
 logistic regression: the overall association between gender and
 admission appears to show bias against women, but this effect reverses
-or disappears when controlling for departmentnt. The departmentnt
+or disappears when controlling for department. The department
 identifiers are anonymized.
 
 ## Usage
@@ -21,8 +21,9 @@ A tibble with 3,593 rows and 3 columns:
 - department:
 
   Department identifier. Type: numeric. Values: 1, 2, 3, 4, 5. Five
-  anonymized departmentnts that differ in their admission rates and
-  gender composition of applicants.
+  anonymized departments that differ in their admission rates and
+  gender composition of applicants. (Renamed from `departme` in
+  v0.2.0.)
 
 - female:
 
@@ -45,14 +46,21 @@ Original data file: `berkeley.dta`
 This dataset is used in Chapters 10-11 (Multiple Logistic Regression and
 Model Fit/Diagnostics) to illustrate confounding in logistic regression
 and Simpson's paradox. Key analyses include: computing odds ratios for
-admission by gender within and across departmentnts, fitting multiple
-logistic regression models with departmentnt as a control variable,
+admission by gender within and across departments, fitting multiple
+logistic regression models with department as a control variable,
 performing likelihood ratio tests, and chi-squared goodness-of-fit
 tests.
 
 Note that this dataset uses `female` as the gender indicator (1 =
-female), whereas `berk_sub` uses `male` (1 = male). The departmentnt
-variable is coded numerically (1-5) rather than by departmentnt name.
+female), whereas `berk_sub` uses `male` (1 = male). The department
+variable is coded numerically (1-5) rather than by department name.
+
+## See also
+
+[`berk_sub`](berk_sub.html) for a two-department subset used to
+introduce Simpson's paradox. Also compare with base R's
+[`UCBAdmissions`](https://rdrr.io/r/datasets/UCBAdmissions.html), which
+provides the same data in aggregate contingency table form.
 
 ## Examples
 
@@ -71,30 +79,30 @@ head(berkeley)
 
 # Unadjusted model: gender only
 glm(admitted ~ female, data = berkeley, family = binomial)
-#> 
+#>
 #> Call:  glm(formula = admitted ~ female, family = binomial, data = berkeley)
-#> 
+#>
 #> Coefficients:
-#> (Intercept)       female  
-#>     -0.5424      -0.4472  
-#> 
+#> (Intercept)       female
+#>     -0.5424      -0.4472
+#>
 #> Degrees of Freedom: 3592 Total (i.e. Null);  3591 Residual
-#> Null Deviance:       4511 
+#> Null Deviance:       4511
 #> Residual Deviance: 4472  AIC: 4476
 
-# Adjusted model: controlling for departmentnt
+# Adjusted model: controlling for department
 glm(admitted ~ female + factor(department), data = berkeley, family = binomial)
-#> 
-#> Call:  glm(formula = admitted ~ female + factor(department), family = binomial, 
+#>
+#> Call:  glm(formula = admitted ~ female + factor(department), family = binomial,
 #>     data = berkeley)
-#> 
+#>
 #> Coefficients:
-#>         (Intercept)               female  factor(department)2  
-#>             0.54418             -0.03069             -1.14008  
-#> factor(department)3  factor(department)4  factor(department)5  
-#>            -1.19456             -1.61308             -3.20527  
-#> 
+#>         (Intercept)               female  factor(department)2
+#>             0.54418             -0.03069             -1.14008
+#> factor(department)3  factor(department)4  factor(department)5
+#>            -1.19456             -1.61308             -3.20527
+#>
 #> Degrees of Freedom: 3592 Total (i.e. Null);  3587 Residual
-#> Null Deviance:       4511 
+#> Null Deviance:       4511
 #> Residual Deviance: 3974  AIC: 3986
 ```

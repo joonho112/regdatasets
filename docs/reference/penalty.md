@@ -52,6 +52,20 @@ deviance goodness-of-fit statistics, cross-tabulation of observed versus
 expected frequencies, and assessment of whether the main-effects model
 is adequate (it fits well, with Pearson X-squared = 0.20, p = 0.66).
 
+## Ethical context
+
+These data document racial disparities in the application of the death
+penalty in Florida during the late 1970s. The original study by Radelet
+(1981) found that cases involving White victims were significantly more
+likely to result in a death sentence than cases involving Black victims,
+after controlling for defendant race. This finding was part of a broader
+body of research - including the Baldus study cited in *McCleskey v.
+Kemp* (1987) - that documented systemic racial bias in capital
+sentencing. Instructors should provide appropriate historical context
+when assigning analyses of this dataset and encourage students to
+consider the structural and institutional factors that underlie these
+patterns.
+
 ## Examples
 
 ``` r

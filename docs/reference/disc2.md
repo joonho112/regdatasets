@@ -104,7 +104,7 @@ A tibble with 2,000 rows and 15 columns:
 
 National Center for Education Statistics (1988). *National Education
 Longitudinal Study of 1988 (NELS:88)*. U.S. Department of Education.
-Original data file: `disc2.dta`
+Public-use data file. Original data file: `disc2.dta`
 
 ## Details
 
@@ -115,7 +115,18 @@ building multiple logistic regression models with continuous and
 categorical predictors; and comparing base-year and follow-up reading
 scores. The SES composite and standardized test scores provide
 continuous predictors for logistic regression, complementing the
-categorical predictors in `disc`.
+categorical predictors in `disc`. The `race` variable has been converted
+to an unordered factor as of v0.2.0.
+
+## Ethical context
+
+See [`disc`](disc.html) for context on racial disparities in school
+discipline and responsible use of race as a predictor variable.
+
+## See also
+
+[`disc`](disc.html) for the same 2,000 students with original NELS:88
+variable names and categorical predictors.
 
 ## Examples
 
@@ -136,31 +147,31 @@ head(disc2)
 
 # Logistic regression: SES effect on office referral
 glm(sentoff ~ ses, data = disc2, family = binomial)
-#> 
+#>
 #> Call:  glm(formula = sentoff ~ ses, family = binomial, data = disc2)
-#> 
+#>
 #> Coefficients:
-#> (Intercept)          ses  
-#>     -0.9879      -0.3921  
-#> 
+#> (Intercept)          ses
+#>     -0.9879      -0.3921
+#>
 #> Degrees of Freedom: 1970 Total (i.e. Null);  1969 Residual
 #>   (29 observations deleted due to missingness)
-#> Null Deviance:       2336 
+#> Null Deviance:       2336
 #> Residual Deviance: 2297  AIC: 2301
 
 # Multiple logistic regression with achievement and demographics
 glm(sentoff ~ ses + reading1 + male + minority, data = disc2,
     family = binomial)
-#> 
-#> Call:  glm(formula = sentoff ~ ses + reading1 + male + minority, family = binomial, 
+#>
+#> Call:  glm(formula = sentoff ~ ses + reading1 + male + minority, family = binomial,
 #>     data = disc2)
-#> 
+#>
 #> Coefficients:
-#> (Intercept)          ses     reading1         male     minority  
-#>     0.51829     -0.23894     -0.04409      1.23041     -0.01177  
-#> 
+#> (Intercept)          ses     reading1         male     minority
+#>     0.51829     -0.23894     -0.04409      1.23041     -0.01177
+#>
 #> Degrees of Freedom: 1870 Total (i.e. Null);  1866 Residual
 #>   (129 observations deleted due to missingness)
-#> Null Deviance:       2200 
+#> Null Deviance:       2200
 #> Residual Deviance: 1977  AIC: 1987
 ```

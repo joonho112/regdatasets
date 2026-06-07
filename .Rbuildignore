@@ -3,4 +3,5 @@
 ^README\.Rmd$
 ^README\.html$
 ^\.DS_Store$
+^\.github$
 ^man/figures/logo\.png$

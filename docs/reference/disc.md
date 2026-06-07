@@ -105,7 +105,7 @@ A tibble with 2,000 rows and 15 columns:
 
 National Center for Education Statistics (1988). *National Education
 Longitudinal Study of 1988 (NELS:88)*. U.S. Department of Education.
-Original data file: `disc.dta`
+Public-use data file. Original data file: `disc.dta`
 
 ## Details
 
@@ -116,10 +116,26 @@ fitting simple and multiple logistic regression models predicting office
 referrals, computing and interpreting odds ratios, likelihood ratio
 tests, and ordinal regression using `osentoff` as the outcome.
 
-Note that several variables use NELS:88 coding where 8 or 98 indicates
-missing/not applicable rather than NA. The derived binary and ordinal
-outcome variables (`sentoff`, `osentoff`) have been recoded with proper
-NA values.
+Note that original NELS:88 sentinel missing codes (8, 98) in variables
+`bys34a` and `bys34b` have been recoded to `NA` as of v0.2.0. The `race`
+variable has been converted from integer codes (1-4) to an unordered
+factor with levels: Asian, Hispanic, Black, White.
+
+## Ethical context
+
+These data involve race as a predictor of school disciplinary outcomes.
+Racial disparities in school discipline are a well-documented phenomenon
+in educational research, often discussed in the context of the
+"school-to-prison pipeline." The race variable categories and coding
+reflect the NELS:88 survey instrument from 1988 and should not be taken
+as exhaustive or current representations of racial/ethnic identity.
+Instructors are encouraged to situate analyses within the broader
+literature on structural inequities in school discipline practices.
+
+## See also
+
+[`disc2`](disc2.html) for the same 2,000 students with SES composite and
+standardized test scores as continuous predictors.
 
 ## Examples
 
@@ -140,32 +156,32 @@ head(disc)
 
 # Logistic regression: gender effect on office referral
 glm(sentoff ~ male, data = disc, family = binomial)
-#> 
+#>
 #> Call:  glm(formula = sentoff ~ male, family = binomial, data = disc)
-#> 
+#>
 #> Coefficients:
-#> (Intercept)         male  
-#>      -1.626        1.209  
-#> 
+#> (Intercept)         male
+#>      -1.626        1.209
+#>
 #> Degrees of Freedom: 1953 Total (i.e. Null);  1952 Residual
 #>   (46 observations deleted due to missingness)
-#> Null Deviance:       2313 
+#> Null Deviance:       2313
 #> Residual Deviance: 2179  AIC: 2183
 
 # Multiple logistic regression with demographics
-glm(sentoff ~ male + factor(race) + fath_ed, data = disc, family = binomial)
-#> 
-#> Call:  glm(formula = sentoff ~ male + factor(race) + fath_ed, family = binomial, 
+glm(sentoff ~ male + race + fath_ed, data = disc, family = binomial)
+#>
+#> Call:  glm(formula = sentoff ~ male + race + fath_ed, family = binomial,
 #>     data = disc)
-#> 
+#>
 #> Coefficients:
-#>          (Intercept)                  male  factor(race)Hispanic  
-#>              -1.6235                1.2178                0.3775  
-#>    factor(race)Black     factor(race)White               fath_ed  
-#>               1.2273                0.3771               -0.5617  
-#> 
+#>  (Intercept)          male  raceHispanic     raceBlack     raceWhite
+#>      -1.6235        1.2178        0.3775        1.2273        0.3771
+#>      fath_ed
+#>      -0.5617
+#>
 #> Degrees of Freedom: 1605 Total (i.e. Null);  1600 Residual
 #>   (394 observations deleted due to missingness)
-#> Null Deviance:       1892 
+#> Null Deviance:       1892
 #> Residual Deviance: 1752  AIC: 1764
 ```
