@@ -3,6 +3,7 @@
 ## All 25 Datasets at a Glance
 
 ``` r
+
 library(regdatasets)
 
 # Build summary table
@@ -60,28 +61,28 @@ knitr::kable(summary_df, format = "html",
 | titanic      |         1309 |         6 |
 | womenlf      |          263 |         5 |
 
-Dimensions of all 25 datasets in regdatasets.
+Dimensions of all 25 datasets in regdatasets. {.table}
 
 ## Course Chapter Mapping
 
 The table below shows which datasets are used in each chapter of the
 companion textbook.
 
-| Chapter | Topic                        | Primary Datasets                           |
-|:--------|:-----------------------------|:-------------------------------------------|
-| 1       | Simple Linear Regression     | `gcse`, `classdata_07`, `pisa2000`         |
-| 2       | ANCOVA                       | `gcse`, `instruction`                      |
-| 3       | One-way ANOVA                | `reading`, `instruction`                   |
-| 4       | Continuous Predictors        | `crime`                                    |
-| 5       | Interactions                 | `gcse`, `individuals`, `faculty`, `crime`  |
-| 6       | Nonlinear Relationships      | `nels_data`, `crime`                       |
-| 7       | Model Building               | `nels_data`, `hsb_sub`, `civic_ed`         |
-| 8       | Model Diagnostics            | `hsbs1`, `nels_data`                       |
-| 9       | Simple Logistic Regression   | `gss_1`, `disc`, `titanic`                 |
-| 10      | Multiple Logistic Regression | `berkeley`, `berk_sub`, `disc2`, `titanic` |
-| 11      | Logistic Model Fit           | `penalty`, `disc`                          |
-| 12      | Latent Response & GLM        | `lambert`, `grades`                        |
-| 13      | Ordinal Models               | `womenlf`, `satisfaction`, `alcohol1_pp`   |
+| Chapter | Topic | Primary Datasets |
+|:---|:---|:---|
+| 1 | Simple Linear Regression | `gcse`, `classdata_07`, `pisa2000` |
+| 2 | ANCOVA | `gcse`, `instruction` |
+| 3 | One-way ANOVA | `reading`, `instruction` |
+| 4 | Continuous Predictors | `crime` |
+| 5 | Interactions | `gcse`, `individuals`, `faculty`, `crime` |
+| 6 | Nonlinear Relationships | `nels_data`, `crime` |
+| 7 | Model Building | `nels_data`, `hsb_sub`, `civic_ed` |
+| 8 | Model Diagnostics | `hsbs1`, `nels_data` |
+| 9 | Simple Logistic Regression | `gss_1`, `disc`, `titanic` |
+| 10 | Multiple Logistic Regression | `berkeley`, `berk_sub`, `disc2`, `titanic` |
+| 11 | Logistic Model Fit | `penalty`, `disc` |
+| 12 | Latent Response & GLM | `lambert`, `grades` |
+| 13 | Ordinal Models | `womenlf`, `satisfaction`, `alcohol1_pp` |
 
 ## Datasets by Topic Area
 

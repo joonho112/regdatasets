@@ -57,6 +57,13 @@ than Psychology (approximately 25%). This creates the conditions for
 Simpson's paradox: the omitted variable (department) is both correlated
 with the predictor (gender) and a predictor of the outcome (admission).
 
+## See also
+
+[`berkeley`](https://joonho112.github.io/regdatasets/reference/berkeley.md)
+for the full five-department version of the Berkeley admissions data.
+Note that `berk_sub` uses `male` (1 = male) while `berkeley` uses
+`female` (1 = female).
+
 ## Examples
 
 ``` r

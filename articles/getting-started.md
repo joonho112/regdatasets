@@ -5,6 +5,7 @@
 Install the development version of **regdatasets** from GitHub:
 
 ``` r
+
 # install.packages("devtools")
 devtools::install_github("joonho112/regdatasets")
 ```
@@ -15,26 +16,26 @@ All 25 datasets are available via the standard
 [`data()`](https://rdrr.io/r/utils/data.html) function:
 
 ``` r
+
 library(regdatasets)
 
 # Load a single dataset
 data(gcse)
 head(gcse)
-#> # A tibble: 6 × 6
-#>   school student   gcse    lrt gender   pred
-#>    <int>   <int>  <dbl>  <dbl>  <int>  <dbl>
-#> 1      1     143   2.61   6.19      1  0.785
-#> 2      1     145   1.34   2.06      1  0.504
-#> 3      1     142 -17.2  -13.6       0 -0.567
-#> 4      1     141   9.68   2.06      1  0.504
-#> 5      1     138   5.44   3.71      1  0.616
-#> 6      1     155  17.3   21.9       0  1.86
+#>   school student     gcse      lrt gender     pred
+#> 1      1     143   2.6132   6.1906      1  0.78545
+#> 2      1     145   1.3407   2.0580      1  0.50373
+#> 3      1     142 -17.2390 -13.6460      0 -0.56681
+#> 4      1     141   9.6759   2.0580      1  0.50373
+#> 5      1     138   5.4434   3.7110      1  0.61641
+#> 6      1     155  17.3490  21.8940      0  1.85600
 ```
 
 Every dataset is stored as a **tibble**, so it prints cleanly and works
 seamlessly with the tidyverse:
 
 ``` r
+
 class(gcse)
 #> [1] "tbl_df"     "tbl"        "data.frame"
 ```
@@ -45,6 +46,7 @@ Use `?dataset_name` to view the full documentation, including variable
 descriptions, sources, and example analyses:
 
 ``` r
+
 ?gcse
 ?berkeley
 ?crime
@@ -57,6 +59,7 @@ contains GCSE exam scores and London Reading Test (LRT) scores for 4,059
 students in 65 London secondary schools:
 
 ``` r
+
 # Fit a simple linear regression
 model <- lm(gcse ~ lrt, data = gcse)
 summary(model)
@@ -81,6 +84,7 @@ summary(model)
 ```
 
 ``` r
+
 library(ggplot2)
 
 ggplot(gcse, aes(x = lrt, y = gcse)) +
@@ -105,6 +109,7 @@ The `berkeley` dataset demonstrates Simpson’s paradox — the reversal of
 an apparent gender bias after controlling for department:
 
 ``` r
+
 data(berkeley)
 
 # Unadjusted model
@@ -132,6 +137,7 @@ classic example of confounding.
 The `reading` dataset compares three reading instruction methods:
 
 ``` r
+
 data(reading)
 
 # ANOVA via regression with dummy variables
@@ -148,6 +154,7 @@ anova(model_anova)
 ```
 
 ``` r
+
 ggplot(reading, aes(x = factor(group), y = post1, fill = factor(group))) +
   geom_boxplot(alpha = 0.7, show.legend = FALSE) +
   scale_fill_manual(values = c("#2C3E50", "#E74C3C", "#3498DB")) +
@@ -172,6 +179,7 @@ Overview](https://joonho112.github.io/regdatasets/articles/dataset-overview.md)
 article.
 
 ``` r
+
 # List all datasets in the package
 data(package = "regdatasets")$results[, c("Item", "Title")]
 #>       Item          

@@ -104,7 +104,7 @@ A tibble with 2,000 rows and 15 columns:
 
 National Center for Education Statistics (1988). *National Education
 Longitudinal Study of 1988 (NELS:88)*. U.S. Department of Education.
-Original data file: `disc2.dta`
+Public-use data file. Original data file: `disc2.dta`
 
 ## Details
 
@@ -115,7 +115,20 @@ building multiple logistic regression models with continuous and
 categorical predictors; and comparing base-year and follow-up reading
 scores. The SES composite and standardized test scores provide
 continuous predictors for logistic regression, complementing the
-categorical predictors in `disc`.
+categorical predictors in `disc`. The `race` variable has been converted
+to an unordered factor as of v0.2.0.
+
+## Ethical context
+
+See [`disc`](https://joonho112.github.io/regdatasets/reference/disc.md)
+for context on racial disparities in school discipline and responsible
+use of race as a predictor variable.
+
+## See also
+
+[`disc`](https://joonho112.github.io/regdatasets/reference/disc.md) for
+the same 2,000 students with original NELS:88 variable names and
+categorical predictors.
 
 ## Examples
 

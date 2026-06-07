@@ -114,6 +114,12 @@ academic outcomes. Key analyses include: multiple regression of writing
 scores on reading and math, residual plots, Cook's distance, leverage
 diagnostics, and VIF assessment for multicollinearity.
 
+## See also
+
+[`hsb_sub`](https://joonho112.github.io/regdatasets/reference/hsb_sub.md)
+for a smaller HS&B subset (188 students, 7 variables) used in model
+building (Chapters 6–7).
+
 ## Examples
 
 ``` r

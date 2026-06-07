@@ -16,7 +16,7 @@ gcse
 
 ## Format
 
-A tibble with 4,059 rows and 9 columns:
+A tibble with 4,059 rows and 6 columns:
 
 - school:
 
@@ -50,29 +50,14 @@ A tibble with 4,059 rows and 9 columns:
   Predicted GCSE score from the regression model. Type: numeric. Range:
   (-1.91, 2.54). Pre-computed predicted values.
 
-- u0:
-
-  School-level random intercept. Type: numeric. Contains large negative
-  placeholder values (-1e30) for most schools, indicating unestimated or
-  filtered values. Valid range approximately (-0.65, 0.65) for estimated
-  schools.
-
-- u1:
-
-  School-level random slope for LRT. Type: numeric. Contains large
-  negative placeholder values (-1e30) for most schools. Valid range
-  approximately (-0.35, 0.35) for estimated schools.
-
-- filter\_\_:
-
-  Filter variable. Type: numeric. Binary indicator (0/1) where 1 =
-  included in a specific analysis subset (2% of observations), 0 = not
-  included.
+Note: Columns `u0`, `u1`, and `filter__` (Stata multilevel model
+artifacts containing -1e30 placeholder values) were removed in v0.2.0.
 
 ## Source
 
-Goldstein, H., Rasbash, J., et al. London school effectiveness study
-data. Original data file: `gcse.dta`
+Goldstein, H., Rasbash, J., Yang, M., et al. (1993). A multilevel
+analysis of school examination results. *Oxford Review of Education*,
+19(4), 425–433. Original data file: `gcse.dta`
 
 ## Details
 
@@ -93,9 +78,10 @@ across schools (school-by-LRT interaction).
 **Chapter 8 (Model Diagnostics):** Residual analysis, outlier detection,
 and influence diagnostics.
 
-The variables u0, u1, pred, and filter\_\_ are pre-computed model
-outputs included for pedagogical purposes. For standard regression
-analyses, the key variables are gcse, lrt, school, and gender.
+The variable `pred` contains pre-computed predicted values from a
+regression model, included for pedagogical reference. For standard
+regression analyses, the key variables are gcse, lrt, school, and
+gender.
 
 ## Examples
 
