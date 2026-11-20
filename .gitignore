@@ -5,6 +5,10 @@
 .Rhistory
 .RData
 .Ruserdata
+Rplots.pdf
+
+# Private working logs (never published)
+log/
 
 # OS files
 .DS_Store

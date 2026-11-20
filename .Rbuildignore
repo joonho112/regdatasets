@@ -2,6 +2,12 @@
 ^data-raw$
 ^README\.Rmd$
 ^README\.html$
-^\.DS_Store$
+(^|/)\.DS_Store$
 ^\.github$
 ^man/figures/logo\.png$
+^log$
+^docs$
+^_pkgdown\.yml$
+^pkgdown$
+^vignettes/articles$
+^tools$

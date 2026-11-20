@@ -1,0 +1,7 @@
+"dataset","variable","position","type","label","values","units","group","recoded_to_na","notes","status"
+"individuals","id",1,"integer","Respondent ID","","","","","","curated"
+"individuals","age",2,"integer","Age","","years","","","The extract covers ages 25 to 65 only.","curated"
+"individuals","educ",3,"integer","Education level","1 = no high school; 2 = some high school; 3 = high school diploma; 4 = some college; 5 = bachelor's degree; 6 = postgraduate degree","","","","The v0.2.0 help page gave wrong meanings for these codes.","curated"
+"individuals","sex",4,"integer","Sex","1 = male; 2 = female","","","","","curated"
+"individuals","earn",5,"integer","Total annual income from all sources","","US dollars","","","Named earn, but the course materials describe it as total income from all sources. 170 values are negative, which is possible in CPS income (e.g., business losses).","curated"
+"individuals","job",6,"integer","Job sector","5 = private sector; 6 = government; 7 = self-employed","","","","Codes start at 5. The v0.2.0 help page swapped codes 5 and 6.","curated"

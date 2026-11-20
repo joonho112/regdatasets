@@ -1,0 +1,6 @@
+"dataset","variable","position","type","label","values","units","group","recoded_to_na","notes","status"
+"gcse","school",1,"integer","School ID","","","","","65 schools in inner London.","curated"
+"gcse","student",2,"integer","Student ID within school","","","","","Original Exam-data ID (1 to 913), not unique across schools. Four IDs occur twice in the same school (8 rows, different students), so it is not a reliable key.","curated"
+"gcse","gcse",3,"double","GCSE exam score at age 16","","normalized score x 10","","","Equals 10 x normexam in mlmRev::Exam (mean about 0, SD about 10). The stored model prediction pred was removed in v1.0.0.","curated"
+"gcse","lrt",4,"double","London Reading Test score at age 11","","standardized score x 10","","","Equals 10 x standLRT in mlmRev::Exam.","curated"
+"gcse","gender",5,"integer","Girl","0 = boy; 1 = girl","","","","","curated"

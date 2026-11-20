@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><title>Canadian Women's Labor Force Participation — womenlf • regdatasets</title><!-- favicons --><link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png"><link rel="icon" type="”image/svg+xml”" href="../favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png"><link rel="icon" sizes="any" href="../favicon.ico"><link rel="manifest" href="../site.webmanifest"><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet"><script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/Source_Sans_Pro-0.4.10/font.css" rel="stylesheet"><link href="../deps/Fira_Code-0.4.10/font.css" rel="stylesheet"><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet"><link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet"><script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Canadian Women's Labor Force Participation — womenlf"><meta name="description" content="Data on labor force participation of 263 married Canadian women, including
-work status (not working, part-time, full-time), husband's income, region
-of residence, and presence of children. This dataset is a classic example
-for ordinal response modeling, as the three-level work status variable
-represents an ordered outcome ranging from no labor force participation
-to full-time employment."><meta property="og:description" content="Data on labor force participation of 263 married Canadian women, including
-work status (not working, part-time, full-time), husband's income, region
-of residence, and presence of children. This dataset is a classic example
-for ordinal response modeling, as the three-level work status variable
-represents an ordered outcome ranging from no labor force participation
-to full-time employment."><meta property="og:image" content="https://joonho112.github.io/regdatasets/logo.png"></head><body>
+<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><title>Canadian women's labour-force participation — womenlf • regdatasets</title><!-- favicons --><link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png"><link rel="icon" type="”image/svg+xml”" href="../favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png"><link rel="icon" sizes="any" href="../favicon.ico"><link rel="manifest" href="../site.webmanifest"><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link href="../deps/bootstrap-5.3.8/bootstrap.min.css" rel="stylesheet"><script src="../deps/bootstrap-5.3.8/bootstrap.bundle.min.js"></script><link href="../deps/Source_Sans_Pro-0.4.10/font.css" rel="stylesheet"><link href="../deps/Fira_Code-0.4.10/font.css" rel="stylesheet"><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet"><link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet"><script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Canadian women's labour-force participation — womenlf"><meta name="description" content="Work status, husband's income, presence of children and region of
+residence for 263 married Canadian women, one row per woman. The data
+come from a 1977 survey by the Social Change in Canada Project of the
+York Institute for Social Research and are a textbook example in Fox
+(2016, 3rd ed.). They are the same data as carData::Womenlf on CRAN."><meta property="og:description" content="Work status, husband's income, presence of children and region of
+residence for 263 married Canadian women, one row per woman. The data
+come from a 1977 survey by the Social Change in Canada Project of the
+York Institute for Social Research and are a textbook example in Fox
+(2016, 3rd ed.). They are the same data as carData::Womenlf on CRAN."><meta property="og:image" content="https://joonho112.github.io/regdatasets/logo.png"></head><body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
 
 
@@ -17,7 +15,7 @@ to full-time employment."><meta property="og:image" content="https://joonho112.g
 
     <a class="navbar-brand me-2" href="../index.html">regdatasets</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,11 +24,12 @@ to full-time employment."><meta property="og:image" content="https://joonho112.g
 
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto"><li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
-<li class="active nav-item"><a class="nav-link" href="../reference/index.html">Datasets</a></li>
+<li class="active nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
 <li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-guides" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Guides</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-guides"><li><a class="dropdown-item" href="../articles/getting-started.html">Getting Started</a></li>
     <li><a class="dropdown-item" href="../articles/dataset-overview.html">Dataset Overview</a></li>
+    <li><a class="dropdown-item" href="../articles/data-provenance.html">How the Data Are Built</a></li>
   </ul></li>
 <li class="nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
       </ul><ul class="navbar-nav"><li class="nav-item"><form class="form-inline" role="search">
@@ -43,18 +42,17 @@ to full-time employment."><meta property="og:image" content="https://joonho112.g
 </nav><div class="container template-reference-topic">
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
-      <img src="../logo.png" class="logo" alt=""><h1>Canadian Women's Labor Force Participation</h1>
-      <small class="dont-index">Source: <a href="https://github.com/joonho112/regdatasets/blob/HEAD/R/data.R" class="external-link"><code>R/data.R</code></a></small>
+      <img src="../logo.png" class="logo" alt=""><h1>Canadian women's labour-force participation</h1>
+      <small class="dont-index">Source: <a href="https://github.com/joonho112/regdatasets/blob/HEAD/R/data-womenlf.R" class="external-link"><code>R/data-womenlf.R</code></a></small>
       <div class="d-none name"><code>womenlf.Rd</code></div>
     </div>
 
     <div class="ref-description section level2">
-    <p>Data on labor force participation of 263 married Canadian women, including
-work status (not working, part-time, full-time), husband's income, region
-of residence, and presence of children. This dataset is a classic example
-for ordinal response modeling, as the three-level work status variable
-represents an ordered outcome ranging from no labor force participation
-to full-time employment.</p>
+    <p>Work status, husband's income, presence of children and region of
+residence for 263 married Canadian women, one row per woman. The data
+come from a 1977 survey by the Social Change in Canada Project of the
+York Institute for Social Research and are a textbook example in Fox
+(2016, 3rd ed.). They are the same data as <code><a href="https://rdrr.io/pkg/carData/man/Womenlf.html" class="external-link">carData::Womenlf</a></code> on CRAN.</p>
     </div>
 
     <div class="section level2">
@@ -64,59 +62,63 @@ to full-time employment.</p>
 
     <div class="section level2">
     <h2 id="format">Format<a class="anchor" aria-label="anchor" href="#format"></a></h2>
-    <p>A tibble with 263 rows and 5 columns:</p><dl><dt>obs</dt>
-<dd><p>Observation number. Type: numeric. Range: (1, 263).</p></dd>
+    <p>A tibble with 263 rows and 5 variables.</p>
+<dl><dt><code>obs</code></dt>
+<dd><p>Observation number. Type: integer.</p></dd>
 
-<dt>husbinc</dt>
-<dd><p>Husband's annual income in thousands of Canadian dollars.
-Type: numeric. Range: (1, 45). Mean approximately $14,760.</p></dd>
+<dt><code>husbinc</code></dt>
+<dd><p>Husband's income. Units: thousands of dollars. Type: integer. The sources give the unit only as $1,000 and do not name the currency (the survey is Canadian).</p></dd>
 
-<dt>region</dt>
-<dd><p>Canadian region of residence. Type: character.
-Levels: "Atlantic" = Atlantic provinces, "Quebec" = Quebec,
-"Ontario" = Ontario, "Prairie" = Prairie provinces, "BC" = British
-Columbia.</p></dd>
+<dt><code>region</code></dt>
+<dd><p>Region of residence. Values: Atlantic = Atlantic Canada; BC = British Columbia; Ontario = Ontario; Prairie = Prairie provinces; Quebec = Quebec. Type: character. Stored as text.</p></dd>
 
-<dt>workstat</dt>
-<dd><p>Work status (ordinal response variable). Type: numeric.
-Values: 0 = not working outside the home, 1 = working part-time,
-2 = working full-time. Ordered from lowest to highest labor
-force participation.</p></dd>
+<dt><code>workstat</code></dt>
+<dd><p>Wife's work status. Values: 0 = not working outside the home; 1 = part time; 2 = full time. Type: integer.</p></dd>
 
-<dt>chilpres</dt>
-<dd><p>Presence of children in the household. Type: numeric.
-Binary (0/1) where 1 = children present, 0 = no children present.</p></dd>
+<dt><code>chilpres</code></dt>
+<dd><p>Children present in the household. Values: 0 = absent; 1 = present. Type: integer.</p></dd>
 
 
-</dl></div>
+</dl><p>See <code>codebook("womenlf")</code> for this table as a data frame.</p>
+    </div>
     <div class="section level2">
     <h2 id="source">Source<a class="anchor" aria-label="anchor" href="#source"></a></h2>
-    <p>Fox, J. (2003). <em>Applied Regression Analysis and Generalized
-Linear Models</em> (2nd ed.). Sage. Based on data from the 1977 Canadian
-Survey of Consumer Finances.
-Original data file: <code>womenlf.dta</code></p>
+    <p>Fox, J. (2016). Applied regression analysis and generalized linear models (3rd ed.). Sage. Data: Social Change in Canada Project, York Institute for Social Research (1977). <a href="https://cran.r-project.org/package=carData" class="external-link">https://cran.r-project.org/package=carData</a></p>
+<p>Stata Press companion data of Rabe-Hesketh and Skrondal, via the UC Berkeley EDUC 275B course files; identical to carData::Womenlf on CRAN. Provenance: verified.</p>
     </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-    <p>This dataset is used in Chapter 13 (Models for Ordinal Responses) to
-illustrate ordinal logistic regression and the proportional odds model.
-The three-level ordered outcome (not working, part-time, full-time) is
-modeled using cumulative logit links. Key analyses include: fitting
-the proportional odds model with husband's income, region, and children
-present as predictors, interpreting cumulative odds ratios,
-testing the proportional odds assumption, and comparing ordinal logit
-versus ordinal probit specifications.</p>
-    </div>
+    <p>The outcome <code>workstat</code> has three ordered categories: 0 = not working
+outside the home (155 women), 1 = part time (42) and 2 = full time (66).
+<code>husbinc</code> is the husband's income in thousands of dollars, <code>chilpres</code> is
+1 when children are present in the household (184 women), and <code>region</code>
+is text with five values, which a model formula turns into a factor with
+Atlantic Canada as the reference level. <code>obs</code> is a row number, not a
+predictor. There are no missing values.</p>
+<p>Version 1.0.0 changes no values. Earlier documentation named the wrong
+source and edition: the data come from the Social Change in Canada
+Project, not from a Survey of Consumer Finances, and the book is Fox
+(2016, 3rd ed.).</p>
+<p><strong>Suggested analyses.</strong></p><ul><li><p>binary logistic regression of working at all (<code>workstat &gt; 0</code>) on
+husband's income and children;</p></li>
+<li><p>a proportional odds model for the three ordered categories, with a
+check of the proportional odds assumption;</p></li>
+<li><p>alternatives if that assumption fails: a multinomial logit, or two
+binary logits (working or not; full time or part time among women who
+work);</p></li>
+<li><p>an interaction between husband's income and the presence of children.</p></li>
+</ul></div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
-    <div class="dont-index"><p>A version of this dataset also appears as <code>Womenlf</code> in the
-<code>carData</code> package (GPL &gt;= 2).</p></div>
+    <div class="dont-index"><p><code><a href="https://rdrr.io/pkg/carData/man/Womenlf.html" class="external-link">carData::Womenlf</a></code> on CRAN holds the same 263 women in the same
+order, under other variable names and with work status, children and
+region as factors. <a href="satisfaction.html">satisfaction</a> has another ordinal outcome.
+<code><a href="codebook.html">codebook()</a></code> and <code><a href="list_datasets.html">list_datasets()</a></code>.</p></div>
     </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">womenlf</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">womenlf</span><span class="op">)</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">womenlf</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 6 × 5</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     obs husbinc region  workstat chilpres</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
@@ -126,13 +128,48 @@ versus ordinal probit specifications.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span>     4      23 Ontario        0        1</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span>     5      19 Ontario        0        1</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span>     6       7 Ontario        0        1</span>
-<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span><span class="va">womenlf</span><span class="op">$</span><span class="va">workstat</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span><span class="va">womenlf</span><span class="op">$</span><span class="va">workstat</span><span class="op">)</span>   <span class="co"># 0 = not working, 1 = part time, 2 = full time</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   0   1   2 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 155  42  66 </span>
-<span class="r-in"><span><span class="co"># Ordinal logistic regression (requires MASS package)</span></span></span>
-<span class="r-in"><span><span class="co"># MASS::polr(factor(workstat) ~ husbinc + chilpres, data = womenlf)</span></span></span>
 <span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># Working at all: binary logistic regression</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/stats/glm.html" class="external-link">glm</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/AsIs.html" class="external-link">I</a></span><span class="op">(</span><span class="va">workstat</span> <span class="op">&gt;</span> <span class="fl">0</span><span class="op">)</span> <span class="op">~</span> <span class="va">husbinc</span> <span class="op">+</span> <span class="va">chilpres</span>, family <span class="op">=</span> <span class="va">binomial</span>, data <span class="op">=</span> <span class="va">womenlf</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Call:  glm(formula = I(workstat &gt; 0) ~ husbinc + chilpres, family = binomial, </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     data = womenlf)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Coefficients:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> (Intercept)      husbinc     chilpres  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     1.33583     -0.04231     -1.57565  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Degrees of Freedom: 262 Total (i.e. Null);  260 Residual</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Null Deviance:	    356.2 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Residual Deviance: 319.7 	AIC: 325.7</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># Proportional odds model (requires MASS; summary() reports t-values</span></span></span>
+<span class="r-in"><span><span class="co"># without p-values)</span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/ns-load.html" class="external-link">requireNamespace</a></span><span class="op">(</span><span class="st">"MASS"</span>, quietly <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="va">fit_ord</span> <span class="op">&lt;-</span> <span class="fu">MASS</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/MASS/man/polr.html" class="external-link">polr</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">workstat</span><span class="op">)</span> <span class="op">~</span> <span class="va">husbinc</span> <span class="op">+</span> <span class="va">chilpres</span>,</span></span>
+<span class="r-in"><span>                        data <span class="op">=</span> <span class="va">womenlf</span>, Hess <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">fit_ord</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Call:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> MASS::polr(formula = factor(workstat) ~ husbinc + chilpres, data = womenlf, </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     Hess = TRUE)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Coefficients:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>            Value Std. Error t value</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> husbinc  -0.0539    0.01949  -2.766</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> chilpres -1.9720    0.28695  -6.872</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Intercepts:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     Value   Std. Error t value</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 0|1 -1.8520  0.3863    -4.7943</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1|2 -0.9409  0.3699    -2.5435</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Residual Deviance: 441.663 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> AIC: 449.663 </span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

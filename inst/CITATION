@@ -1,14 +1,10 @@
+year <- if (!is.null(meta$Date)) sub("-.*", "", meta$Date) else format(Sys.Date(), "%Y")
+
 bibentry(
-  bibtype  = "Manual",
-  title    = "regdatasets: Datasets for Teaching Regression Analysis",
-  author   = person("JoonHo", "Lee"),
-  year     = "2026",
-  note     = "R package version 0.2.0",
-  url      = "https://github.com/joonho112/regdatasets",
-  textVersion = paste(
-    "Lee, J. (2026).",
-    "regdatasets: Datasets for Teaching Regression Analysis.",
-    "R package version 0.2.0.",
-    "https://github.com/joonho112/regdatasets"
-  )
+  bibtype = "Manual",
+  title   = "{regdatasets}: Datasets for Teaching Regression Analysis",
+  author  = person("JoonHo", "Lee", comment = c(ORCID = "0009-0006-4019-8703")),
+  year    = year,
+  note    = sprintf("R package version %s", meta$Version),
+  url     = "https://joonho112.github.io/regdatasets/"
 )

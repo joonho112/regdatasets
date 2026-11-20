@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
@@ -12,15 +12,15 @@
 <link rel="icon" sizes="any" href="favicon.ico">
 <link rel="manifest" href="site.webmanifest">
 <script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
-<script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="deps/Source_Sans_Pro-0.4.10/font.css" rel="stylesheet">
+<link href="deps/bootstrap-5.3.8/bootstrap.min.css" rel="stylesheet">
+<script src="deps/bootstrap-5.3.8/bootstrap.bundle.min.js"></script><link href="deps/Source_Sans_Pro-0.4.10/font.css" rel="stylesheet">
 <link href="deps/Fira_Code-0.4.10/font.css" rel="stylesheet">
 <link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="regdatasets: Datasets for Teaching Regression Analysis">
-<meta name="description" content="A curated collection of 24 datasets for teaching introductory and intermediate regression analysis in education and social science contexts.
+<meta name="description" content="Twenty-two reproducibly built, cleaned, and documented datasets for teaching introductory and intermediate regression analysis in education and the social sciences.
 ">
-<meta property="og:description" content="A curated collection of 24 datasets for teaching introductory and intermediate regression analysis in education and social science contexts.
+<meta property="og:description" content="Twenty-two reproducibly built, cleaned, and documented datasets for teaching introductory and intermediate regression analysis in education and the social sciences.
 ">
 <meta property="og:image" content="https://joonho112.github.io/regdatasets/logo.png">
 </head>
@@ -32,7 +32,7 @@
 
     <a class="navbar-brand me-2" href="index.html">regdatasets</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,12 +42,13 @@
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto">
 <li class="active nav-item"><a class="nav-link" href="index.html">Home</a></li>
-<li class="nav-item"><a class="nav-link" href="reference/index.html">Datasets</a></li>
+<li class="nav-item"><a class="nav-link" href="reference/index.html">Reference</a></li>
 <li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-guides" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Guides</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-guides">
 <li><a class="dropdown-item" href="articles/getting-started.html">Getting Started</a></li>
     <li><a class="dropdown-item" href="articles/dataset-overview.html">Dataset Overview</a></li>
+    <li><a class="dropdown-item" href="articles/data-provenance.html">How the Data Are Built</a></li>
   </ul>
 </li>
 <li class="nav-item"><a class="nav-link" href="news/index.html">Changelog</a></li>
@@ -71,320 +72,242 @@
 </div>
 <!-- badges: start -->
 
-<p><strong>regdatasets</strong> provides a curated collection of 24 datasets for teaching introductory and intermediate regression analysis in education and social science contexts.</p>
+<p><strong>regdatasets</strong> provides 22 datasets for teaching introductory and intermediate regression analysis in education and the social sciences: simple and multiple regression, ANOVA and ANCOVA, interactions, model building and diagnostics, logistic regression, latent-response models and ordinal models.</p>
+<p>The data come from published studies, textbooks and public archives. Every dataset is rebuilt reproducibly from its source, cleaned of missing-value codes, and documented variable by variable.</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>Install the development version from GitHub:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># install.packages("devtools")</span></span>
-<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"joonho112/regdatasets"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># install.packages("remotes")</span></span>
+<span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"joonho112/regdatasets"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># or a fixed release (recommended for a course, so results never change):</span></span>
+<span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"joonho112/regdatasets@v1.0.0"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="datasets">Datasets<a class="anchor" aria-label="anchor" href="#datasets"></a>
-</h2>
-<table class="table">
-<colgroup>
-<col width="31%">
-<col width="24%">
-<col width="20%">
-<col width="24%">
-</colgroup>
-<thead><tr>
-<th align="left">Dataset</th>
-<th align="right">N</th>
-<th align="right">Variables</th>
-<th align="left">Topic</th>
-</tr></thead>
-<tbody>
-<tr>
-<td align="left"><code>gcse</code></td>
-<td align="right">4,059</td>
-<td align="right">9</td>
-<td align="left">GCSE exam scores and London Reading Test (Chapters 1–2, 5)</td>
-</tr>
-<tr>
-<td align="left"><code>crime</code></td>
-<td align="right">67</td>
-<td align="right">5</td>
-<td align="left">Florida county crime rates (Chapters 4–5)</td>
-</tr>
-<tr>
-<td align="left"><code>instruction</code></td>
-<td align="right">1,190</td>
-<td align="right">12</td>
-<td align="left">Math achievement gains, multilevel (Chapters 2–3)</td>
-</tr>
-<tr>
-<td align="left"><code>reading</code></td>
-<td align="right">66</td>
-<td align="right">8</td>
-<td align="left">Three-group reading instruction experiment (Chapter 3)</td>
-</tr>
-<tr>
-<td align="left"><code>pisa2000</code></td>
-<td align="right">4,528</td>
-<td align="right">15</td>
-<td align="left">OECD PISA reading scores, 3 countries (Chapter 1)</td>
-</tr>
-<tr>
-<td align="left"><code>individuals</code></td>
-<td align="right">55,899</td>
-<td align="right">6</td>
-<td align="left">BLS wage data by gender and sector (Chapter 5)</td>
-</tr>
-<tr>
-<td align="left"><code>faculty</code></td>
-<td align="right">514</td>
-<td align="right">10</td>
-<td align="left">Faculty salaries and experience (Chapter 5)</td>
-</tr>
-<tr>
-<td align="left"><code>nels_data</code></td>
-<td align="right">2,000</td>
-<td align="right">299</td>
-<td align="left">National Education Longitudinal Study (Chapters 7–8)</td>
-</tr>
-<tr>
-<td align="left"><code>hsbs1</code></td>
-<td align="right">350</td>
-<td align="right">16</td>
-<td align="left">High School and Beyond survey (Chapter 8)</td>
-</tr>
-<tr>
-<td align="left"><code>gss_1</code></td>
-<td align="right">2,832</td>
-<td align="right">16</td>
-<td align="left">General Social Survey 1982/1994 (Chapter 9)</td>
-</tr>
-<tr>
-<td align="left"><code>berkeley</code></td>
-<td align="right">3,593</td>
-<td align="right">3</td>
-<td align="left">UC Berkeley admissions, Simpson’s paradox (Chapter 10)</td>
-</tr>
-<tr>
-<td align="left"><code>penalty</code></td>
-<td align="right">674</td>
-<td align="right">3</td>
-<td align="left">Death penalty sentencing by race (Chapter 11)</td>
-</tr>
-<tr>
-<td align="left"><code>titanic</code></td>
-<td align="right">1,309</td>
-<td align="right">6</td>
-<td align="left">Titanic passenger survival (Chapters 9–11)</td>
-</tr>
-<tr>
-<td align="left"><code>womenlf</code></td>
-<td align="right">263</td>
-<td align="right">5</td>
-<td align="left">Women’s labor force participation (Chapter 13)</td>
-</tr>
-<tr>
-<td align="left"><code>satisfaction</code></td>
-<td align="right">110</td>
-<td align="right">3</td>
-<td align="left">Ordinal satisfaction survey (Chapter 13)</td>
-</tr>
-<tr>
-<td align="left"><code>alcohol1_pp</code></td>
-<td align="right">246</td>
-<td align="right">9</td>
-<td align="left">Adolescent alcohol use, person-period (Chapter 13)</td>
-</tr>
-<tr>
-<td align="left"><code>lambert</code></td>
-<td align="right">492</td>
-<td align="right">109</td>
-<td align="left">Canadian longitudinal child study (Chapter 12)</td>
-</tr>
-<tr>
-<td align="left"><code>civic_ed</code></td>
-<td align="right">794</td>
-<td align="right">237</td>
-<td align="left">Civic education pre/post study (Chapters 1, 7)</td>
-</tr>
-<tr>
-<td align="left"><code>disc</code></td>
-<td align="right">2,000</td>
-<td align="right">15</td>
-<td align="left">NELS:88 discipline study (Chapters 9–10)</td>
-</tr>
-<tr>
-<td align="left"><code>disc2</code></td>
-<td align="right">2,000</td>
-<td align="right">15</td>
-<td align="left">NELS:88 with achievement scores (Chapters 10–11)</td>
-</tr>
-<tr>
-<td align="left"><code>berk_sub</code></td>
-<td align="right">1,169</td>
-<td align="right">3</td>
-<td align="left">Berkeley admissions subset (Chapter 10)</td>
-</tr>
-<tr>
-<td align="left"><code>hsb_sub</code></td>
-<td align="right">188</td>
-<td align="right">7</td>
-<td align="left">High School and Beyond subset (Chapter 7)</td>
-</tr>
-<tr>
-<td align="left"><code>classdata_07</code></td>
-<td align="right">44</td>
-<td align="right">12</td>
-<td align="left">Classroom survey data (Chapter 1)</td>
-</tr>
-<tr>
-<td align="left"><code>grades</code></td>
-<td align="right">198</td>
-<td align="right">8</td>
-<td align="left">Essay grades and writing features (Chapter 12)</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section level2">
-<h2 id="quick-start">Quick Start<a class="anchor" aria-label="anchor" href="#quick-start"></a>
+<h2 id="find-a-dataset">Find a dataset<a class="anchor" aria-label="anchor" href="#find-a-dataset"></a>
 </h2>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://joonho112.github.io/regdatasets/">regdatasets</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># --- Simple linear regression ---</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">gcse</span><span class="op">)</span></span>
-<span><span class="va">model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">gcse</span> <span class="op">~</span> <span class="va">lrt</span>, data <span class="op">=</span> <span class="va">gcse</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">model</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># --- Logistic regression: Simpson's paradox ---</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">berkeley</span><span class="op">)</span></span>
-<span><span class="co"># Unadjusted: gender appears to matter</span></span>
-<span><span class="va">crude</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/glm.html" class="external-link">glm</a></span><span class="op">(</span><span class="va">admitted</span> <span class="op">~</span> <span class="va">female</span>, family <span class="op">=</span> <span class="va">binomial</span>, data <span class="op">=</span> <span class="va">berkeley</span><span class="op">)</span></span>
-<span><span class="co"># Adjusted: gender effect disappears after controlling for department</span></span>
-<span><span class="va">adjusted</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/glm.html" class="external-link">glm</a></span><span class="op">(</span><span class="va">admitted</span> <span class="op">~</span> <span class="va">female</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">department</span><span class="op">)</span>,</span>
-<span>                family <span class="op">=</span> <span class="va">binomial</span>, data <span class="op">=</span> <span class="va">berkeley</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/Log.html" class="external-link">exp</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/coef.html" class="external-link">coef</a></span><span class="op">(</span><span class="va">crude</span><span class="op">)</span><span class="op">[</span><span class="st">"female"</span><span class="op">]</span><span class="op">)</span>    <span class="co"># Crude OR ~ 0.64</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/Log.html" class="external-link">exp</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/coef.html" class="external-link">coef</a></span><span class="op">(</span><span class="va">adjusted</span><span class="op">)</span><span class="op">[</span><span class="st">"female"</span><span class="op">]</span><span class="op">)</span> <span class="co"># Adjusted OR ~ 0.97</span></span>
-<span></span>
-<span><span class="co"># --- One-way ANOVA ---</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">reading</span><span class="op">)</span></span>
-<span><span class="va">model_anova</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">post1</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">group</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">reading</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/stats/anova.html" class="external-link">anova</a></span><span class="op">(</span><span class="va">model_anova</span><span class="op">)</span></span></code></pre></div>
-</div>
-<div class="section level2">
-<h2 id="works-well-with">Works Well With<a class="anchor" aria-label="anchor" href="#works-well-with"></a>
-</h2>
-<p><strong>regdatasets</strong> is designed to work seamlessly with modern R workflows:</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org" class="external-link">tidyverse</a></span><span class="op">)</span>   <span class="co"># dplyr, ggplot2, tibble, ...</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://easystats.github.io/easystats/" class="external-link">easystats</a></span><span class="op">)</span>   <span class="co"># parameters, performance, effectsize, see, ...</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ddsjoberg/gtsummary" class="external-link">gtsummary</a></span><span class="op">)</span>   <span class="co"># publication-ready tables</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://marginaleffects.com/" class="external-link">marginaleffects</a></span><span class="op">)</span> <span class="co"># predictions, comparisons, slopes</span></span></code></pre></div>
-<p>Example using the <strong>easystats</strong> and <strong>marginaleffects</strong> ecosystem:</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://joonho112.github.io/regdatasets/">regdatasets</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://easystats.github.io/easystats/" class="external-link">easystats</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://marginaleffects.com/" class="external-link">marginaleffects</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Fit model</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">gcse</span><span class="op">)</span></span>
-<span><span class="va">model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">gcse</span> <span class="op">~</span> <span class="va">lrt</span> <span class="op">*</span> <span class="va">school</span>, data <span class="op">=</span> <span class="va">gcse</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># easystats: model summary and diagnostics</span></span>
-<span><span class="fu">model_parameters</span><span class="op">(</span><span class="va">model</span><span class="op">)</span></span>
-<span><span class="fu">check_model</span><span class="op">(</span><span class="va">model</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># marginaleffects: predicted values and slopes</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/marginaleffects/man/plot_predictions.html" class="external-link">plot_predictions</a></span><span class="op">(</span><span class="va">model</span>, condition <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"lrt"</span>, <span class="st">"school"</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/marginaleffects/man/slopes.html" class="external-link">avg_slopes</a></span><span class="op">(</span><span class="va">model</span>, variables <span class="op">=</span> <span class="st">"lrt"</span>, by <span class="op">=</span> <span class="st">"school"</span><span class="op">)</span></span></code></pre></div>
-</div>
-<div class="section level2">
-<h2 id="course-coverage">Course Coverage<a class="anchor" aria-label="anchor" href="#course-coverage"></a>
-</h2>
-<table style="width:100%;" class="table">
+<span><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html" class="external-link">kable</a></span><span class="op">(</span><span class="fu"><a href="reference/list_datasets.html">list_datasets</a></span><span class="op">(</span><span class="op">)</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"dataset"</span>, <span class="st">"title"</span>, <span class="st">"rows"</span>, <span class="st">"cols"</span>, <span class="st">"topics"</span><span class="op">)</span><span class="op">]</span><span class="op">)</span></span></code></pre></div>
+<table class="table">
 <colgroup>
-<col width="37%">
-<col width="25%">
-<col width="37%">
+<col width="20%">
+<col width="20%">
+<col width="20%">
+<col width="20%">
+<col width="20%">
 </colgroup>
 <thead><tr>
-<th align="left">Chapters</th>
-<th align="left">Topic</th>
-<th align="left">Datasets</th>
+<th align="left">dataset</th>
+<th align="left">title</th>
+<th align="right">rows</th>
+<th align="right">cols</th>
+<th align="left">topics</th>
 </tr></thead>
 <tbody>
 <tr>
-<td align="left">1–2</td>
-<td align="left">SLR, ANCOVA</td>
-<td align="left">
-<code>gcse</code>, <code>civic_ed</code>, <code>classdata_07</code>, <code>pisa2000</code>
-</td>
+<td align="left">alcohol1_pp</td>
+<td align="left">Adolescent alcohol use (person-period data)</td>
+<td align="right">246</td>
+<td align="right">9</td>
+<td align="left">multilevel-longitudinal</td>
 </tr>
 <tr>
-<td align="left">3</td>
-<td align="left">One-way ANOVA</td>
-<td align="left">
-<code>reading</code>, <code>instruction</code>
-</td>
+<td align="left">berk_sub</td>
+<td align="left">Berkeley graduate admissions: two departments</td>
+<td align="right">1169</td>
+<td align="right">3</td>
+<td align="left">logistic</td>
 </tr>
 <tr>
-<td align="left">4</td>
-<td align="left">Continuous predictors</td>
-<td align="left"><code>crime</code></td>
+<td align="left">berkeley</td>
+<td align="left">Berkeley graduate admissions: five departments</td>
+<td align="right">3593</td>
+<td align="right">3</td>
+<td align="left">logistic</td>
 </tr>
 <tr>
-<td align="left">5</td>
-<td align="left">Interactions</td>
-<td align="left">
-<code>gcse</code>, <code>individuals</code>, <code>faculty</code>, <code>crime</code>
-</td>
+<td align="left">classdata_07</td>
+<td align="left">Simulated class survey</td>
+<td align="right">44</td>
+<td align="right">12</td>
+<td align="left">simple-regression</td>
 </tr>
 <tr>
-<td align="left">6</td>
-<td align="left">Nonlinear relationships</td>
-<td align="left">
-<code>nels_data</code>, <code>crime</code>
-</td>
+<td align="left">crime</td>
+<td align="left">Florida county crime rates</td>
+<td align="right">67</td>
+<td align="right">5</td>
+<td align="left">continuous-predictors, nonlinear</td>
 </tr>
 <tr>
-<td align="left">7–8</td>
-<td align="left">Model building &amp; diagnostics</td>
-<td align="left">
-<code>nels_data</code>, <code>hsbs1</code>, <code>hsb_sub</code>
-</td>
+<td align="left">disc</td>
+<td align="left">School discipline: NELS:88 original items</td>
+<td align="right">2000</td>
+<td align="right">15</td>
+<td align="left">logistic, ordinal</td>
 </tr>
 <tr>
-<td align="left">9–11</td>
-<td align="left">Logistic regression</td>
-<td align="left">
-<code>gss_1</code>, <code>berkeley</code>, <code>penalty</code>, <code>titanic</code>, <code>disc</code>
-</td>
+<td align="left">disc2</td>
+<td align="left">School discipline: NELS:88 with SES and test scores</td>
+<td align="right">2000</td>
+<td align="right">15</td>
+<td align="left">logistic, ordinal</td>
 </tr>
 <tr>
-<td align="left">12</td>
-<td align="left">Latent response &amp; GLM</td>
-<td align="left">
-<code>lambert</code>, <code>grades</code>
-</td>
+<td align="left">faculty</td>
+<td align="left">Faculty salaries</td>
+<td align="right">514</td>
+<td align="right">10</td>
+<td align="left">interactions, continuous-predictors</td>
 </tr>
 <tr>
-<td align="left">13</td>
-<td align="left">Ordinal models</td>
-<td align="left">
-<code>womenlf</code>, <code>satisfaction</code>, <code>alcohol1_pp</code>
-</td>
+<td align="left">gcse</td>
+<td align="left">GCSE and London Reading Test scores</td>
+<td align="right">4059</td>
+<td align="right">5</td>
+<td align="left">simple-regression, ancova, interactions, nonlinear, model-building, diagnostics, multilevel-longitudinal</td>
+</tr>
+<tr>
+<td align="left">grades</td>
+<td align="left">Essay grades and text features</td>
+<td align="right">198</td>
+<td align="right">8</td>
+<td align="left">ordinal, glm-latent</td>
+</tr>
+<tr>
+<td align="left">gss_1</td>
+<td align="left">General Social Survey 1998</td>
+<td align="right">2832</td>
+<td align="right">16</td>
+<td align="left">logistic</td>
+</tr>
+<tr>
+<td align="left">hsb_sub</td>
+<td align="left">High School and Beyond: five schools</td>
+<td align="right">188</td>
+<td align="right">7</td>
+<td align="left">interactions, model-building, diagnostics, multilevel-longitudinal</td>
+</tr>
+<tr>
+<td align="left">hsbs1</td>
+<td align="left">High School and Beyond: 350 students</td>
+<td align="right">350</td>
+<td align="right">16</td>
+<td align="left">diagnostics, model-building</td>
+</tr>
+<tr>
+<td align="left">individuals</td>
+<td align="left">Earnings, education and job sector (CPS 2000)</td>
+<td align="right">55899</td>
+<td align="right">6</td>
+<td align="left">interactions, anova</td>
+</tr>
+<tr>
+<td align="left">instruction</td>
+<td align="left">Teachers’ math knowledge and first-grade math gains</td>
+<td align="right">1190</td>
+<td align="right">12</td>
+<td align="left">anova, simple-regression, multilevel-longitudinal</td>
+</tr>
+<tr>
+<td align="left">nels_data</td>
+<td align="left">NELS:88 base year and first follow-up (2,000 students)</td>
+<td align="right">2000</td>
+<td align="right">299</td>
+<td align="left">model-building, diagnostics</td>
+</tr>
+<tr>
+<td align="left">penalty</td>
+<td align="left">Death-penalty verdicts in Florida</td>
+<td align="right">674</td>
+<td align="right">3</td>
+<td align="left">logistic, diagnostics</td>
+</tr>
+<tr>
+<td align="left">pisa2000</td>
+<td align="left">PISA 2000 reading: UK, Germany and USA</td>
+<td align="right">4528</td>
+<td align="right">15</td>
+<td align="left">anova, interactions, simple-regression, logistic</td>
+</tr>
+<tr>
+<td align="left">reading</td>
+<td align="left">Reading comprehension experiment</td>
+<td align="right">66</td>
+<td align="right">8</td>
+<td align="left">anova, ancova</td>
+</tr>
+<tr>
+<td align="left">satisfaction</td>
+<td align="left">Job satisfaction by income and gender</td>
+<td align="right">110</td>
+<td align="right">3</td>
+<td align="left">ordinal</td>
+</tr>
+<tr>
+<td align="left">titanic</td>
+<td align="left">Titanic passenger survival</td>
+<td align="right">1309</td>
+<td align="right">6</td>
+<td align="left">logistic, glm-latent</td>
+</tr>
+<tr>
+<td align="left">womenlf</td>
+<td align="left">Canadian women’s labour-force participation</td>
+<td align="right">263</td>
+<td align="right">5</td>
+<td align="left">ordinal, logistic</td>
 </tr>
 </tbody>
 </table>
+<p>Filter by topic, for example <code>list_datasets(topic = "logistic")</code>.</p>
 </div>
 <div class="section level2">
-<h2 id="companion-textbook">Companion Textbook<a class="anchor" aria-label="anchor" href="#companion-textbook"></a>
+<h2 id="understand-its-variables">Understand its variables<a class="anchor" aria-label="anchor" href="#understand-its-variables"></a>
 </h2>
-<p>This package accompanies <a href="https://github.com/joonho112/regression-lecture-notes" class="external-link">Regression Lecture Notes</a>, a Quarto-based interactive textbook for graduate-level regression analysis in education and social science.</p>
+<p>Each dataset has a help page (for example <code><a href="reference/titanic.html">?titanic</a></code>). The same information is available as a data frame:</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="reference/codebook.html">codebook</a></span><span class="op">(</span><span class="st">"titanic"</span><span class="op">)</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"variable"</span>, <span class="st">"label"</span>, <span class="st">"values"</span><span class="op">)</span><span class="op">]</span></span>
+<span><span class="co">#&gt; # A tibble: 6 × 3</span></span>
+<span><span class="co">#&gt;   variable label               values                                           </span></span>
+<span><span class="co">#&gt;   &lt;chr&gt;    &lt;chr&gt;               &lt;chr&gt;                                            </span></span>
+<span><span class="co">#&gt; 1 pclass   Passenger class     1 = first class; 2 = second class; 3 = third cla…</span></span>
+<span><span class="co">#&gt; 2 survived Survived            0 = died; 1 = survived                           </span></span>
+<span><span class="co">#&gt; 3 age      Age                 &lt;NA&gt;                                             </span></span>
+<span><span class="co">#&gt; 4 fare     Passenger fare      &lt;NA&gt;                                             </span></span>
+<span><span class="co">#&gt; 5 embarked Port of embarkation C = Cherbourg; Q = Queenstown; S = Southampton   </span></span>
+<span><span class="co">#&gt; 6 sex      Sex                 0 = male; 1 = female</span></span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="license">License<a class="anchor" aria-label="anchor" href="#license"></a>
+<h2 id="fit-a-model">Fit a model<a class="anchor" aria-label="anchor" href="#fit-a-model"></a>
 </h2>
-<p>MIT</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">fit</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/glm.html" class="external-link">glm</a></span><span class="op">(</span><span class="va">survived</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">pclass</span><span class="op">)</span> <span class="op">+</span> <span class="va">sex</span> <span class="op">+</span> <span class="va">age</span>, data <span class="op">=</span> <span class="va">titanic</span>, family <span class="op">=</span> <span class="va">binomial</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">fit</span><span class="op">)</span><span class="op">$</span><span class="va">coefficients</span>, <span class="fl">3</span><span class="op">)</span></span>
+<span><span class="co">#&gt;                 Estimate Std. Error z value Pr(&gt;|z|)</span></span>
+<span><span class="co">#&gt; (Intercept)        1.024      0.296   3.457    0.001</span></span>
+<span><span class="co">#&gt; factor(pclass)2   -1.281      0.226  -5.678    0.000</span></span>
+<span><span class="co">#&gt; factor(pclass)3   -2.290      0.226 -10.140    0.000</span></span>
+<span><span class="co">#&gt; sex                2.498      0.166  15.044    0.000</span></span>
+<span><span class="co">#&gt; age               -0.034      0.006  -5.433    0.000</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="how-the-data-are-built">How the data are built<a class="anchor" aria-label="anchor" href="#how-the-data-are-built"></a>
+</h2>
+<p>The files in <code>data/</code> are build outputs and are never edited by hand. The script <code>data-raw/build_all.R</code> rebuilds every dataset from checksummed source files, one recipe per dataset, and refuses to save data that break the data contract in <code>data-raw/CONTRACT.md</code>. The folder <code>data-raw/audit/</code> records every difference from the previous version and the decision that approved it. See <a href="https://github.com/joonho112/regdatasets/blob/main/NEWS.md" class="external-link">NEWS</a> for what changed in version 1.0.0.</p>
+</div>
+<div class="section level2">
+<h2 id="sources-and-licensing">Sources and licensing<a class="anchor" aria-label="anchor" href="#sources-and-licensing"></a>
+</h2>
+<p>The code and documentation are released under the MIT license. The datasets come from the published sources cited on each help page and in <a href="https://github.com/joonho112/regdatasets/blob/main/LICENSE.note" class="external-link">LICENSE.note</a>, which also records why each one may be redistributed. Most datasets reached this package as teaching extracts used in the course EDUC 275B at the Graduate School of Education, University of California, Berkeley.</p>
+</div>
+<div class="section level2">
+<h2 id="citation">Citation<a class="anchor" aria-label="anchor" href="#citation"></a>
+</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>Lee <span class="fu">J</span> (<span class="dv">2026</span>). _regdatasets<span class="sc">:</span> Datasets <span class="cf">for</span> Teaching Regression Analysis_.</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>R package version <span class="dv">1</span>.<span class="fl">0.0</span>, <span class="sc">&lt;</span>https<span class="sc">:</span><span class="er">//</span>joonho112.github.io<span class="sc">/</span>regdatasets<span class="sc">/</span><span class="er">&gt;</span>.</span></code></pre></div>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="links">
@@ -422,8 +345,7 @@
 <h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
 <li><a href="https://github.com/joonho112/regdatasets/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/joonho112/regdatasets/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
-<li><a href="https://opensource.org/licenses/MIT" class="external-link"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"></a></li>
-<li><a href="https://lifecycle.r-lib.org/articles/stages.html#experimental" class="external-link"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="Lifecycle: experimental"></a></li>
+<li><a href="https://lifecycle.r-lib.org/articles/stages.html#stable" class="external-link"><img src="https://img.shields.io/badge/lifecycle-stable-brightgreen.svg" alt="Lifecycle: stable"></a></li>
 </ul>
 </div>
 

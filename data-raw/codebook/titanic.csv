@@ -1,0 +1,7 @@
+"dataset","variable","position","type","label","values","units","group","recoded_to_na","notes","status"
+"titanic","pclass",1,"integer","Passenger class","1 = first class; 2 = second class; 3 = third class","","","","A proxy for socioeconomic class.","curated"
+"titanic","survived",2,"integer","Survived","0 = died; 1 = survived","","","","","curated"
+"titanic","age",3,"double","Age","","years","","","Fractional for infants under 1 year. 263 passengers (20%) have no age.","curated"
+"titanic","fare",4,"double","Passenger fare","","pre-1970 British pounds","","","17 passengers have a fare of 0 and 1 is NA.","curated"
+"titanic","embarked",5,"character","Port of embarkation","C = Cherbourg; Q = Queenstown; S = Southampton","","","","Corrected from the titanic3 source in v1.0.0 (355 passengers were wrong in the course file). 2 passengers are NA.","curated"
+"titanic","sex",6,"integer","Sex","0 = male; 1 = female","","","","","curated"

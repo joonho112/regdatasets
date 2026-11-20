@@ -1,5 +1,7 @@
 url: https://joonho112.github.io/regdatasets/
 
+llm-docs: false
+
 template:
   bootstrap: 5
   bootswatch: cosmo
@@ -12,8 +14,9 @@ template:
 home:
   title: "regdatasets: Datasets for Teaching Regression Analysis"
   description: >
-    A curated collection of 24 datasets for teaching introductory and
-    intermediate regression analysis in education and social science contexts.
+    Twenty-two reproducibly built, cleaned, and documented datasets for
+    teaching introductory and intermediate regression analysis in education
+    and the social sciences.
 
 navbar:
   structure:
@@ -24,7 +27,7 @@ navbar:
       text: Home
       href: index.html
     reference:
-      text: Datasets
+      text: Reference
       href: reference/index.html
     articles:
       text: Guides
@@ -33,6 +36,8 @@ navbar:
           href: articles/getting-started.html
         - text: Dataset Overview
           href: articles/dataset-overview.html
+        - text: How the Data Are Built
+          href: articles/data-provenance.html
     news:
       text: Changelog
       href: news/index.html
@@ -41,90 +46,143 @@ navbar:
       href: https://github.com/joonho112/regdatasets
       aria-label: GitHub
 
+articles:
+  - title: "Guides"
+    navbar: ~
+    contents:
+      - getting-started
+      - dataset-overview
+      - articles/data-provenance
+
 reference:
-  - title: "Simple Linear Regression & ANCOVA (Chapters 1–2)"
+  - title: "Functions & Package"
     desc: >
-      Datasets for introducing simple linear regression, ANCOVA, and
-      the fundamental concepts of controlling for covariates.
-    contents:
-      - gcse
-      - classdata_07
-      - pisa2000
-      - civic_ed
-
-  - title: "One-way ANOVA (Chapter 3)"
-    desc: >
-      Datasets for categorical predictors, dummy variable coding,
-      and group comparisons via ANOVA as a special case of regression.
-    contents:
-      - reading
-      - instruction
-
-  - title: "Multiple Regression: Continuous Predictors (Chapter 4)"
-    desc: >
-      Datasets for partial regression, standardized coefficients, and
-      the confounding/sign-reversal phenomenon.
-    contents:
-      - crime
-
-  - title: "Interactions (Chapter 5)"
-    desc: >
-      Datasets for interaction effects between dummy variables,
-      continuous and dummy variables, and two continuous predictors.
-    contents:
-      - individuals
-      - faculty
-
-  - title: "Nonlinear Relationships & Model Building (Chapters 6–7)"
-    desc: >
-      Datasets for log transformations, polynomial regression, and
-      model selection strategies.
-    contents:
-      - nels_data
-      - hsb_sub
-
-  - title: "Model Diagnostics (Chapter 8)"
-    desc: >
-      Datasets for residual analysis, normality checks, influence
-      diagnostics, and collinearity assessment.
-    contents:
-      - hsbs1
-
-  - title: "Logistic Regression (Chapters 9–11)"
-    desc: >
-      Datasets for binary outcomes, odds ratios, Simpson's paradox,
-      maximum likelihood estimation, and model fit diagnostics.
-    contents:
-      - gss_1
-      - berkeley
-      - berk_sub
-      - penalty
-      - titanic
-      - disc
-      - disc2
-
-  - title: "Latent Response & GLM (Chapter 12)"
-    desc: >
-      Datasets for latent variable formulations, probit vs. logit
-      models, and the generalized linear model framework.
-    contents:
-      - lambert
-      - grades
-
-  - title: "Ordinal Response Models (Chapter 13)"
-    desc: >
-      Datasets for ordinal logistic/probit regression, threshold
-      models, and the proportional odds assumption.
-    contents:
-      - womenlf
-      - satisfaction
-      - alcohol1_pp
-
-  - title: "Utility Functions"
-    desc: >
-      Helper functions for exploring the package.
+      Explore the registry, browse variable codebooks, and view package
+      documentation.
     contents:
       - list_datasets
+      - codebook
+      - regdatasets-package
+
+  - title: "Simple Regression"
+    desc: >
+      Datasets for introductory simple linear regression and comparing two
+      groups with a dummy predictor (`simple-regression`).
+    contents:
+      - classdata_07
+      - gcse
+      - instruction
+      - pisa2000
+
+  - title: "ANCOVA"
+    desc: >
+      Datasets for comparing groups while controlling for a continuous
+      covariate or pretest score (`ancova`).
+    contents:
+      - gcse
+      - reading
+
+  - title: "ANOVA & Categorical Predictors"
+    desc: >
+      Datasets for categorical predictors, dummy or effect coding, and
+      one-way or two-way ANOVA as regression (`anova`).
+    contents:
+      - individuals
+      - instruction
+      - pisa2000
+      - reading
+
+  - title: "Continuous Predictors & Confounding"
+    desc: >
+      Datasets for multiple regression with continuous predictors, partial
+      relationships, and confounding (`continuous-predictors`).
+    contents:
+      - crime
+      - faculty
+
+  - title: "Interactions"
+    desc: >
+      Datasets for dummy-by-dummy, dummy-by-continuous, and
+      continuous-by-continuous interaction models (`interactions`).
+    contents:
+      - faculty
+      - gcse
+      - hsb_sub
+      - individuals
+      - pisa2000
+
+  - title: "Nonlinear Relationships"
+    desc: >
+      Datasets for polynomial terms, log transformations, and nonlinear
+      patterns (`nonlinear`).
+    contents:
+      - crime
+      - gcse
+
+  - title: "Model Building"
+    desc: >
+      Datasets for variable selection, nested model comparisons, and
+      working with wide survey data (`model-building`).
+    contents:
+      - gcse
+      - hsb_sub
+      - hsbs1
+      - nels_data
+
+  - title: "Diagnostics"
+    desc: >
+      Datasets for residual plots, leverage, influence measures,
+      collinearity, and goodness-of-fit checks (`diagnostics`).
+    contents:
+      - gcse
+      - hsb_sub
+      - hsbs1
+      - nels_data
+      - penalty
+
+  - title: "Logistic Regression"
+    desc: >
+      Datasets for binary outcomes, odds ratios, Simpson's paradox, and
+      maximum likelihood estimation (`logistic`).
+    contents:
+      - berk_sub
+      - berkeley
+      - disc
+      - disc2
+      - gss_1
+      - penalty
+      - pisa2000
+      - titanic
+      - womenlf
+
+  - title: "Latent Response & GLM"
+    desc: >
+      Datasets for probit versus logit links and the latent-variable
+      formulation of generalized linear models (`glm-latent`).
+    contents:
+      - grades
+      - titanic
+
+  - title: "Ordinal Response Models"
+    desc: >
+      Datasets for ordered categorical outcomes, proportional odds models,
+      and threshold interpretations (`ordinal`).
+    contents:
+      - disc
+      - disc2
+      - grades
+      - satisfaction
+      - womenlf
+
+  - title: "Multilevel & Longitudinal"
+    desc: >
+      Datasets with students nested in classrooms or schools, or repeated
+      measurements over time (`multilevel-longitudinal`).
+    contents:
+      - alcohol1_pp
+      - gcse
+      - hsb_sub
+      - instruction
 
 footer:
   structure:

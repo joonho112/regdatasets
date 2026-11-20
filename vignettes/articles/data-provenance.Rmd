@@ -1,0 +1,82 @@
+---
+title: "How the data are built"
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>", echo = FALSE)
+library(regdatasets)
+reg_path <- system.file("extdata", "registry.csv", package = "regdatasets")
+cb_path  <- system.file("extdata", "codebook.csv", package = "regdatasets")
+reg <- utils::read.csv(reg_path, stringsAsFactors = FALSE, na.strings = "")
+cb  <- utils::read.csv(cb_path, stringsAsFactors = FALSE, na.strings = "")
+```
+
+Every dataset in regdatasets is a **build output**: it is produced by a
+script from a checksummed source file, never edited by hand. This article
+explains how, so that anyone can check and repeat it.
+
+## The pipeline
+
+1. **Sources.** The original files are kept in `data-raw/source/`, each with
+   a SHA-256 checksum in `MANIFEST.csv`. The build refuses a file whose
+   checksum does not match.
+2. **Recipes.** One small R script per dataset (`data-raw/recipes/`) turns
+   the source file into the shipped tibble: it drops Stata metadata, recodes
+   missing-value codes and applies the documented corrections.
+3. **Contract.** Before saving, every dataset is checked against the data
+   contract (`data-raw/CONTRACT.md`): a plain tibble, the documented column
+   names and types, and no missing-value codes left.
+4. **Build.** `data-raw/build_all.R` runs all recipes and saves `data/`. Two
+   consecutive builds produce byte-identical files.
+5. **Metadata.** The registry and the codebook (`inst/extdata/`) describe
+   every dataset and every variable. Help pages, `list_datasets()`,
+   `codebook()` and this website are generated from them, and tests check
+   them against the data.
+
+## Missing-value codes
+
+Surveys such as NELS:88 store nonresponse as numeric codes, for example
+`8 = missing`, `9 = legitimate skip` or `99.98` for a missing test score.
+Left in place, such a code acts as a real value: one 99.98 on a scale that
+runs from −3 to 1.5 dominates a regression. In version 1.0.0 these codes
+were recoded to `NA`, using the survey's own value labels and codebook:
+
+```{r}
+recoded <- cb[!is.na(cb$recoded_to_na), ]
+parts <- strsplit(recoded$recoded_to_na, "; ", fixed = TRUE)
+counts <- vapply(parts, function(p) {
+  sum(as.integer(sub(".*: ", "", p)))
+}, numeric(1))
+tab <- aggregate(counts, by = list(dataset = recoded$dataset), FUN = sum)
+names(tab)[2] <- "Cells recoded to NA (counted from the source file)"
+knitr::kable(tab, format.args = list(big.mark = ","))
+```
+
+Because these counts start from the raw Stata source files, they include cells
+that version 0.2.0 had already turned into `NA`: 482 cells in `disc` (`bys34a`
+and `bys34b` codes 8 and 98) and 82 cells in `nels_data` (`g8minor` and
+`g8lunch` code 998). Relative to version 0.2.0, version 1.0.0 adds **144** new
+`NA`s in `disc` and **41,966** new `NA`s in `nels_data`, as reported in
+`NEWS.md`.
+
+`codebook("<dataset>")` shows, for each variable, which codes were recoded.
+"Don't know" answers were recoded only where the item is an ordered scale; on
+nominal items they remain a category.
+
+## Provenance
+
+Each dataset's source, the route by which it reached this package, and the
+basis for redistributing it are recorded in the registry and in
+`LICENSE.note`:
+
+```{r}
+knitr::kable(
+  reg[, c("dataset", "provenance_status", "redistribution_basis")],
+  col.names = c("Dataset", "Provenance", "Basis for redistribution")
+)
+```
+
+Two datasets of earlier versions, `lambert` and `civic_ed`, were removed in
+1.0.0 because no basis for redistributing them could be established.
+`classdata_07` is a simulated look-alike of a 2007 class survey, for the same
+reason.

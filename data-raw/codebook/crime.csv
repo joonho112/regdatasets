@@ -1,0 +1,6 @@
+"dataset","variable","position","type","label","values","units","group","recoded_to_na","notes","status"
+"crime","county",1,"character","County","","","","","67 Florida counties in capitals, at most 8 characters long, so 11 names are cut short (e.g., HILLSBOR = Hillsborough, PALM_B. = Palm Beach); Miami-Dade appears as DADE.","curated"
+"crime","c",2,"integer","Crime rate","","crimes per 1,000 residents per year","","","The year and the agency behind the data are not documented in the sources.","curated"
+"crime","i",3,"double","Median income","","thousands of US dollars","","","","curated"
+"crime","hs",4,"double","Adults with at least a high school education","","percent","","","","curated"
+"crime","u",5,"double","Urban population","","percent of residents living in urban areas","","","","curated"

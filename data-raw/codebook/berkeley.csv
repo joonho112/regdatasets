@@ -1,0 +1,4 @@
+"dataset","variable","position","type","label","values","units","group","recoded_to_na","notes","status"
+"berkeley","department",1,"integer","Department","1 = department B; 2 = department C; 3 = department D; 4 = department E; 5 = department F","","","","Letters are the anonymous departments of datasets::UCBAdmissions; department A (933 applicants) is not included.","curated"
+"berkeley","female",2,"integer","Female applicant","0 = male; 1 = female","","","","","curated"
+"berkeley","admitted",3,"integer","Admitted","0 = rejected; 1 = admitted","","","","One row per applicant (fall 1973), expanded from the published admissions table, so many rows are identical.","curated"

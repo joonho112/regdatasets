@@ -1,0 +1,4 @@
+"dataset","variable","position","type","label","values","units","group","recoded_to_na","notes","status"
+"berk_sub","admitted",1,"integer","Admitted","0 = rejected; 1 = admitted","","","","One row per applicant, expanded from the published admissions table, so many rows are identical.","curated"
+"berk_sub","male",2,"integer","Male applicant","0 = female; 1 = male","","","","","curated"
+"berk_sub","engineering",3,"integer","Department: B (1) or E (0)","0 = department E; 1 = department B","","","","Departments B and E of datasets::UCBAdmissions (berkeley codes 1 and 4). The names engineering and psychology are guesses from the teaching materials the data came from; the real departments are anonymous.","curated"

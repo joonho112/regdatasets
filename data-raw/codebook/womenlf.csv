@@ -1,0 +1,6 @@
+"dataset","variable","position","type","label","values","units","group","recoded_to_na","notes","status"
+"womenlf","obs",1,"integer","Observation number","","","","","","curated"
+"womenlf","husbinc",2,"integer","Husband's income","","thousands of dollars","","","The sources give the unit only as $1,000 and do not name the currency (the survey is Canadian).","curated"
+"womenlf","region",3,"character","Region of residence","Atlantic = Atlantic Canada; BC = British Columbia; Ontario = Ontario; Prairie = Prairie provinces; Quebec = Quebec","","","","Stored as text.","curated"
+"womenlf","workstat",4,"integer","Wife's work status","0 = not working outside the home; 1 = part time; 2 = full time","","","","","curated"
+"womenlf","chilpres",5,"integer","Children present in the household","0 = absent; 1 = present","","","","","curated"

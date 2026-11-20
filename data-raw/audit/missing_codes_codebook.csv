@@ -1,0 +1,22 @@
+dataset,variable,code,code_label,evidence
+nels_data,bygrads,9.8,{missing},NELS_data.pdf (course copy of the NCES codebook): 'The range for BYGRADS is 0.5-4.0 with 9.8 indicating missing'
+nels_data,bylocus1,99.98,{missing},NELS_data.pdf (course copy of the NCES codebook): '99.98 indicates missing'
+nels_data,bylocus2,99.98,{missing},NELS_data.pdf (course copy of the NCES codebook): '99.98 indicates missing'
+nels_data,bycncpt1,99.98,{missing},NELS_data.pdf (course copy of the NCES codebook): '99.98 indicates missing'
+nels_data,bycncpt2,99.98,{missing},NELS_data.pdf (course copy of the NCES codebook): '99.98 indicates missing'
+nels_data,byses,99.998,{missing},NELS_data.pdf (course copy of the NCES codebook): 'with 99.998 indicating - Missing'
+nels_data,by2xrstd,99.98,{missing},NELS_data.pdf (course copy of the NCES codebook): code table: 99.98 {MISSING}
+nels_data,by2xrstd,99.99,{test not comp},NELS_data.pdf (course copy of the NCES codebook): code table: 99.99 {TEST NOT COMP}
+nels_data,by2xmstd,99.98,{missing},NELS_data.pdf (course copy of the NCES codebook): code table: 99.98 {MISSING}
+nels_data,by2xmstd,99.99,{test not comp},NELS_data.pdf (course copy of the NCES codebook): code table: 99.99 {TEST NOT COMP}
+nels_data,by2xsstd,99.98,{missing},NELS_data.pdf (course copy of the NCES codebook): code table: 99.98 {MISSING}
+nels_data,by2xsstd,99.99,{test not comp},NELS_data.pdf (course copy of the NCES codebook): code table: 99.99 {TEST NOT COMP}
+nels_data,by2xhstd,99.98,{missing},NELS_data.pdf (course copy of the NCES codebook): code table: 99.98 {MISSING}
+nels_data,by2xhstd,99.99,{test not comp},NELS_data.pdf (course copy of the NCES codebook): code table: 99.99 {TEST NOT COMP}
+nels_data,f12xrstd,99.98,{missing},NELS_data.pdf (course copy of the NCES codebook): code table: 99.98 {MISSING}
+nels_data,f12xrstd,99.99,{test not comp},NELS_data.pdf (course copy of the NCES codebook): code table: 99.99 {TEST NOT COMP}
+nels_data,f1ses,99.998,{missing},NELS_data.pdf (course copy of the NCES codebook): code table: 99.998 {MISSING}
+nels_data,f1locus1,99.98,{missing},NELS_data.pdf (course copy of the NCES codebook): code table: 99.98 {MISSING}
+nels_data,f1locus2,99.98,{missing},NELS_data.pdf (course copy of the NCES codebook): code table: 99.98 {MISSING}
+nels_data,f1cncpt1,99.98,{missing},NELS_data.pdf (course copy of the NCES codebook): code table: 99.98 {MISSING}
+nels_data,f1cncpt2,99.98,{missing},NELS_data.pdf (course copy of the NCES codebook): code table: 99.98 {MISSING}

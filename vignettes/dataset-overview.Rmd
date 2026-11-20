@@ -1,136 +1,83 @@
 ---
-title: "Dataset Overview and Course Mapping"
+title: "Dataset overview"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Dataset Overview and Course Mapping}
+  %\VignetteIndexEntry{Dataset overview}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
 ```{r setup, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  message = FALSE,
-  warning = FALSE
-)
-```
-
-## All 25 Datasets at a Glance
-
-```{r dataset-table}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>", echo = FALSE)
 library(regdatasets)
-
-# Build summary table
-datasets <- c(
-  "alcohol1_pp", "berk_sub", "berkeley", "civic_ed", "classdata_07",
-  "crime", "disc", "disc2", "faculty", "gcse", "grades", "gss_1",
-  "hsb_sub", "hsbs1", "individuals", "instruction", "lambert",
-  "nels_data", "penalty", "pisa2000", "reading",
-  "satisfaction", "titanic", "womenlf"
-)
-
-summary_df <- data.frame(
-  Dataset = datasets,
-  Rows = integer(length(datasets)),
-  Cols = integer(length(datasets)),
-  stringsAsFactors = FALSE
-)
-
-for (i in seq_along(datasets)) {
-  data(list = datasets[i], package = "regdatasets")
-  df <- get(datasets[i])
-  summary_df$Rows[i] <- nrow(df)
-  summary_df$Cols[i] <- ncol(df)
-}
-
-knitr::kable(summary_df, format = "html",
-             caption = "Dimensions of all 25 datasets in regdatasets.",
-             col.names = c("Dataset", "Observations", "Variables"))
+reg_path <- system.file("extdata", "registry.csv", package = "regdatasets")
+reg <- utils::read.csv(reg_path, stringsAsFactors = FALSE, na.strings = "")
 ```
 
-## Course Chapter Mapping
+This overview is generated from the package registry, the same table that
+drives `list_datasets()` and the help pages.
 
-The table below shows which datasets are used in each chapter of the
-companion textbook.
+## All datasets
 
-| Chapter | Topic | Primary Datasets |
-|:--------|:------|:-----------------|
-| 1 | Simple Linear Regression | `gcse`, `classdata_07`, `pisa2000` |
-| 2 | ANCOVA | `gcse`, `instruction` |
-| 3 | One-way ANOVA | `reading`, `instruction` |
-| 4 | Continuous Predictors | `crime` |
-| 5 | Interactions | `gcse`, `individuals`, `faculty`, `crime` |
-| 6 | Nonlinear Relationships | `nels_data`, `crime` |
-| 7 | Model Building | `nels_data`, `hsb_sub`, `civic_ed` |
-| 8 | Model Diagnostics | `hsbs1`, `nels_data` |
-| 9 | Simple Logistic Regression | `gss_1`, `disc`, `titanic` |
-| 10 | Multiple Logistic Regression | `berkeley`, `berk_sub`, `disc2`, `titanic` |
-| 11 | Logistic Model Fit | `penalty`, `disc` |
-| 12 | Latent Response & GLM | `lambert`, `grades` |
-| 13 | Ordinal Models | `womenlf`, `satisfaction`, `alcohol1_pp` |
+```{r}
+knitr::kable(
+  reg[, c("dataset", "title", "unit", "n_rows", "n_cols")],
+  col.names = c("Dataset", "Title", "One row is", "Rows", "Columns"),
+  format.args = list(big.mark = ",")
+)
+```
 
+## Datasets by topic
 
-## Datasets by Topic Area
+```{r}
+topics <- c(
+  "simple-regression", "ancova", "anova", "continuous-predictors",
+  "interactions", "nonlinear", "model-building", "diagnostics",
+  "logistic", "glm-latent", "ordinal", "multilevel-longitudinal"
+)
+by_topic <- vapply(topics, function(t) {
+  parts <- strsplit(reg$topics, ";", fixed = TRUE)
+  hit <- reg$dataset[vapply(parts, function(x) t %in% x, logical(1))]
+  paste0("`", hit, "`", collapse = ", ")
+}, character(1))
+knitr::kable(data.frame(Topic = topics, Datasets = by_topic), row.names = FALSE)
+```
 
-### Linear Regression Foundation
+## Sources
 
-These datasets support the core linear regression chapters (1-8):
+```{r}
+knitr::kable(
+  reg[, c("dataset", "source_citation", "provenance_status")],
+  col.names = c("Dataset", "Source", "Provenance")
+)
+```
 
-- **`gcse`** (4,059 x 9): The primary running example. GCSE exam scores
-  and London Reading Test scores from 65 schools. Used across Chapters 1,
-  2, and 5 for SLR, ANCOVA, and interactions.
+"Verified" means a checkable source ties the dataset to its origin; "probable"
+means a strong match without an explicit statement. See `LICENSE.note` for the
+redistribution basis of each dataset.
 
-- **`crime`** (67 x 5): Florida county-level crime rates. Demonstrates
-  the confounding/sign-reversal phenomenon between education and crime
-  once urbanization is controlled.
+## Changed in version 1.0.0
 
-- **`instruction`** (1,190 x 12): Math achievement gains nested in
-  classrooms and schools. Supports ANOVA and ANCOVA demonstrations.
+In addition to stripping legacy Stata attributes across all datasets and
+removing `lambert` and `civic_ed` (no redistribution basis), six shipped
+datasets changed values or columns in version 1.0.0:
 
-- **`reading`** (66 x 8): Three-group reading instruction experiment.
-  Clean example for one-way ANOVA with clear group differences.
+```{r}
+summaries <- c(
+  classdata_07 = "Replaced with a seeded simulated look-alike (no consent record for the 2007 survey).",
+  disc         = "144 remaining nonresponse codes recoded to NA; race gained 'American Indian' (68 students).",
+  disc2        = "race gained 'American Indian' (68 students).",
+  gcse         = "Removed the stored model-prediction column pred (6 -> 5 columns).",
+  nels_data    = "41,966 nonresponse, composite missing, and ordered 'don't know' codes recoded to NA.",
+  titanic      = "Corrected embarked from titanic3 (355 passengers: 353 changed, 2 to NA)."
+)
+ch <- reg[!is.na(reg$values_changed_in), c("dataset", "values_changed_in")]
+ch$summary <- unname(summaries[ch$dataset])
+knitr::kable(
+  ch,
+  col.names = c("Dataset", "Version", "Summary of value/column changes"),
+  row.names = FALSE
+)
+```
 
-### Logistic Regression
-
-These datasets support the binary outcome chapters (9-11):
-
-- **`berkeley`** (3,593 x 3): The classic Simpson's paradox dataset.
-  UC Berkeley graduate admissions by gender and department.
-
-- **`gss_1`** (2,832 x 16): General Social Survey 1982/1994. Attitude
-  change over time as a simple logistic regression example.
-
-- **`penalty`** (674 x 3): Death penalty sentencing data by defendant
-  and victim race. Used for goodness-of-fit testing.
-
-- **`titanic`** (1,309 x 6): Passenger survival data with class, sex,
-  age, and fare as predictors.
-
-### Ordinal and Advanced Models
-
-- **`womenlf`** (263 x 5): Canadian women's labor force participation
-  with a three-level ordinal outcome.
-
-- **`satisfaction`** (110 x 3): Four-level ordinal satisfaction data
-  for ordinal logistic regression.
-
-- **`lambert`** (492 x 109): Rich longitudinal dataset for latent
-  response model demonstrations.
-
-
-## Data Sources
-
-Most datasets originate from published educational and social science
-studies. Key sources include:
-
-- **GCSE data**: Goldstein et al. (1993), UK examination council records
-- **PISA 2000**: OECD Programme for International Student Assessment
-- **Berkeley admissions**: Bickel, Hammel & O'Connell (1975)
-- **General Social Survey**: NORC at the University of Chicago
-- **NAEP**: National Center for Education Statistics
-- **NELS:88**: National Education Longitudinal Study of 1988
-- **Titanic**: British Board of Trade records
-
-See individual dataset documentation (`?dataset_name`) for complete
-source citations.
+See `NEWS.md` for the full migration table.

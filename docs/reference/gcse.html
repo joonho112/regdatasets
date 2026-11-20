@@ -1,17 +1,15 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><title>GCSE and London Reading Test Data — gcse • regdatasets</title><!-- favicons --><link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png"><link rel="icon" type="”image/svg+xml”" href="../favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png"><link rel="icon" sizes="any" href="../favicon.ico"><link rel="manifest" href="../site.webmanifest"><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet"><script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/Source_Sans_Pro-0.4.10/font.css" rel="stylesheet"><link href="../deps/Fira_Code-0.4.10/font.css" rel="stylesheet"><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet"><link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet"><script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="GCSE and London Reading Test Data — gcse"><meta name="description" content="Student achievement data from 65 London secondary schools, containing
-GCSE (General Certificate of Secondary Education) exam scores taken at
-age 16 and London Reading Test (LRT) scores at age 11 for 4,059 students.
-Both scores have been standardized to have mean 0 and standard deviation
-approximately 10. This is the primary running example throughout the
-course, used from simple linear regression through interactions and
-model diagnostics."><meta property="og:description" content="Student achievement data from 65 London secondary schools, containing
-GCSE (General Certificate of Secondary Education) exam scores taken at
-age 16 and London Reading Test (LRT) scores at age 11 for 4,059 students.
-Both scores have been standardized to have mean 0 and standard deviation
-approximately 10. This is the primary running example throughout the
-course, used from simple linear regression through interactions and
-model diagnostics."><meta property="og:image" content="https://joonho112.github.io/regdatasets/logo.png"></head><body>
+<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><title>GCSE and London Reading Test scores — gcse • regdatasets</title><!-- favicons --><link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png"><link rel="icon" type="”image/svg+xml”" href="../favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png"><link rel="icon" sizes="any" href="../favicon.ico"><link rel="manifest" href="../site.webmanifest"><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link href="../deps/bootstrap-5.3.8/bootstrap.min.css" rel="stylesheet"><script src="../deps/bootstrap-5.3.8/bootstrap.bundle.min.js"></script><link href="../deps/Source_Sans_Pro-0.4.10/font.css" rel="stylesheet"><link href="../deps/Fira_Code-0.4.10/font.css" rel="stylesheet"><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet"><link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet"><script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="GCSE and London Reading Test scores — gcse"><meta name="description" content="Examination results of 4,059 students in 65 inner-London schools, one row
+per student: the GCSE (General Certificate of Secondary Education) exam
+score at age 16 and the London Reading Test (LRT) score at age 11. The
+data are the Exam data of Goldstein et al. (1993), distributed by the
+Centre for Multilevel Modelling at the University of Bristol, with both
+scores multiplied by 10."><meta property="og:description" content="Examination results of 4,059 students in 65 inner-London schools, one row
+per student: the GCSE (General Certificate of Secondary Education) exam
+score at age 16 and the London Reading Test (LRT) score at age 11. The
+data are the Exam data of Goldstein et al. (1993), distributed by the
+Centre for Multilevel Modelling at the University of Bristol, with both
+scores multiplied by 10."><meta property="og:image" content="https://joonho112.github.io/regdatasets/logo.png"></head><body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
 
 
@@ -19,7 +17,7 @@ model diagnostics."><meta property="og:image" content="https://joonho112.github.
 
     <a class="navbar-brand me-2" href="../index.html">regdatasets</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,11 +26,12 @@ model diagnostics."><meta property="og:image" content="https://joonho112.github.
 
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto"><li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
-<li class="active nav-item"><a class="nav-link" href="../reference/index.html">Datasets</a></li>
+<li class="active nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
 <li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-guides" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Guides</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-guides"><li><a class="dropdown-item" href="../articles/getting-started.html">Getting Started</a></li>
     <li><a class="dropdown-item" href="../articles/dataset-overview.html">Dataset Overview</a></li>
+    <li><a class="dropdown-item" href="../articles/data-provenance.html">How the Data Are Built</a></li>
   </ul></li>
 <li class="nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
       </ul><ul class="navbar-nav"><li class="nav-item"><form class="form-inline" role="search">
@@ -45,19 +44,18 @@ model diagnostics."><meta property="og:image" content="https://joonho112.github.
 </nav><div class="container template-reference-topic">
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
-      <img src="../logo.png" class="logo" alt=""><h1>GCSE and London Reading Test Data</h1>
-      <small class="dont-index">Source: <a href="https://github.com/joonho112/regdatasets/blob/HEAD/R/data.R" class="external-link"><code>R/data.R</code></a></small>
+      <img src="../logo.png" class="logo" alt=""><h1>GCSE and London Reading Test scores</h1>
+      <small class="dont-index">Source: <a href="https://github.com/joonho112/regdatasets/blob/HEAD/R/data-gcse.R" class="external-link"><code>R/data-gcse.R</code></a></small>
       <div class="d-none name"><code>gcse.Rd</code></div>
     </div>
 
     <div class="ref-description section level2">
-    <p>Student achievement data from 65 London secondary schools, containing
-GCSE (General Certificate of Secondary Education) exam scores taken at
-age 16 and London Reading Test (LRT) scores at age 11 for 4,059 students.
-Both scores have been standardized to have mean 0 and standard deviation
-approximately 10. This is the primary running example throughout the
-course, used from simple linear regression through interactions and
-model diagnostics.</p>
+    <p>Examination results of 4,059 students in 65 inner-London schools, one row
+per student: the GCSE (General Certificate of Secondary Education) exam
+score at age 16 and the London Reading Test (LRT) score at age 11. The
+data are the Exam data of Goldstein et al. (1993), distributed by the
+Centre for Multilevel Modelling at the University of Bristol, with both
+scores multiplied by 10.</p>
     </div>
 
     <div class="section level2">
@@ -67,108 +65,109 @@ model diagnostics.</p>
 
     <div class="section level2">
     <h2 id="format">Format<a class="anchor" aria-label="anchor" href="#format"></a></h2>
-    <p>A tibble with 4,059 rows and 6 columns:</p><dl><dt>school</dt>
-<dd><p>School identifier. Type: numeric. Values: 1 to 65.
-65 unique London secondary schools.</p></dd>
+    <p>A tibble with 4,059 rows and 5 variables.</p>
+<dl><dt><code>school</code></dt>
+<dd><p>School ID. Type: integer. 65 schools in inner London.</p></dd>
 
-<dt>student</dt>
-<dd><p>Student identifier within school. Type: numeric.
-Range: (1, 913). Not unique across schools.</p></dd>
+<dt><code>student</code></dt>
+<dd><p>Student ID within school. Type: integer. Original Exam-data ID (1 to 913), not unique across schools. Four IDs occur twice in the same school (8 rows, different students), so it is not a reliable key.</p></dd>
 
-<dt>gcse</dt>
-<dd><p>GCSE examination score at age 16, standardized. Type:
-numeric. Range: (-36.66, 36.66). Mean approximately 0, SD
-approximately 10. This is the primary outcome variable.</p></dd>
+<dt><code>gcse</code></dt>
+<dd><p>GCSE exam score at age 16. Units: normalized score x 10. Type: double. Equals 10 x normexam in mlmRev::Exam (mean about 0, SD about 10). The stored model prediction pred was removed in v1.0.0.</p></dd>
 
-<dt>lrt</dt>
-<dd><p>London Reading Test score at age 11, standardized. Type:
-numeric. Range: (-29.35, 30.16). Mean approximately 0, SD
-approximately 10. This is the primary predictor for intake
-achievement.</p></dd>
+<dt><code>lrt</code></dt>
+<dd><p>London Reading Test score at age 11. Units: standardized score x 10. Type: double. Equals 10 x standLRT in mlmRev::Exam.</p></dd>
 
-<dt>gender</dt>
-<dd><p>Gender of student. Type: numeric. Binary indicator
-(0/1) where 1 = female, 0 = male. 60% female.</p></dd>
-
-<dt>pred</dt>
-<dd><p>Predicted GCSE score from the regression model. Type:
-numeric. Range: (-1.91, 2.54). Pre-computed predicted values.</p></dd>
+<dt><code>gender</code></dt>
+<dd><p>Girl. Values: 0 = boy; 1 = girl. Type: integer.</p></dd>
 
 
-</dl><p>Note: Columns <code>u0</code>, <code>u1</code>, and <code>filter__</code> (Stata multilevel
-model artifacts containing -1e30 placeholder values) were removed in v0.2.0.</p>
+</dl><p>See <code>codebook("gcse")</code> for this table as a data frame.</p>
     </div>
     <div class="section level2">
     <h2 id="source">Source<a class="anchor" aria-label="anchor" href="#source"></a></h2>
-    <p>Goldstein, H., Rasbash, J., Yang, M., et al. (1993). A
-multilevel analysis of school examination results. <em>Oxford Review
-of Education</em>, 19(4), 425–433. Original data file: <code>gcse.dta</code></p>
+    <p>Goldstein, H., Rasbash, J., Yang, M., Woodhouse, G., Pan, H., Nuttall, D., &amp; Thomas, S. (1993). A multilevel analysis of school examination results. Oxford Review of Education, 19(4), 425-433. <a href="https://doi.org/10.1080/0305498930190401" class="external-link">doi:10.1080/0305498930190401</a>
+ <a href="https://www.bristol.ac.uk/cmm/learning/mmsoftware/data-rev.html" class="external-link">https://www.bristol.ac.uk/cmm/learning/mmsoftware/data-rev.html</a></p>
+<p>The Exam data of the Centre for Multilevel Modelling (Bristol), rescaled by 10, via the UC Berkeley EDUC 275B course files; also in the CRAN package mlmRev as Exam. Provenance: verified.</p>
     </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-    <p>This dataset is the primary running example used throughout the course.
-It appears in virtually every chapter:</p>
-<p><strong>Chapter 1 (Simple Linear Regression):</strong> Regressing GCSE on LRT
-for individual schools (e.g., Battersea, Chelsea) to introduce the
-regression model, OLS estimation, R-squared, and inference.</p>
-<p><strong>Chapter 2 (ANCOVA):</strong> Comparing schools while controlling for
-LRT intake scores. The unadjusted difference between Chelsea and
-Battersea is 9.86 points, but the LRT-adjusted difference is 7.51.</p>
-<p><strong>Chapter 5 (Interactions):</strong> Testing whether the LRT slope
-differs across schools (school-by-LRT interaction).</p>
-<p><strong>Chapter 8 (Model Diagnostics):</strong> Residual analysis, outlier
-detection, and influence diagnostics.</p>
-<p>The variable <code>pred</code> contains pre-computed predicted values from
-a regression model, included for pedagogical reference. For standard
-regression analyses, the key variables are gcse, lrt, school, and gender.</p>
+    <p><strong>Scores.</strong> <code>gcse</code> and <code>lrt</code> are the Exam data's <code>normexam</code> and <code>standLRT</code>
+(as named in <code><a href="https://rdrr.io/pkg/mlmRev/man/Exam.html" class="external-link">mlmRev::Exam</a></code>) multiplied by 10, so each has a mean of about
+0 and a standard deviation of about 10: one point is about a tenth of a
+standard deviation. The data frame and its outcome share the name <code>gcse</code>,
+so the outcome is <code>gcse$gcse</code>.</p>
+<p><strong>Coding.</strong> <code>gender</code> is 1 for girls and 0 for boys. Thirty of the 65
+schools are single-sex (20 girls' and 10 boys' schools), so in a model
+with a school factor the gender effect rests on the 35 mixed schools.
+<code>school</code> is an ID number from 1 to 65; the data do not name the schools.
+<code>student</code> is the original Exam ID: it is not unique across schools, and
+four IDs occur twice within the same school (8 rows, different students),
+so <code>school</code> and <code>student</code> together do not identify a row. No value is
+missing.</p>
+<p><strong>Changes in version 1.0.0.</strong> The column <code>pred</code>, a stored prediction from
+a multilevel model on the original score scale (not multiplied by 10), was
+removed, so the data now have 5 columns. The other values are unchanged.</p>
+<p><strong>Suggested analyses.</strong></p><ul><li><p>Simple regression of <code>gcse</code> on <code>lrt</code>, for all students or within one
+school.</p></li>
+<li><p>ANCOVA: comparing schools, or girls and boys, at the same <code>lrt</code> score.</p></li>
+<li><p>Interactions: does the <code>lrt</code> slope differ by <code>gender</code>, or across schools
+(<code>lrt * factor(school)</code>)?</p></li>
+<li><p>Nonlinearity, model building and diagnostics: a quadratic term in <code>lrt</code>,
+residual plots and influence measures. Because students are nested in
+schools, the data also suit random-intercept and random-slope models.</p></li>
+</ul></div>
+    <div class="section level2">
+    <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
+    <div class="dont-index"><p><code><a href="https://rdrr.io/pkg/mlmRev/man/Exam.html" class="external-link">mlmRev::Exam</a></code> on CRAN has the same students on the original
+score scale, with more variables; <code><a href="codebook.html">codebook()</a></code> and <code><a href="list_datasets.html">list_datasets()</a></code>.</p></div>
     </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">gcse</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">gcse</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 6 × 6</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   school student   gcse    lrt gender   pred</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>      1     143   2.61   6.19      1  0.785</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span>      1     145   1.34   2.06      1  0.504</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span>      1     142 -<span style="color: #BB0000;">17.2</span>  -<span style="color: #BB0000;">13.6</span>       0 -<span style="color: #BB0000;">0.567</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span>      1     141   9.68   2.06      1  0.504</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span>      1     138   5.44   3.71      1  0.616</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span>      1     155  17.3   21.9       0  1.86 </span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">gcse</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 6 × 5</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   school student   gcse    lrt gender</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>      1     143   2.61   6.19      1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span>      1     145   1.34   2.06      1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span>      1     142 -<span style="color: #BB0000;">17.2</span>  -<span style="color: #BB0000;">13.6</span>       0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span>      1     141   9.68   2.06      1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span>      1     138   5.44   3.71      1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span>      1     155  17.3   21.9       0</span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="co"># Simple linear regression: GCSE on LRT</span></span></span>
-<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">gcse</span> <span class="op">~</span> <span class="va">lrt</span>, data <span class="op">=</span> <span class="va">gcse</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="co"># Simple regression of the GCSE score on the reading score at age 11</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">gcse</span> <span class="op">~</span> <span class="va">lrt</span>, data <span class="op">=</span> <span class="va">gcse</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Call:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> lm(formula = gcse ~ lrt, data = gcse)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Residuals:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      Min       1Q   Median       3Q      Max </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> -26.5617  -5.1847   0.1265   5.4397  29.7399 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Coefficients:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> (Intercept)          lrt  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    -0.01195      0.59506  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             Estimate Std. Error t value Pr(&gt;|t|)    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> (Intercept) -0.01195    0.12642  -0.095    0.925    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> lrt          0.59506    0.01273  46.744   &lt;2e-16 ***</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ---</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Residual standard error: 8.054 on 4057 degrees of freedom</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Multiple R-squared:   0.35,	Adjusted R-squared:  0.3499 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> F-statistic:  2185 on 1 and 4057 DF,  p-value: &lt; 2.2e-16</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="co"># ANCOVA: school differences controlling for LRT</span></span></span>
-<span class="r-in"><span><span class="va">gcse_sub</span> <span class="op">&lt;-</span> <span class="va">gcse</span><span class="op">[</span><span class="va">gcse</span><span class="op">$</span><span class="va">school</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span><span class="op">)</span>, <span class="op">]</span></span></span>
-<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">gcse</span> <span class="op">~</span> <span class="va">lrt</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">school</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">gcse_sub</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="co"># ANCOVA: schools 1 and 2 compared at the same LRT score</span></span></span>
+<span class="r-in"><span><span class="va">two</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html" class="external-link">subset</a></span><span class="op">(</span><span class="va">gcse</span>, <span class="va">school</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">gcse</span> <span class="op">~</span> <span class="va">lrt</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">school</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">two</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Call:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> lm(formula = gcse ~ lrt + factor(school), data = gcse_sub)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> lm(formula = gcse ~ lrt + factor(school), data = two)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Coefficients:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     (Intercept)              lrt  factor(school)2  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>          3.7937           0.7332           1.1402  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="co"># Interaction: does LRT slope differ by gender?</span></span></span>
-<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">gcse</span> <span class="op">~</span> <span class="va">lrt</span> <span class="op">*</span> <span class="va">gender</span>, data <span class="op">=</span> <span class="va">gcse</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Call:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> lm(formula = gcse ~ lrt * gender, data = gcse)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Coefficients:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> (Intercept)          lrt       gender   lrt:gender  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   -1.030480     0.592813     1.699015    -0.004031  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 </code></pre></div>
     </div>

@@ -1,0 +1,4 @@
+"dataset","variable","position","type","label","values","units","group","recoded_to_na","notes","status"
+"penalty","def_bl",1,"integer","Defendant is Black","0 = White; 1 = Black","","","","One row per defendant, expanded from the published table of 674 Florida multiple-murder indictments, 1976 to 1987.","curated"
+"penalty","vic_bl",2,"integer","Victim is Black","0 = White; 1 = Black","","","","","curated"
+"penalty","death_pe",3,"integer","Death penalty imposed","0 = no; 1 = yes","","","","","curated"

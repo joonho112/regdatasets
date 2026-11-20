@@ -1,0 +1,8 @@
+"dataset","variable","position","type","label","values","units","group","recoded_to_na","notes","status"
+"hsb_sub","minority",1,"integer","Minority student","0 = no; 1 = yes (nonwhite)","","","","","curated"
+"hsb_sub","female",2,"integer","Female","0 = male; 1 = female","","","","","curated"
+"hsb_sub","ses",3,"double","Socioeconomic status","","composite score","","","Based on parental education, occupation and income.","curated"
+"hsb_sub","mathach",4,"double","Mathematics achievement score","","score points","","","","curated"
+"hsb_sub","size",5,"integer","School enrollment","","students","","","School level: the same for every student in a school.","curated"
+"hsb_sub","sector",6,"integer","School sector","0 = public; 1 = Catholic","","","","School level.","curated"
+"hsb_sub","schoolid",7,"integer","School ID","","","","","The five schools with the lowest IDs in the HSB file: 1224, 1288, 1296, 1308 and 1317.","curated"

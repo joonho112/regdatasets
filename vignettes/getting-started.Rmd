@@ -1,8 +1,8 @@
 ---
-title: "Getting Started with regdatasets"
+title: "Getting started with regdatasets"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Getting Started with regdatasets}
+  %\VignetteIndexEntry{Getting started with regdatasets}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -11,132 +11,130 @@ vignette: >
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  fig.width = 7,
-  fig.height = 4,
-  message = FALSE,
-  warning = FALSE
+  fig.width = 6,
+  fig.height = 4
 )
 ```
 
-## Installation
-
-Install the development version of **regdatasets** from GitHub:
+## Install
 
 ```{r, eval = FALSE}
-# install.packages("devtools")
-devtools::install_github("joonho112/regdatasets")
+# install.packages("remotes")
+remotes::install_github("joonho112/regdatasets")
+
+# A fixed release keeps every number in a course stable:
+remotes::install_github("joonho112/regdatasets@v1.0.0")
 ```
 
-## Loading Datasets
+## Find a dataset
 
-All 25 datasets are available via the standard `data()` function:
+`list_datasets()` lists every dataset with its size and the regression topics
+it suits:
 
 ```{r}
 library(regdatasets)
+datasets <- list_datasets()
+datasets[, c("dataset", "rows", "cols", "topics")]
+```
 
-# Load a single dataset
-data(gcse)
+Filter by topic to find data for a particular method:
+
+```{r}
+list_datasets(topic = "ordinal")[, c("dataset", "title")]
+```
+
+## Understand the variables
+
+Every dataset has a help page, for example `?gcse`. The variable table on that
+page is also available as a data frame through `codebook()`, which hides empty
+columns when printed so value meanings stay readable. For wide datasets, filter
+by `label` or `group`, or inspect interactively with `View(codebook("nels_data"))`:
+
+```{r}
+codebook("gcse")[, c("variable", "label", "values", "units")]
+```
+
+```{r}
+cb <- codebook("nels_data")
+nrow(cb)
+cb[
+  grepl("locus of control", cb$label, ignore.case = TRUE),
+  c("variable", "label", "group")
+]
+```
+
+## Use the data
+
+The datasets are loaded on first use; no `data()` call is needed. They are
+plain tibbles without attached Stata labels: most variables are numeric
+(`integer` or `double`), seven datasets include `character` columns (such as
+`titanic$embarked` or `reading$group`), and `disc$race` / `disc2$race` are
+factors. Value meanings are always documented in `codebook()` and the help page.
+
+```{r}
 head(gcse)
 ```
 
-Every dataset is stored as a **tibble**, so it prints cleanly and works
-seamlessly with the tidyverse:
+### Categorical variables and `factor()`
+
+Because multi-level survey codes are kept as integers (for example
+`titanic$pclass`, `individuals$job`, or `berkeley$department`), wrap them in
+`factor()` inside model formulas so R creates dummy indicators rather than
+fitting a linear trend across arbitrary code numbers. Use `relevel()` to change
+the reference category of a factor (for example
+`relevel(disc$race, ref = "White")`). Also check binary codings in `codebook()`:
+most indicators are `0/1`, while several survey items (such as
+`individuals$sex` or `nels_data$bys74`) keep their original `1/2` coding and
+must be recoded to `0/1` (for example `I(bys74 == 2)`) before passing them as
+the outcome of `glm(..., family = binomial)`.
+
+### First models
+
+A first linear regression, with the reading test at age 11 predicting the
+exam score at age 16:
 
 ```{r}
-class(gcse)
+fit <- lm(gcse ~ lrt, data = gcse)
+coef(summary(fit))
+plot(
+  gcse ~ lrt,
+  data = gcse,
+  pch = 16,
+  col = grDevices::adjustcolor("grey30", 0.2),
+  xlab = "London Reading Test (age 11)",
+  ylab = "GCSE score (age 16)"
+)
+abline(fit, lwd = 2)
 ```
 
-## Exploring a Dataset
-
-Use `?dataset_name` to view the full documentation, including variable
-descriptions, sources, and example analyses:
-
-```{r, eval = FALSE}
-?gcse
-?berkeley
-?crime
-```
-
-## Example: Simple Linear Regression
-
-The `gcse` dataset is the primary running example for Chapters 1–2.
-It contains GCSE exam scores and London Reading Test (LRT) scores for
-4,059 students in 65 London secondary schools:
+A logistic regression of Titanic survival:
 
 ```{r}
-# Fit a simple linear regression
-model <- lm(gcse ~ lrt, data = gcse)
-summary(model)
+fit2 <- glm(
+  survived ~ factor(pclass) + sex + age,
+  data = titanic,
+  family = binomial
+)
+round(exp(coef(fit2)), 2)   # odds ratios
 ```
 
-```{r fig-gcse-scatter, fig.cap = "GCSE scores vs. LRT scores with fitted regression line."}
-library(ggplot2)
+## Missing values
 
-ggplot(gcse, aes(x = lrt, y = gcse)) +
-  geom_point(alpha = 0.3, size = 1) +
-  geom_smooth(method = "lm", color = "#E74C3C", se = TRUE) +
-  labs(
-    title = "GCSE vs. London Reading Test",
-    x = "London Reading Test Score (Age 11)",
-    y = "GCSE Score (Age 16)"
-  ) +
-  theme_minimal(base_size = 13)
-```
-
-## Example: Logistic Regression
-
-The `berkeley` dataset demonstrates Simpson's paradox — the reversal of
-an apparent gender bias after controlling for department:
+Survey nonresponse codes such as "8 = missing" or "99.98" were recoded to
+`NA` in version 1.0.0, so they can no longer enter a model as if they were
+real values. `codebook()` shows, for each variable, what was recoded:
 
 ```{r}
-data(berkeley)
-
-# Unadjusted model
-crude <- glm(admitted ~ female, family = binomial, data = berkeley)
-
-# Adjusted model (controlling for department)
-adjusted <- glm(admitted ~ female + factor(department),
-                family = binomial, data = berkeley)
-
-# Compare odds ratios
-exp(coef(crude)["female"])    # Crude OR
-exp(coef(adjusted)["female"]) # Adjusted OR
+cb <- codebook("nels_data")
+cb[
+  cb$variable %in% c("byses", "f1locus1"),
+  c("variable", "na_count", "recoded_to_na")
+]
 ```
 
-The crude odds ratio suggests female applicants are disadvantaged, but
-after adjusting for department the effect essentially disappears —
-a classic example of confounding.
+## Where the data come from
 
-## Example: One-way ANOVA
-
-The `reading` dataset compares three reading instruction methods:
-
-```{r}
-data(reading)
-
-# ANOVA via regression with dummy variables
-model_anova <- lm(post1 ~ factor(group), data = reading)
-anova(model_anova)
-```
-
-```{r fig-reading-box, fig.cap = "Post-test scores by instruction group."}
-ggplot(reading, aes(x = factor(group), y = post1, fill = factor(group))) +
-  geom_boxplot(alpha = 0.7, show.legend = FALSE) +
-  scale_fill_manual(values = c("#2C3E50", "#E74C3C", "#3498DB")) +
-  labs(
-    title = "Reading Comprehension by Instruction Method",
-    x = "Instruction Group",
-    y = "Post-test Score (post1)"
-  ) +
-  theme_minimal(base_size = 13)
-```
-
-## Available Datasets
-
-For a complete list of all 25 datasets and their chapter mappings, see the
-[Dataset Overview](dataset-overview.html) article.
-
-```{r}
-# List all datasets in the package
-data(package = "regdatasets")$results[, c("Item", "Title")]
-```
+Each help page ends with a **Source** section. `LICENSE.note` lists the source
+of every dataset, how it reached this package and why it may be
+redistributed. The article *How the data are built* on the package website
+describes the reproducible build.

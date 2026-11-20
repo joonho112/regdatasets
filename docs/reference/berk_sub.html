@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><title>UC Berkeley Graduate Admissions Subset (Engineering and Psychology) — berk_sub • regdatasets</title><!-- favicons --><link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png"><link rel="icon" type="”image/svg+xml”" href="../favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png"><link rel="icon" sizes="any" href="../favicon.ico"><link rel="manifest" href="../site.webmanifest"><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet"><script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/Source_Sans_Pro-0.4.10/font.css" rel="stylesheet"><link href="../deps/Fira_Code-0.4.10/font.css" rel="stylesheet"><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet"><link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet"><script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="UC Berkeley Graduate Admissions Subset (Engineering and Psychology) — berk_sub"><meta name="description" content="A subset of UC Berkeley's 1973 graduate admissions data, restricted to
-two departments (Engineering and Psychology) with 1,169 applicants. This
-streamlined version of the Berkeley data is used to illustrate Simpson's
-paradox and confounding in multiple logistic regression, where the apparent
-association between gender and admission reverses after controlling for
-department."><meta property="og:description" content="A subset of UC Berkeley's 1973 graduate admissions data, restricted to
-two departments (Engineering and Psychology) with 1,169 applicants. This
-streamlined version of the Berkeley data is used to illustrate Simpson's
-paradox and confounding in multiple logistic regression, where the apparent
-association between gender and admission reverses after controlling for
-department."><meta property="og:image" content="https://joonho112.github.io/regdatasets/logo.png"></head><body>
+<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><title>Berkeley graduate admissions: two departments — berk_sub • regdatasets</title><!-- favicons --><link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png"><link rel="icon" type="”image/svg+xml”" href="../favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png"><link rel="icon" sizes="any" href="../favicon.ico"><link rel="manifest" href="../site.webmanifest"><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link href="../deps/bootstrap-5.3.8/bootstrap.min.css" rel="stylesheet"><script src="../deps/bootstrap-5.3.8/bootstrap.bundle.min.js"></script><link href="../deps/Source_Sans_Pro-0.4.10/font.css" rel="stylesheet"><link href="../deps/Fira_Code-0.4.10/font.css" rel="stylesheet"><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet"><link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet"><script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Berkeley graduate admissions: two departments — berk_sub"><meta name="description" content="Admission decisions for the 1,169 applicants to two departments of the
+graduate school of the University of California, Berkeley, in fall 1973,
+one row per applicant. The two departments are B and E of the admissions
+table in base R's datasets::UCBAdmissions, which identifies departments
+only by letter. With three binary variables, the data are a compact
+example of confounding and Simpson's paradox in logistic regression."><meta property="og:description" content="Admission decisions for the 1,169 applicants to two departments of the
+graduate school of the University of California, Berkeley, in fall 1973,
+one row per applicant. The two departments are B and E of the admissions
+table in base R's datasets::UCBAdmissions, which identifies departments
+only by letter. With three binary variables, the data are a compact
+example of confounding and Simpson's paradox in logistic regression."><meta property="og:image" content="https://joonho112.github.io/regdatasets/logo.png"></head><body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
 
 
@@ -17,7 +17,7 @@ department."><meta property="og:image" content="https://joonho112.github.io/regd
 
     <a class="navbar-brand me-2" href="../index.html">regdatasets</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,11 +26,12 @@ department."><meta property="og:image" content="https://joonho112.github.io/regd
 
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto"><li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
-<li class="active nav-item"><a class="nav-link" href="../reference/index.html">Datasets</a></li>
+<li class="active nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
 <li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-guides" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Guides</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-guides"><li><a class="dropdown-item" href="../articles/getting-started.html">Getting Started</a></li>
     <li><a class="dropdown-item" href="../articles/dataset-overview.html">Dataset Overview</a></li>
+    <li><a class="dropdown-item" href="../articles/data-provenance.html">How the Data Are Built</a></li>
   </ul></li>
 <li class="nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
       </ul><ul class="navbar-nav"><li class="nav-item"><form class="form-inline" role="search">
@@ -43,18 +44,18 @@ department."><meta property="og:image" content="https://joonho112.github.io/regd
 </nav><div class="container template-reference-topic">
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
-      <img src="../logo.png" class="logo" alt=""><h1>UC Berkeley Graduate Admissions Subset (Engineering and Psychology)</h1>
-      <small class="dont-index">Source: <a href="https://github.com/joonho112/regdatasets/blob/HEAD/R/data.R" class="external-link"><code>R/data.R</code></a></small>
+      <img src="../logo.png" class="logo" alt=""><h1>Berkeley graduate admissions: two departments</h1>
+      <small class="dont-index">Source: <a href="https://github.com/joonho112/regdatasets/blob/HEAD/R/data-berk_sub.R" class="external-link"><code>R/data-berk_sub.R</code></a></small>
       <div class="d-none name"><code>berk_sub.Rd</code></div>
     </div>
 
     <div class="ref-description section level2">
-    <p>A subset of UC Berkeley's 1973 graduate admissions data, restricted to
-two departments (Engineering and Psychology) with 1,169 applicants. This
-streamlined version of the Berkeley data is used to illustrate Simpson's
-paradox and confounding in multiple logistic regression, where the apparent
-association between gender and admission reverses after controlling for
-department.</p>
+    <p>Admission decisions for the 1,169 applicants to two departments of the
+graduate school of the University of California, Berkeley, in fall 1973,
+one row per applicant. The two departments are B and E of the admissions
+table in base R's <code><a href="https://rdrr.io/r/datasets/UCBAdmissions.html" class="external-link">datasets::UCBAdmissions</a></code>, which identifies departments
+only by letter. With three binary variables, the data are a compact
+example of confounding and Simpson's paradox in logistic regression.</p>
     </div>
 
     <div class="section level2">
@@ -64,57 +65,64 @@ department.</p>
 
     <div class="section level2">
     <h2 id="format">Format<a class="anchor" aria-label="anchor" href="#format"></a></h2>
-    <p>A tibble with 1,169 rows and 3 columns:</p><dl><dt>admitted</dt>
-<dd><p>Admission decision. Type: numeric. Binary indicator
-(0/1) where 1 = admitted, 0 = not admitted. This is the primary
-outcome variable. Overall admission rate is 44%.</p></dd>
+    <p>A tibble with 1,169 rows and 3 variables.</p>
+<dl><dt><code>admitted</code></dt>
+<dd><p>Admitted. Values: 0 = rejected; 1 = admitted. Type: integer. One row per applicant, expanded from the published admissions table, so many rows are identical.</p></dd>
 
-<dt>male</dt>
-<dd><p>Sex of applicant. Type: numeric. Binary indicator
-(0/1) where 1 = male, 0 = female. Approximately 64% of applicants
-are male.</p></dd>
+<dt><code>male</code></dt>
+<dd><p>Male applicant. Values: 0 = female; 1 = male. Type: integer.</p></dd>
 
-<dt>engineering</dt>
-<dd><p>Department applied to. Type: numeric. Binary
-indicator (0/1) where 1 = Engineering, 0 = Psychology. The two
-departments differ substantially in both gender composition and
-admission rates.</p></dd>
+<dt><code>engineering</code></dt>
+<dd><p>Department: B (1) or E (0). Values: 0 = department E; 1 = department B. Type: integer. Departments B and E of datasets::UCBAdmissions (berkeley codes 1 and 4). The names engineering and psychology are guesses from the teaching materials the data came from; the real departments are anonymous.</p></dd>
 
 
-</dl></div>
+</dl><p>See <code>codebook("berk_sub")</code> for this table as a data frame.</p>
+    </div>
     <div class="section level2">
     <h2 id="source">Source<a class="anchor" aria-label="anchor" href="#source"></a></h2>
-    <p>Bickel, P. J., Hammel, E. A., &amp; O'Connell, J. W. (1975). Sex
-bias in graduate admissions: Data from Berkeley. <em>Science</em>, 187(4175),
-398-404. Original data file: <code>berk_sub.dta</code></p>
+    <p>Bickel, P. J., Hammel, E. A., &amp; O'Connell, J. W. (1975). Sex bias in graduate admissions: Data from Berkeley. Science, 187(4175), 398-404. <a href="https://doi.org/10.1126/science.187.4175.398" class="external-link">doi:10.1126/science.187.4175.398</a></p>
+<p>Subset of berkeley prepared for the UC Berkeley EDUC 275B course. Provenance: verified.</p>
     </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-    <p>This dataset is used in Chapter 10 (Multiple Logistic Regression) to
-illustrate confounding and omitted variable bias in logistic regression.
-Key analyses include: computing unadjusted odds ratios for admission by
-gender, fitting a multiple logistic regression controlling for department,
-and demonstrating how the apparent gender effect (unadjusted OR = 3.25)
-largely disappears after adjusting for department (adjusted OR approximately
-1.1).</p>
-<p>The Engineering department has a much higher proportion of male applicants
-(approximately 96%) compared to Psychology (approximately 33%), and also
-has a higher overall admission rate (approximately 63%) than Psychology
-(approximately 25%). This creates the conditions for Simpson's paradox:
-the omitted variable (department) is both correlated with the predictor
-(gender) and a predictor of the outcome (admission).</p>
-    </div>
+    <p><strong>Departments.</strong> <code>engineering</code> = 1 is department B (585 applicants) and
+<code>engineering</code> = 0 is department E (584 applicants); they are departments
+1 and 4 of <a href="berkeley.html">berkeley</a>. The names "engineering" (for B) and "psychology"
+(for E) are guesses, not documented facts: the real departments are
+anonymous. The variable keeps its old name, but describe the departments
+as B and E.</p>
+<p><strong>One row per applicant.</strong> The rows were expanded from a table of counts,
+so there are only eight distinct rows (2 departments x 2 genders x 2
+decisions). A logistic regression on the 1,169 rows gives the same
+estimates and standard errors as a binomial regression on the four
+department-by-gender counts.</p>
+<p><strong>Coding.</strong> <code>male</code> is 1 for men and 0 for women, whereas <a href="berkeley.html">berkeley</a> codes
+<code>female</code> (1 = women). No value is missing, and the values are unchanged in
+version 1.0.0.</p>
+<p><strong>Simpson's paradox.</strong> Overall, 54% of men and 27% of women were admitted
+(odds ratio for men 3.25). But 96% of department B's applicants were men,
+against 33% of department E's, and B admitted 63% of its applicants
+against 25% for E. Controlling for department, the odds ratio for men
+falls to about 1.1 and is not statistically significant; in department B,
+women were admitted at a slightly higher rate than men.</p>
+<p><strong>Suggested analyses.</strong></p><ul><li><p>Logistic regression of <code>admitted</code> on <code>male</code>, without and with
+<code>engineering</code>: confounding and omitted-variable bias.</p></li>
+<li><p>The interaction <code>male * engineering</code>: does the gender difference differ
+between the two departments?</p></li>
+<li><p>The same models fitted to the aggregated counts with a binomial
+response, <code>cbind(admitted, rejected)</code>, to compare individual and
+grouped data.</p></li>
+</ul></div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
-    <div class="dont-index"><p><code><a href="berkeley.html">berkeley</a></code> for the full five-department version of the
-Berkeley admissions data. Note that <code>berk_sub</code> uses <code>male</code>
-(1 = male) while <code>berkeley</code> uses <code>female</code> (1 = female).</p></div>
+    <div class="dont-index"><p><a href="berkeley.html">berkeley</a> for five departments (B to F) of the same admissions
+data; <code><a href="https://rdrr.io/r/datasets/UCBAdmissions.html" class="external-link">datasets::UCBAdmissions</a></code> in base R for the full six-department
+table of counts; <code><a href="codebook.html">codebook()</a></code> and <code><a href="list_datasets.html">list_datasets()</a></code>.</p></div>
     </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">berk_sub</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">berk_sub</span><span class="op">)</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">berk_sub</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 6 × 3</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   admitted  male engineering</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
@@ -125,33 +133,22 @@ Berkeley admissions data. Note that <code>berk_sub</code> uses <code>male</code>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span>        1     1           1</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span>        1     0           1</span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="co"># Unadjusted logistic regression: gender effect on admission</span></span></span>
-<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/stats/glm.html" class="external-link">glm</a></span><span class="op">(</span><span class="va">admitted</span> <span class="op">~</span> <span class="va">male</span>, data <span class="op">=</span> <span class="va">berk_sub</span>, family <span class="op">=</span> <span class="va">binomial</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Call:  glm(formula = admitted ~ male, family = binomial, data = berk_sub)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Coefficients:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> (Intercept)         male  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>      -1.017        1.180  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Degrees of Freedom: 1168 Total (i.e. Null);  1167 Residual</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Null Deviance:	    1605 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Residual Deviance: 1520 	AIC: 1524</span>
+<span class="r-in"><span><span class="co"># Share of men and admission rate by department (engineering = 1 is B)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/stats/aggregate.html" class="external-link">aggregate</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html" class="external-link">cbind</a></span><span class="op">(</span><span class="va">male</span>, <span class="va">admitted</span><span class="op">)</span> <span class="op">~</span> <span class="va">engineering</span>, data <span class="op">=</span> <span class="va">berk_sub</span>, FUN <span class="op">=</span> <span class="va">mean</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   engineering      male  admitted</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1           0 0.3270548 0.2517123</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2           1 0.9572650 0.6324786</span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="co"># Adjusted logistic regression: controlling for department</span></span></span>
-<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/stats/glm.html" class="external-link">glm</a></span><span class="op">(</span><span class="va">admitted</span> <span class="op">~</span> <span class="va">male</span> <span class="op">+</span> <span class="va">engineering</span>, data <span class="op">=</span> <span class="va">berk_sub</span>, family <span class="op">=</span> <span class="va">binomial</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Call:  glm(formula = admitted ~ male + engineering, family = binomial, </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     data = berk_sub)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Coefficients:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> (Intercept)         male  engineering  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     -1.1309       0.1241       1.5551  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Degrees of Freedom: 1168 Total (i.e. Null);  1166 Residual</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Null Deviance:	    1605 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Residual Deviance: 1428 	AIC: 1434</span>
-<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># Odds ratios for men, before and after controlling for department</span></span></span>
+<span class="r-in"><span><span class="va">fit0</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/glm.html" class="external-link">glm</a></span><span class="op">(</span><span class="va">admitted</span> <span class="op">~</span> <span class="va">male</span>, data <span class="op">=</span> <span class="va">berk_sub</span>, family <span class="op">=</span> <span class="va">binomial</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">fit1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/glm.html" class="external-link">glm</a></span><span class="op">(</span><span class="va">admitted</span> <span class="op">~</span> <span class="va">male</span> <span class="op">+</span> <span class="va">engineering</span>, data <span class="op">=</span> <span class="va">berk_sub</span>,</span></span>
+<span class="r-in"><span>            family <span class="op">=</span> <span class="va">binomial</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/Log.html" class="external-link">exp</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/coef.html" class="external-link">coef</a></span><span class="op">(</span><span class="va">fit0</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> (Intercept)        male </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   0.3615635   3.2547852 </span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/Log.html" class="external-link">exp</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/coef.html" class="external-link">coef</a></span><span class="op">(</span><span class="va">fit1</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> (Intercept)        male engineering </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   0.3227341   1.1321297   4.7354328 </span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

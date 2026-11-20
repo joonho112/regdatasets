@@ -1,0 +1,4 @@
+"dataset","variable","position","type","label","values","units","group","recoded_to_na","notes","status"
+"satisfaction","gender",1,"character","Gender","F = female; M = male","","","","One row per respondent, expanded from a published table.","curated"
+"satisfaction","income",2,"integer","Income","1 = less than $5,000; 2 = $5,000 to $15,000; 3 = $15,000 to $25,000; 4 = more than $25,000","","","","Ordered income categories.","curated"
+"satisfaction","satisfaction",3,"integer","Job satisfaction","1 = very dissatisfied; 2 = a little dissatisfied; 3 = moderately satisfied; 4 = very satisfied","","","","From a published 1991 GSS table (Agresti 2002, Table 7.8), not simulated as v0.2.0 said. One case was added to each of its 6 empty cells, so n = 110 instead of 104. Category 2 keeps the source Stata file and 1991 GSS SATJOB wording (a little dissatisfied); Agresti (2002, Table 7.8) and coin::jobsatisfaction print it as A Little Satisfied.","curated"

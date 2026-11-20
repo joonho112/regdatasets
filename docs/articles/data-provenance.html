@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>How the data are built • regdatasets</title>
+<!-- favicons --><link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+<link rel="icon" type="”image/svg+xml”" href="../favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="icon" sizes="any" href="../favicon.ico">
+<link rel="manifest" href="../site.webmanifest">
+<script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="../deps/bootstrap-5.3.8/bootstrap.min.css" rel="stylesheet">
+<script src="../deps/bootstrap-5.3.8/bootstrap.bundle.min.js"></script><link href="../deps/Source_Sans_Pro-0.4.10/font.css" rel="stylesheet">
+<link href="../deps/Fira_Code-0.4.10/font.css" rel="stylesheet">
+<link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
+<link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
+<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="How the data are built">
+</head>
+<body>
+    <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
+
+
+    <nav class="navbar navbar-expand-lg fixed-top bg-primary" data-bs-theme="dark" aria-label="Site navigation"><div class="container">
+
+    <a class="navbar-brand me-2" href="../index.html">regdatasets</a>
+
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.0</small>
+
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbar" class="collapse navbar-collapse ms-3">
+      <ul class="navbar-nav me-auto">
+<li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
+<li class="active nav-item dropdown">
+  <button class="nav-link dropdown-toggle" type="button" id="dropdown-guides" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Guides</button>
+  <ul class="dropdown-menu" aria-labelledby="dropdown-guides">
+<li><a class="dropdown-item" href="../articles/getting-started.html">Getting Started</a></li>
+    <li><a class="dropdown-item" href="../articles/dataset-overview.html">Dataset Overview</a></li>
+    <li><a class="dropdown-item" href="../articles/data-provenance.html">How the Data Are Built</a></li>
+  </ul>
+</li>
+<li class="nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
+      </ul>
+<ul class="navbar-nav">
+<li class="nav-item"><form class="form-inline" role="search">
+ <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json">
+</form></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/joonho112/regdatasets" aria-label="GitHub"><span class="fa fab fa-github"></span></a></li>
+      </ul>
+</div>
+
+
+  </div>
+</nav><div class="container template-article">
+
+
+
+
+<div class="row">
+  <main id="main" class="col-md-9"><div class="page-header">
+      <img src="../logo.png" class="logo" alt=""><h1>How the data are built</h1>
+            
+      
+      <small class="dont-index">Source: <a href="https://github.com/joonho112/regdatasets/blob/HEAD/vignettes/articles/data-provenance.Rmd" class="external-link"><code>vignettes/articles/data-provenance.Rmd</code></a></small>
+      <div class="d-none name"><code>data-provenance.Rmd</code></div>
+    </div>
+
+    
+    
+<p>Every dataset in regdatasets is a <strong>build output</strong>: it
+is produced by a script from a checksummed source file, never edited by
+hand. This article explains how, so that anyone can check and repeat
+it.</p>
+<div class="section level2">
+<h2 id="the-pipeline">The pipeline<a class="anchor" aria-label="anchor" href="#the-pipeline"></a>
+</h2>
+<ol style="list-style-type: decimal">
+<li>
+<strong>Sources.</strong> The original files are kept in
+<code>data-raw/source/</code>, each with a SHA-256 checksum in
+<code>MANIFEST.csv</code>. The build refuses a file whose checksum does
+not match.</li>
+<li>
+<strong>Recipes.</strong> One small R script per dataset
+(<code>data-raw/recipes/</code>) turns the source file into the shipped
+tibble: it drops Stata metadata, recodes missing-value codes and applies
+the documented corrections.</li>
+<li>
+<strong>Contract.</strong> Before saving, every dataset is checked
+against the data contract (<code>data-raw/CONTRACT.md</code>): a plain
+tibble, the documented column names and types, and no missing-value
+codes left.</li>
+<li>
+<strong>Build.</strong> <code>data-raw/build_all.R</code> runs all
+recipes and saves <code>data/</code>. Two consecutive builds produce
+byte-identical files.</li>
+<li>
+<strong>Metadata.</strong> The registry and the codebook
+(<code>inst/extdata/</code>) describe every dataset and every variable.
+Help pages, <code><a href="../reference/list_datasets.html">list_datasets()</a></code>, <code><a href="../reference/codebook.html">codebook()</a></code> and
+this website are generated from them, and tests check them against the
+data.</li>
+</ol>
+</div>
+<div class="section level2">
+<h2 id="missing-value-codes">Missing-value codes<a class="anchor" aria-label="anchor" href="#missing-value-codes"></a>
+</h2>
+<p>Surveys such as NELS:88 store nonresponse as numeric codes, for
+example <code>8 = missing</code>, <code>9 = legitimate skip</code> or
+<code>99.98</code> for a missing test score. Left in place, such a code
+acts as a real value: one 99.98 on a scale that runs from −3 to 1.5
+dominates a regression. In version 1.0.0 these codes were recoded to
+<code>NA</code>, using the survey’s own value labels and codebook:</p>
+<table class="table">
+<thead><tr class="header">
+<th align="left">dataset</th>
+<th align="right">Cells recoded to NA (counted from the source
+file)</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">disc</td>
+<td align="right">626</td>
+</tr>
+<tr class="even">
+<td align="left">nels_data</td>
+<td align="right">42,048</td>
+</tr>
+</tbody>
+</table>
+<p>Because these counts start from the raw Stata source files, they
+include cells that version 0.2.0 had already turned into
+<code>NA</code>: 482 cells in <code>disc</code> (<code>bys34a</code> and
+<code>bys34b</code> codes 8 and 98) and 82 cells in
+<code>nels_data</code> (<code>g8minor</code> and <code>g8lunch</code>
+code 998). Relative to version 0.2.0, version 1.0.0 adds
+<strong>144</strong> new <code>NA</code>s in <code>disc</code> and
+<strong>41,966</strong> new <code>NA</code>s in <code>nels_data</code>,
+as reported in <code>NEWS.md</code>.</p>
+<p><code>codebook("&lt;dataset&gt;")</code> shows, for each variable,
+which codes were recoded. “Don’t know” answers were recoded only where
+the item is an ordered scale; on nominal items they remain a
+category.</p>
+</div>
+<div class="section level2">
+<h2 id="provenance">Provenance<a class="anchor" aria-label="anchor" href="#provenance"></a>
+</h2>
+<p>Each dataset’s source, the route by which it reached this package,
+and the basis for redistributing it are recorded in the registry and in
+<code>LICENSE.note</code>:</p>
+<table class="table">
+<colgroup>
+<col width="7%">
+<col width="6%">
+<col width="86%">
+</colgroup>
+<thead><tr class="header">
+<th align="left">Dataset</th>
+<th align="left">Provenance</th>
+<th align="left">Basis for redistribution</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">alcohol1_pp</td>
+<td align="left">verified</td>
+<td align="left">Companion data of a published textbook, freely
+distributed for teaching by UCLA OARC.</td>
+</tr>
+<tr class="even">
+<td align="left">berk_sub</td>
+<td align="left">verified</td>
+<td align="left">Published aggregate admissions table (also in base R as
+datasets::UCBAdmissions), expanded to one row per applicant.</td>
+</tr>
+<tr class="odd">
+<td align="left">berkeley</td>
+<td align="left">verified</td>
+<td align="left">Published aggregate admissions table (also in base R as
+datasets::UCBAdmissions), expanded to one row per applicant.</td>
+</tr>
+<tr class="even">
+<td align="left">classdata_07</td>
+<td align="left">verified</td>
+<td align="left">Simulated data created for this package; no third-party
+data are included.</td>
+</tr>
+<tr class="odd">
+<td align="left">crime</td>
+<td align="left">verified</td>
+<td align="left">Published textbook data of county aggregates,
+redistributed on CRAN (smss).</td>
+</tr>
+<tr class="even">
+<td align="left">disc</td>
+<td align="left">verified</td>
+<td align="left">NCES public-use data; every NELS variable is in the
+public-use files.</td>
+</tr>
+<tr class="odd">
+<td align="left">disc2</td>
+<td align="left">verified</td>
+<td align="left">NCES public-use data.</td>
+</tr>
+<tr class="even">
+<td align="left">faculty</td>
+<td align="left">verified</td>
+<td align="left">Published textbook data, publicly redistributed by the
+publisher and Stata Press; contains no names.</td>
+</tr>
+<tr class="odd">
+<td align="left">gcse</td>
+<td align="left">verified</td>
+<td align="left">Freely downloadable teaching data, redistributed on
+CRAN (mlmRev) and by Stata Press.</td>
+</tr>
+<tr class="even">
+<td align="left">grades</td>
+<td align="left">probable</td>
+<td align="left">Published textbook data, publicly redistributed by
+Stata Press and on CRAN (mvord).</td>
+</tr>
+<tr class="odd">
+<td align="left">gss_1</td>
+<td align="left">probable</td>
+<td align="left">GSS public-use data, distributed by NORC for research
+and teaching; cited as NORC requires.</td>
+</tr>
+<tr class="even">
+<td align="left">hsb_sub</td>
+<td align="left">verified</td>
+<td align="left">NCES public-use survey data, widely redistributed (CRAN
+nlme, mlmRev; Stata Press).</td>
+</tr>
+<tr class="odd">
+<td align="left">hsbs1</td>
+<td align="left">probable</td>
+<td align="left">NCES public-use survey data printed in a textbook
+appendix and redistributed on CRAN (candisc).</td>
+</tr>
+<tr class="even">
+<td align="left">individuals</td>
+<td align="left">probable</td>
+<td align="left">U.S. federal government data, not subject to copyright
+(17 U.S.C. 105).</td>
+</tr>
+<tr class="odd">
+<td align="left">instruction</td>
+<td align="left">verified</td>
+<td align="left">Teaching extract publicly released by the book’s
+authors and Stata Press, redistributed on CRAN (WWGbook).</td>
+</tr>
+<tr class="even">
+<td align="left">nels_data</td>
+<td align="left">verified</td>
+<td align="left">NCES public-use data: all 296 named NELS variables
+(plus id, the NCES student ID STU_ID) are in the public-use files
+(checked against the NCES variable list).</td>
+</tr>
+<tr class="odd">
+<td align="left">penalty</td>
+<td align="left">verified</td>
+<td align="left">Published aggregate table, expanded to one row per
+defendant; also on CRAN (catdata, asbio).</td>
+</tr>
+<tr class="even">
+<td align="left">pisa2000</td>
+<td align="left">probable</td>
+<td align="left">OECD terms allow copying and distribution with credit
+to the OECD; this package is not endorsed by the OECD.</td>
+</tr>
+<tr class="odd">
+<td align="left">reading</td>
+<td align="left">verified</td>
+<td align="left">Published textbook data, redistributed on CRAN
+(carData, GPL).</td>
+</tr>
+<tr class="even">
+<td align="left">satisfaction</td>
+<td align="left">probable</td>
+<td align="left">Published aggregate table of counts, redistributed on
+CRAN (coin).</td>
+</tr>
+<tr class="odd">
+<td align="left">titanic</td>
+<td align="left">verified</td>
+<td align="left">Historical passenger records, publicly distributed by
+Vanderbilt Biostatistics and redistributed on CRAN (carData,
+PASWR).</td>
+</tr>
+<tr class="even">
+<td align="left">womenlf</td>
+<td align="left">verified</td>
+<td align="left">Published textbook data, redistributed on CRAN
+(carData, GPL) and by Stata Press.</td>
+</tr>
+</tbody>
+</table>
+<p>Two datasets of earlier versions, <code>lambert</code> and
+<code>civic_ed</code>, were removed in 1.0.0 because no basis for
+redistributing them could be established. <code>classdata_07</code> is a
+simulated look-alike of a 2007 class survey, for the same reason.</p>
+</div>
+  </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
+    </nav></aside>
+</div>
+
+
+
+    <footer><div class="pkgdown-footer-left">
+  <p>Developed by JoonHo Lee.</p>
+</div>
+
+<div class="pkgdown-footer-right">
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
+</div>
+
+    </footer>
+</div>
+
+
+
+
+
+  </body>
+</html>

@@ -1,132 +1,121 @@
 
-# regdatasets <img src="man/figures/logo.png" align="right" height="139" alt="regdatasets logo" />
+<!-- README.md is generated from README.Rmd. Please edit that file. -->
+
+# regdatasets <img src="man/figures/logo.png" align="right" height="139" alt="" />
 
 <!-- badges: start -->
+
 [![R-CMD-check](https://github.com/joonho112/regdatasets/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/joonho112/regdatasets/actions/workflows/R-CMD-check.yaml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+[![Lifecycle:
+stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 <!-- badges: end -->
 
-**regdatasets** provides a curated collection of 24 datasets for
-teaching introductory and intermediate regression analysis in education
-and social science contexts.
+**regdatasets** provides 22 datasets for teaching introductory and
+intermediate regression analysis in education and the social sciences:
+simple and multiple regression, ANOVA and ANCOVA, interactions, model
+building and diagnostics, logistic regression, latent-response models
+and ordinal models.
+
+The data come from published studies, textbooks and public archives.
+Every dataset is rebuilt reproducibly from its source, cleaned of
+missing-value codes, and documented variable by variable.
 
 ## Installation
 
-Install the development version from GitHub:
-
 ``` r
-# install.packages("devtools")
-devtools::install_github("joonho112/regdatasets")
+# install.packages("remotes")
+remotes::install_github("joonho112/regdatasets")
+
+# or a fixed release (recommended for a course, so results never change):
+remotes::install_github("joonho112/regdatasets@v1.0.0")
 ```
 
-## Datasets
-
-| Dataset | N | Variables | Topic |
-|:--------|------:|-----:|:------|
-| `gcse` | 4,059 | 9 | GCSE exam scores and London Reading Test (Chapters 1–2, 5) |
-| `crime` | 67 | 5 | Florida county crime rates (Chapters 4–5) |
-| `instruction` | 1,190 | 12 | Math achievement gains, multilevel (Chapters 2–3) |
-| `reading` | 66 | 8 | Three-group reading instruction experiment (Chapter 3) |
-| `pisa2000` | 4,528 | 15 | OECD PISA reading scores, 3 countries (Chapter 1) |
-| `individuals` | 55,899 | 6 | BLS wage data by gender and sector (Chapter 5) |
-| `faculty` | 514 | 10 | Faculty salaries and experience (Chapter 5) |
-| `nels_data` | 2,000 | 299 | National Education Longitudinal Study (Chapters 7–8) |
-| `hsbs1` | 350 | 16 | High School and Beyond survey (Chapter 8) |
-| `gss_1` | 2,832 | 16 | General Social Survey 1982/1994 (Chapter 9) |
-| `berkeley` | 3,593 | 3 | UC Berkeley admissions, Simpson's paradox (Chapter 10) |
-| `penalty` | 674 | 3 | Death penalty sentencing by race (Chapter 11) |
-| `titanic` | 1,309 | 6 | Titanic passenger survival (Chapters 9–11) |
-| `womenlf` | 263 | 5 | Women's labor force participation (Chapter 13) |
-| `satisfaction` | 110 | 3 | Ordinal satisfaction survey (Chapter 13) |
-| `alcohol1_pp` | 246 | 9 | Adolescent alcohol use, person-period (Chapter 13) |
-| `lambert` | 492 | 109 | Canadian longitudinal child study (Chapter 12) |
-| `civic_ed` | 794 | 237 | Civic education pre/post study (Chapters 1, 7) |
-| `disc` | 2,000 | 15 | NELS:88 discipline study (Chapters 9–10) |
-| `disc2` | 2,000 | 15 | NELS:88 with achievement scores (Chapters 10–11) |
-| `berk_sub` | 1,169 | 3 | Berkeley admissions subset (Chapter 10) |
-| `hsb_sub` | 188 | 7 | High School and Beyond subset (Chapter 7) |
-| `classdata_07` | 44 | 12 | Classroom survey data (Chapter 1) |
-| `grades` | 198 | 8 | Essay grades and writing features (Chapter 12) |
-
-## Quick Start
+## Find a dataset
 
 ``` r
 library(regdatasets)
-
-# --- Simple linear regression ---
-data(gcse)
-model <- lm(gcse ~ lrt, data = gcse)
-summary(model)
-
-# --- Logistic regression: Simpson's paradox ---
-data(berkeley)
-# Unadjusted: gender appears to matter
-crude <- glm(admitted ~ female, family = binomial, data = berkeley)
-# Adjusted: gender effect disappears after controlling for department
-adjusted <- glm(admitted ~ female + factor(department),
-                family = binomial, data = berkeley)
-exp(coef(crude)["female"])    # Crude OR ~ 0.64
-exp(coef(adjusted)["female"]) # Adjusted OR ~ 0.97
-
-# --- One-way ANOVA ---
-data(reading)
-model_anova <- lm(post1 ~ factor(group), data = reading)
-anova(model_anova)
+knitr::kable(list_datasets()[, c("dataset", "title", "rows", "cols", "topics")])
 ```
 
-## Works Well With
+| dataset | title | rows | cols | topics |
+|:---|:---|---:|---:|:---|
+| alcohol1_pp | Adolescent alcohol use (person-period data) | 246 | 9 | multilevel-longitudinal |
+| berk_sub | Berkeley graduate admissions: two departments | 1169 | 3 | logistic |
+| berkeley | Berkeley graduate admissions: five departments | 3593 | 3 | logistic |
+| classdata_07 | Simulated class survey | 44 | 12 | simple-regression |
+| crime | Florida county crime rates | 67 | 5 | continuous-predictors, nonlinear |
+| disc | School discipline: NELS:88 original items | 2000 | 15 | logistic, ordinal |
+| disc2 | School discipline: NELS:88 with SES and test scores | 2000 | 15 | logistic, ordinal |
+| faculty | Faculty salaries | 514 | 10 | interactions, continuous-predictors |
+| gcse | GCSE and London Reading Test scores | 4059 | 5 | simple-regression, ancova, interactions, nonlinear, model-building, diagnostics, multilevel-longitudinal |
+| grades | Essay grades and text features | 198 | 8 | ordinal, glm-latent |
+| gss_1 | General Social Survey 1998 | 2832 | 16 | logistic |
+| hsb_sub | High School and Beyond: five schools | 188 | 7 | interactions, model-building, diagnostics, multilevel-longitudinal |
+| hsbs1 | High School and Beyond: 350 students | 350 | 16 | diagnostics, model-building |
+| individuals | Earnings, education and job sector (CPS 2000) | 55899 | 6 | interactions, anova |
+| instruction | Teachers’ math knowledge and first-grade math gains | 1190 | 12 | anova, simple-regression, multilevel-longitudinal |
+| nels_data | NELS:88 base year and first follow-up (2,000 students) | 2000 | 299 | model-building, diagnostics |
+| penalty | Death-penalty verdicts in Florida | 674 | 3 | logistic, diagnostics |
+| pisa2000 | PISA 2000 reading: UK, Germany and USA | 4528 | 15 | anova, interactions, simple-regression, logistic |
+| reading | Reading comprehension experiment | 66 | 8 | anova, ancova |
+| satisfaction | Job satisfaction by income and gender | 110 | 3 | ordinal |
+| titanic | Titanic passenger survival | 1309 | 6 | logistic, glm-latent |
+| womenlf | Canadian women’s labour-force participation | 263 | 5 | ordinal, logistic |
 
-**regdatasets** is designed to work seamlessly with modern R workflows:
+Filter by topic, for example `list_datasets(topic = "logistic")`.
+
+## Understand its variables
+
+Each dataset has a help page (for example `?titanic`). The same
+information is available as a data frame:
 
 ``` r
-library(tidyverse)   # dplyr, ggplot2, tibble, ...
-library(easystats)   # parameters, performance, effectsize, see, ...
-library(gtsummary)   # publication-ready tables
-library(marginaleffects) # predictions, comparisons, slopes
+codebook("titanic")[, c("variable", "label", "values")]
+#> # A tibble: 6 × 3
+#>   variable label               values                                           
+#>   <chr>    <chr>               <chr>                                            
+#> 1 pclass   Passenger class     1 = first class; 2 = second class; 3 = third cla…
+#> 2 survived Survived            0 = died; 1 = survived                           
+#> 3 age      Age                 <NA>                                             
+#> 4 fare     Passenger fare      <NA>                                             
+#> 5 embarked Port of embarkation C = Cherbourg; Q = Queenstown; S = Southampton   
+#> 6 sex      Sex                 0 = male; 1 = female
 ```
 
-Example using the **easystats** and **marginaleffects** ecosystem:
+## Fit a model
 
 ``` r
-library(regdatasets)
-library(easystats)
-library(marginaleffects)
-
-# Fit model
-data(gcse)
-model <- lm(gcse ~ lrt * school, data = gcse)
-
-# easystats: model summary and diagnostics
-model_parameters(model)
-check_model(model)
-
-# marginaleffects: predicted values and slopes
-plot_predictions(model, condition = c("lrt", "school"))
-avg_slopes(model, variables = "lrt", by = "school")
+fit <- glm(survived ~ factor(pclass) + sex + age, data = titanic, family = binomial)
+round(summary(fit)$coefficients, 3)
+#>                 Estimate Std. Error z value Pr(>|z|)
+#> (Intercept)        1.024      0.296   3.457    0.001
+#> factor(pclass)2   -1.281      0.226  -5.678    0.000
+#> factor(pclass)3   -2.290      0.226 -10.140    0.000
+#> sex                2.498      0.166  15.044    0.000
+#> age               -0.034      0.006  -5.433    0.000
 ```
 
-## Course Coverage
+## How the data are built
 
-| Chapters | Topic | Datasets |
-|:---------|:------|:---------|
-| 1–2 | SLR, ANCOVA | `gcse`, `civic_ed`, `classdata_07`, `pisa2000` |
-| 3 | One-way ANOVA | `reading`, `instruction` |
-| 4 | Continuous predictors | `crime` |
-| 5 | Interactions | `gcse`, `individuals`, `faculty`, `crime` |
-| 6 | Nonlinear relationships | `nels_data`, `crime` |
-| 7–8 | Model building & diagnostics | `nels_data`, `hsbs1`, `hsb_sub` |
-| 9–11 | Logistic regression | `gss_1`, `berkeley`, `penalty`, `titanic`, `disc` |
-| 12 | Latent response & GLM | `lambert`, `grades` |
-| 13 | Ordinal models | `womenlf`, `satisfaction`, `alcohol1_pp` |
+The files in `data/` are build outputs and are never edited by hand. The
+script `data-raw/build_all.R` rebuilds every dataset from checksummed
+source files, one recipe per dataset, and refuses to save data that
+break the data contract in `data-raw/CONTRACT.md`. The folder
+`data-raw/audit/` records every difference from the previous version and
+the decision that approved it. See
+[NEWS](https://github.com/joonho112/regdatasets/blob/main/NEWS.md) for
+what changed in version 1.0.0.
 
-## Companion Textbook
+## Sources and licensing
 
-This package accompanies
-[Regression Lecture Notes](https://github.com/joonho112/regression-lecture-notes),
-a Quarto-based interactive textbook for graduate-level regression
-analysis in education and social science.
+The code and documentation are released under the MIT license. The
+datasets come from the published sources cited on each help page and in
+[LICENSE.note](https://github.com/joonho112/regdatasets/blob/main/LICENSE.note),
+which also records why each one may be redistributed. Most datasets
+reached this package as teaching extracts used in the course EDUC 275B
+at the Graduate School of Education, University of California, Berkeley.
 
-## License
+## Citation
 
-MIT
+    Lee J (2026). _regdatasets: Datasets for Teaching Regression Analysis_.
+    R package version 1.0.0, <https://joonho112.github.io/regdatasets/>.

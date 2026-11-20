@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><title>Titanic Passenger Survival Data — titanic • regdatasets</title><!-- favicons --><link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png"><link rel="icon" type="”image/svg+xml”" href="../favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png"><link rel="icon" sizes="any" href="../favicon.ico"><link rel="manifest" href="../site.webmanifest"><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet"><script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/Source_Sans_Pro-0.4.10/font.css" rel="stylesheet"><link href="../deps/Fira_Code-0.4.10/font.css" rel="stylesheet"><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet"><link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet"><script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Titanic Passenger Survival Data — titanic"><meta name="description" content="Passenger data from the RMS Titanic disaster of April 15, 1912, containing
-survival status and demographic information for 1,309 passengers. This
-widely used dataset illustrates logistic regression with both continuous
-and categorical predictors, and serves as a compelling teaching example
-of how passenger class, sex, and age influenced survival probability."><meta property="og:description" content="Passenger data from the RMS Titanic disaster of April 15, 1912, containing
-survival status and demographic information for 1,309 passengers. This
-widely used dataset illustrates logistic regression with both continuous
-and categorical predictors, and serves as a compelling teaching example
-of how passenger class, sex, and age influenced survival probability."><meta property="og:image" content="https://joonho112.github.io/regdatasets/logo.png"></head><body>
+<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><title>Titanic passenger survival — titanic • regdatasets</title><!-- favicons --><link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png"><link rel="icon" type="”image/svg+xml”" href="../favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png"><link rel="icon" sizes="any" href="../favicon.ico"><link rel="manifest" href="../site.webmanifest"><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link href="../deps/bootstrap-5.3.8/bootstrap.min.css" rel="stylesheet"><script src="../deps/bootstrap-5.3.8/bootstrap.bundle.min.js"></script><link href="../deps/Source_Sans_Pro-0.4.10/font.css" rel="stylesheet"><link href="../deps/Fira_Code-0.4.10/font.css" rel="stylesheet"><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet"><link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet"><script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Titanic passenger survival — titanic"><meta name="description" content="Survival, passenger class, sex, age, fare and port of embarkation for
+1,309 passengers of the Titanic, which sank in April 1912; the crew are
+not included. One row per passenger. The data are 6 of the 14 variables
+of titanic3, compiled by Thomas Cason from Encyclopedia Titanica and
+other sources and distributed by the Department of Biostatistics at
+Vanderbilt University."><meta property="og:description" content="Survival, passenger class, sex, age, fare and port of embarkation for
+1,309 passengers of the Titanic, which sank in April 1912; the crew are
+not included. One row per passenger. The data are 6 of the 14 variables
+of titanic3, compiled by Thomas Cason from Encyclopedia Titanica and
+other sources and distributed by the Department of Biostatistics at
+Vanderbilt University."><meta property="og:image" content="https://joonho112.github.io/regdatasets/logo.png"></head><body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
 
 
@@ -15,7 +17,7 @@ of how passenger class, sex, and age influenced survival probability."><meta pro
 
     <a class="navbar-brand me-2" href="../index.html">regdatasets</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,11 +26,12 @@ of how passenger class, sex, and age influenced survival probability."><meta pro
 
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto"><li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
-<li class="active nav-item"><a class="nav-link" href="../reference/index.html">Datasets</a></li>
+<li class="active nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
 <li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-guides" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Guides</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-guides"><li><a class="dropdown-item" href="../articles/getting-started.html">Getting Started</a></li>
     <li><a class="dropdown-item" href="../articles/dataset-overview.html">Dataset Overview</a></li>
+    <li><a class="dropdown-item" href="../articles/data-provenance.html">How the Data Are Built</a></li>
   </ul></li>
 <li class="nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
       </ul><ul class="navbar-nav"><li class="nav-item"><form class="form-inline" role="search">
@@ -41,17 +44,18 @@ of how passenger class, sex, and age influenced survival probability."><meta pro
 </nav><div class="container template-reference-topic">
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
-      <img src="../logo.png" class="logo" alt=""><h1>Titanic Passenger Survival Data</h1>
-      <small class="dont-index">Source: <a href="https://github.com/joonho112/regdatasets/blob/HEAD/R/data.R" class="external-link"><code>R/data.R</code></a></small>
+      <img src="../logo.png" class="logo" alt=""><h1>Titanic passenger survival</h1>
+      <small class="dont-index">Source: <a href="https://github.com/joonho112/regdatasets/blob/HEAD/R/data-titanic.R" class="external-link"><code>R/data-titanic.R</code></a></small>
       <div class="d-none name"><code>titanic.Rd</code></div>
     </div>
 
     <div class="ref-description section level2">
-    <p>Passenger data from the RMS Titanic disaster of April 15, 1912, containing
-survival status and demographic information for 1,309 passengers. This
-widely used dataset illustrates logistic regression with both continuous
-and categorical predictors, and serves as a compelling teaching example
-of how passenger class, sex, and age influenced survival probability.</p>
+    <p>Survival, passenger class, sex, age, fare and port of embarkation for
+1,309 passengers of the Titanic, which sank in April 1912; the crew are
+not included. One row per passenger. The data are 6 of the 14 variables
+of titanic3, compiled by Thomas Cason from Encyclopedia Titanica and
+other sources and distributed by the Department of Biostatistics at
+Vanderbilt University.</p>
     </div>
 
     <div class="section level2">
@@ -61,67 +65,76 @@ of how passenger class, sex, and age influenced survival probability.</p>
 
     <div class="section level2">
     <h2 id="format">Format<a class="anchor" aria-label="anchor" href="#format"></a></h2>
-    <p>A tibble with 1,309 rows and 6 columns:</p><dl><dt>pclass</dt>
-<dd><p>Passenger class (ticket class). Type: numeric.
-Values: 1 = 1st class (upper), 2 = 2nd class (middle),
-3 = 3rd class (lower). Serves as a proxy for socioeconomic status.</p></dd>
+    <p>A tibble with 1,309 rows and 6 variables.</p>
+<dl><dt><code>pclass</code></dt>
+<dd><p>Passenger class. Values: 1 = first class; 2 = second class; 3 = third class. Type: integer. A proxy for socioeconomic class.</p></dd>
 
-<dt>survived</dt>
-<dd><p>Survival indicator. Type: numeric. Binary (0/1) where
-1 = survived, 0 = did not survive. Overall survival rate is approximately
-38 percent.</p></dd>
+<dt><code>survived</code></dt>
+<dd><p>Survived. Values: 0 = died; 1 = survived. Type: integer.</p></dd>
 
-<dt>age</dt>
-<dd><p>Passenger age in years. Type: numeric. Range: (0.17, 80.00).
-263 missing values. Fractional ages (e.g., 0.17) represent infants.</p></dd>
+<dt><code>age</code></dt>
+<dd><p>Age. Units: years. Type: double. Fractional for infants under 1 year. 263 passengers (20%) have no age.</p></dd>
 
-<dt>fare</dt>
-<dd><p>Passenger fare in British pounds. Type: numeric.
-Range: (0.00, 512.33). 1 missing value. Varies substantially by
-class.</p></dd>
+<dt><code>fare</code></dt>
+<dd><p>Passenger fare. Units: pre-1970 British pounds. Type: double. 17 passengers have a fare of 0 and 1 is NA.</p></dd>
 
-<dt>embarked</dt>
-<dd><p>Port of embarkation. Type: character.
-Values: S = Southampton, C = Cherbourg, Q = Queenstown
-(Cobh, Ireland). Two cases have missing embarkation port.</p></dd>
+<dt><code>embarked</code></dt>
+<dd><p>Port of embarkation. Values: C = Cherbourg; Q = Queenstown; S = Southampton. Type: character. Corrected from the titanic3 source in v1.0.0 (355 passengers were wrong in the course file). 2 passengers are NA.</p></dd>
 
-<dt>sex</dt>
-<dd><p>Passenger sex indicator. Type: numeric. Binary (0/1)
-where 1 = female, 0 = male.</p></dd>
+<dt><code>sex</code></dt>
+<dd><p>Sex. Values: 0 = male; 1 = female. Type: integer.</p></dd>
 
 
-</dl></div>
+</dl><p>See <code>codebook("titanic")</code> for this table as a data frame.</p>
+    </div>
     <div class="section level2">
     <h2 id="source">Source<a class="anchor" aria-label="anchor" href="#source"></a></h2>
-    <p>British Board of Trade (1990). <em>Report on the Loss of the
-"Titanic" (S.S.)</em>. Compiled from various historical passenger records.
-Original data file: <code>titanic.dta</code></p>
+    <p>Cason, T. (1999). titanic3 (Data set). Department of Biostatistics, Vanderbilt University. Based on Encyclopedia Titanica and Eaton and Haas (1994), Titanic: Triumph and Tragedy. <a href="https://hbiostat.org/data/repo/titanic.html" class="external-link">https://hbiostat.org/data/repo/titanic.html</a></p>
+<p>Six of the 14 titanic3 variables, via the UC Berkeley EDUC 275B course files; embarked re-taken from titanic3 in 1.0.0. Provenance: verified.</p>
     </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-    <p>This dataset is used in Chapters 9-11 (Logistic Regression) to illustrate
-simple and multiple logistic regression modeling. The well-known "women
-and children first" evacuation policy makes this dataset effective for
-demonstrating how sex, class, and age predict binary outcomes. Key analyses
-include: simple logistic regression of survival on sex, multiple logistic
-regression with class and age, odds ratio interpretation, predicted
-probabilities, handling missing data in age, and model comparison using
-likelihood ratio tests and AIC.</p>
-    </div>
+    <p><code>survived</code> is 1 for the 500 passengers (38%) who survived. <code>sex</code> is coded
+1 = female and 0 = male, so its coefficient compares women with men.
+<code>pclass</code> is an integer; use <code>factor(pclass)</code> for a separate effect of
+each class rather than a linear trend. <code>fare</code> is in pre-1970 British
+pounds; 17 passengers have a fare of 0 and 1 has none.</p>
+<p>Age is missing for 263 passengers (20%), 208 of them in third class, and
+passengers with no recorded age survived less often (28% against 41%).
+Models with <code>age</code> drop these passengers by default, and the complete
+cases are not a random subset. Ages under 1 year are fractional.</p>
+<p>Version 1.0.0 corrected <code>embarked</code>. In the file used by earlier versions
+the port was wrong for 355 passengers (27%); it is now taken from
+titanic3, so results that use <code>embarked</code> change. Two passengers have no
+recorded port. The other variables are unchanged.</p>
+<p><strong>Suggested analyses.</strong></p><ul><li><p>simple logistic regression of survival on sex, with odds ratios;</p></li>
+<li><p>multiple logistic regression with class (as a factor) and age, and a
+sex-by-class interaction: 97% of first-class women survived, but only
+49% of third-class women;</p></li>
+<li><p>missing data: what complete-case analysis of <code>age</code> does to the sample;</p></li>
+<li><p>logit versus probit links, and the latent-variable view of a binary
+outcome.</p></li>
+</ul></div>
     <div class="section level2">
     <h2 id="note">Note<a class="anchor" aria-label="anchor" href="#note"></a></h2>
 
 
-<p>This dataset represents real individuals who perished in or survived
-a maritime disaster. The data are used for statistical education with
-respect for those involved. The <code>embarked</code> variable contains 2
-missing values (converted from blank strings to <code>NA</code> in v0.2.0).</p>
+<p>Each row is a real person, and 809 of these passengers died in the
+sinking. The data are offered for statistical teaching, with respect for
+the people they describe and for their families.</p>
+    </div>
+    <div class="section level2">
+    <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
+    <div class="dont-index"><p><code><a href="https://rdrr.io/pkg/carData/man/TitanicSurvival.html" class="external-link">carData::TitanicSurvival</a></code> on CRAN has the same 1,309
+passengers in the same order, with four of these variables (survival,
+sex and class as factors, and age). The base R table <code><a href="https://rdrr.io/r/datasets/Titanic.html" class="external-link">datasets::Titanic</a></code>
+is a different source: counts for 2,201 people, crew included, with age
+only as child or adult. <code><a href="codebook.html">codebook()</a></code> and <code><a href="list_datasets.html">list_datasets()</a></code>.</p></div>
     </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">titanic</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">titanic</span><span class="op">)</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">titanic</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 6 × 6</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   pclass survived    age  fare embarked   sex</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
@@ -131,19 +144,45 @@ missing values (converted from blank strings to <code>NA</code> in v0.2.0).</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span>      1        0 30     152.  S            0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span>      1        0 25     152.  S            1</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span>      1        1 48      26.5 S            0</span>
-<span class="r-in"><span><span class="co"># Logistic regression: survival predicted by sex and passenger class</span></span></span>
-<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/stats/glm.html" class="external-link">glm</a></span><span class="op">(</span><span class="va">survived</span> <span class="op">~</span> <span class="va">sex</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">pclass</span><span class="op">)</span>, family <span class="op">=</span> <span class="va">binomial</span>, data <span class="op">=</span> <span class="va">titanic</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># Proportion surviving by sex (1 = female) and class</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/with.html" class="external-link">with</a></span><span class="op">(</span><span class="va">titanic</span>, <span class="fu"><a href="https://rdrr.io/r/base/tapply.html" class="external-link">tapply</a></span><span class="op">(</span><span class="va">survived</span>, <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>sex <span class="op">=</span> <span class="va">sex</span>, class <span class="op">=</span> <span class="va">pclass</span><span class="op">)</span>, <span class="va">mean</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    class</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> sex         1         2         3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   0 0.3407821 0.1461988 0.1521298</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   1 0.9652778 0.8867925 0.4907407</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># Logistic regression with class as a factor</span></span></span>
+<span class="r-in"><span><span class="va">fit</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/glm.html" class="external-link">glm</a></span><span class="op">(</span><span class="va">survived</span> <span class="op">~</span> <span class="va">sex</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">pclass</span><span class="op">)</span> <span class="op">+</span> <span class="va">age</span>, family <span class="op">=</span> <span class="va">binomial</span>,</span></span>
+<span class="r-in"><span>           data <span class="op">=</span> <span class="va">titanic</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">fit</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Call:  glm(formula = survived ~ sex + factor(pclass), family = binomial, </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Call:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> glm(formula = survived ~ sex + factor(pclass) + age, family = binomial, </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     data = titanic)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Coefficients:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     (Intercept)              sex  factor(pclass)2  factor(pclass)3  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         -0.4059           2.5150          -0.8808          -1.7231  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                  Estimate Std. Error z value Pr(&gt;|z|)    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> (Intercept)      1.024229   0.296280   3.457 0.000546 ***</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> sex              2.497845   0.166037  15.044  &lt; 2e-16 ***</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> factor(pclass)2 -1.280570   0.225538  -5.678 1.36e-08 ***</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> factor(pclass)3 -2.289661   0.225802 -10.140  &lt; 2e-16 ***</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> age             -0.034393   0.006331  -5.433 5.56e-08 ***</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ---</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Degrees of Freedom: 1308 Total (i.e. Null);  1305 Residual</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Null Deviance:	    1741 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Residual Deviance: 1257 	AIC: 1265</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> (Dispersion parameter for binomial family taken to be 1)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     Null deviance: 1414.62  on 1045  degrees of freedom</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Residual deviance:  982.45  on 1041  degrees of freedom</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   (263 observations deleted due to missingness)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> AIC: 992.45</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Number of Fisher Scoring iterations: 4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/Log.html" class="external-link">exp</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/coef.html" class="external-link">coef</a></span><span class="op">(</span><span class="va">fit</span><span class="op">)</span><span class="op">)</span>   <span class="co"># odds ratios</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     (Intercept)             sex factor(pclass)2 factor(pclass)3             age </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       2.7849484      12.1562649       0.2778789       0.1013008       0.9661915 </span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

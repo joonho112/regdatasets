@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><title>Satisfaction Survey Data — satisfaction • regdatasets</title><!-- favicons --><link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png"><link rel="icon" type="”image/svg+xml”" href="../favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png"><link rel="icon" sizes="any" href="../favicon.ico"><link rel="manifest" href="../site.webmanifest"><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet"><script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/Source_Sans_Pro-0.4.10/font.css" rel="stylesheet"><link href="../deps/Fira_Code-0.4.10/font.css" rel="stylesheet"><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet"><link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet"><script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Satisfaction Survey Data — satisfaction"><meta name="description" content="Ordinal survey data from 110 respondents measuring job or life satisfaction
-on a 4-point scale, along with gender and income level. Used in regression
-teaching to illustrate ordinal logistic regression (proportional odds
-model), the cumulative link formulation, and the proportional odds
-assumption with a simple, interpretable dataset."><meta property="og:description" content="Ordinal survey data from 110 respondents measuring job or life satisfaction
-on a 4-point scale, along with gender and income level. Used in regression
-teaching to illustrate ordinal logistic regression (proportional odds
-model), the cumulative link formulation, and the proportional odds
-assumption with a simple, interpretable dataset."><meta property="og:image" content="https://joonho112.github.io/regdatasets/logo.png"></head><body>
+<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><title>Job satisfaction by income and gender — satisfaction • regdatasets</title><!-- favicons --><link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png"><link rel="icon" type="”image/svg+xml”" href="../favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png"><link rel="icon" sizes="any" href="../favicon.ico"><link rel="manifest" href="../site.webmanifest"><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link href="../deps/bootstrap-5.3.8/bootstrap.min.css" rel="stylesheet"><script src="../deps/bootstrap-5.3.8/bootstrap.bundle.min.js"></script><link href="../deps/Source_Sans_Pro-0.4.10/font.css" rel="stylesheet"><link href="../deps/Fira_Code-0.4.10/font.css" rel="stylesheet"><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet"><link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet"><script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Job satisfaction by income and gender — satisfaction"><meta name="description" content="Job satisfaction, income and gender of 110 workers, one row per person.
+The data are not simulated: they come from a table of 1991 General Social
+Survey data published by Agresti (2002, Table 7.8), expanded to one record
+per respondent. One case was added to each of the table's six empty
+cells, so there are 110 rows instead of 104."><meta property="og:description" content="Job satisfaction, income and gender of 110 workers, one row per person.
+The data are not simulated: they come from a table of 1991 General Social
+Survey data published by Agresti (2002, Table 7.8), expanded to one record
+per respondent. One case was added to each of the table's six empty
+cells, so there are 110 rows instead of 104."><meta property="og:image" content="https://joonho112.github.io/regdatasets/logo.png"></head><body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
 
 
@@ -15,7 +15,7 @@ assumption with a simple, interpretable dataset."><meta property="og:image" cont
 
     <a class="navbar-brand me-2" href="../index.html">regdatasets</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,11 +24,12 @@ assumption with a simple, interpretable dataset."><meta property="og:image" cont
 
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto"><li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
-<li class="active nav-item"><a class="nav-link" href="../reference/index.html">Datasets</a></li>
+<li class="active nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
 <li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-guides" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Guides</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-guides"><li><a class="dropdown-item" href="../articles/getting-started.html">Getting Started</a></li>
     <li><a class="dropdown-item" href="../articles/dataset-overview.html">Dataset Overview</a></li>
+    <li><a class="dropdown-item" href="../articles/data-provenance.html">How the Data Are Built</a></li>
   </ul></li>
 <li class="nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
       </ul><ul class="navbar-nav"><li class="nav-item"><form class="form-inline" role="search">
@@ -41,17 +42,17 @@ assumption with a simple, interpretable dataset."><meta property="og:image" cont
 </nav><div class="container template-reference-topic">
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
-      <img src="../logo.png" class="logo" alt=""><h1>Satisfaction Survey Data</h1>
-      <small class="dont-index">Source: <a href="https://github.com/joonho112/regdatasets/blob/HEAD/R/data.R" class="external-link"><code>R/data.R</code></a></small>
+      <img src="../logo.png" class="logo" alt=""><h1>Job satisfaction by income and gender</h1>
+      <small class="dont-index">Source: <a href="https://github.com/joonho112/regdatasets/blob/HEAD/R/data-satisfaction.R" class="external-link"><code>R/data-satisfaction.R</code></a></small>
       <div class="d-none name"><code>satisfaction.Rd</code></div>
     </div>
 
     <div class="ref-description section level2">
-    <p>Ordinal survey data from 110 respondents measuring job or life satisfaction
-on a 4-point scale, along with gender and income level. Used in regression
-teaching to illustrate ordinal logistic regression (proportional odds
-model), the cumulative link formulation, and the proportional odds
-assumption with a simple, interpretable dataset.</p>
+    <p>Job satisfaction, income and gender of 110 workers, one row per person.
+The data are not simulated: they come from a table of 1991 General Social
+Survey data published by Agresti (2002, Table 7.8), expanded to one record
+per respondent. One case was added to each of the table's six empty
+cells, so there are 110 rows instead of 104.</p>
     </div>
 
     <div class="section level2">
@@ -61,41 +62,66 @@ assumption with a simple, interpretable dataset.</p>
 
     <div class="section level2">
     <h2 id="format">Format<a class="anchor" aria-label="anchor" href="#format"></a></h2>
-    <p>A tibble with 110 rows and 3 columns:</p><dl><dt>gender</dt>
-<dd><p>Respondent gender. Type: character. Values: "F" = female,
-"M" = male.</p></dd>
+    <p>A tibble with 110 rows and 3 variables.</p>
+<dl><dt><code>gender</code></dt>
+<dd><p>Gender. Values: F = female; M = male. Type: character. One row per respondent, expanded from a published table.</p></dd>
 
-<dt>income</dt>
-<dd><p>Income level (ordinal). Type: numeric. Values: 1 = low,
-2 = medium-low, 3 = medium-high, 4 = high.</p></dd>
+<dt><code>income</code></dt>
+<dd><p>Income. Values: 1 = less than $5,000; 2 = $5,000 to $15,000; 3 = $15,000 to $25,000; 4 = more than $25,000. Type: integer. Ordered income categories.</p></dd>
 
-<dt>satisfaction</dt>
-<dd><p>Satisfaction rating (ordinal response variable).
-Type: numeric. Values: 1 = not satisfied, 2 = slightly satisfied,
-3 = satisfied, 4 = very satisfied.</p></dd>
+<dt><code>satisfaction</code></dt>
+<dd><p>Job satisfaction. Values: 1 = very dissatisfied; 2 = a little dissatisfied; 3 = moderately satisfied; 4 = very satisfied. Type: integer. From a published 1991 GSS table (Agresti 2002, Table 7.8), not simulated as v0.2.0 said. One case was added to each of its 6 empty cells, so n = 110 instead of 104. Category 2 keeps the source Stata file and 1991 GSS SATJOB wording (a little dissatisfied); Agresti (2002, Table 7.8) and coin::jobsatisfaction print it as A Little Satisfied.</p></dd>
 
 
-</dl></div>
+</dl><p>See <code>codebook("satisfaction")</code> for this table as a data frame.</p>
+    </div>
     <div class="section level2">
     <h2 id="source">Source<a class="anchor" aria-label="anchor" href="#source"></a></h2>
-    <p>Simulated survey data for pedagogical purposes.
-Original data file: <code>satisfaction.dta</code></p>
+    <p>Agresti, A. (2002). Categorical data analysis (2nd ed., Table 7.8). Wiley. Data: 1991 General Social Survey. <a href="https://cran.r-project.org/package=coin" class="external-link">https://cran.r-project.org/package=coin</a></p>
+<p>Individual-level expansion of the published table made for the UC Berkeley EDUC 275B course; the same table is on CRAN as coin::jobsatisfaction. Provenance: probable.</p>
     </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-    <p>This dataset is used in Chapter 13 (Models for Ordinal Responses) to
-illustrate the ordinal logistic regression (proportional odds) model.
-The 4-level satisfaction outcome is modeled using the cumulative logit
-formulation. Key analyses include: fitting the proportional odds model
-with gender and income as predictors, interpreting cumulative odds ratios,
-testing the proportional odds assumption, comparing ordinal logit and
-ordinal probit models, and examining threshold (cut-point) estimates.</p>
+    <p><code>satisfaction</code> runs from 1 = very dissatisfied to 4 = very satisfied, and
+<code>income</code> has four ordered bands, from 1 = less than $5,000 to 4 = more
+than $25,000. Both are stored as integers: wrap the outcome in <code><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor()</a></code>
+for an ordinal model, and enter <code>income</code> either as a score (one slope) or
+as <code>factor(income)</code> (three contrasts). <code>gender</code> is text, so a model
+formula turns it into a factor with women (<code>"F"</code>) as the reference level.
+There are no missing values. Note on category 2: this package keeps the
+label <code>"a little dissatisfied"</code> from the source Stata file and the 1991
+GSS <code>SATJOB</code> item, whereas Agresti (2002, Table 7.8) and
+<code><a href="https://rdrr.io/pkg/coin/man/jobsatisfaction.html" class="external-link">coin::jobsatisfaction</a></code> print category 2 as <code>"A Little Satisfied"</code>.</p>
+<p>The six added cases fill the empty cells of the published table: one
+each for women in income bands 3 and 4 and for men in bands 2, 3 and 4
+with <code>satisfaction</code> = 1, and one for men in band 3 with
+<code>satisfaction</code> = 2. All six are in the two lowest satisfaction
+categories and in income bands 2 to 4, so they weaken the association
+between income and satisfaction: in the proportional odds model of the
+examples, the income coefficient is about 0.34 with them and about 0.51
+without them. Results therefore differ from those for Agresti's original
+104 cases. Even so the data are sparse: 23 of the 32
+gender-by-income-by-satisfaction cells hold three cases or fewer.</p>
+<p>Version 1.0.0 changes no values. Earlier versions described the data as
+simulated, which was wrong.</p>
+<p><strong>Suggested analyses.</strong></p><ul><li><p>a proportional odds (cumulative logit) model of satisfaction on income
+and gender, with cumulative odds ratios and cut-points;</p></li>
+<li><p>checking the proportional odds assumption, for example by comparing
+binary logits for <code>satisfaction &gt;= 2</code>, <code>&gt;= 3</code> and <code>&gt;= 4</code>;</p></li>
+<li><p>income as a linear score versus a factor, compared with a
+likelihood-ratio test;</p></li>
+<li><p>cumulative logit versus probit links.</p></li>
+</ul></div>
+    <div class="section level2">
+    <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
+    <div class="dont-index"><p><a href="womenlf.html">womenlf</a>, and <code>osentoff</code> in <a href="disc.html">disc</a>, for other ordinal outcomes;
+<code><a href="codebook.html">codebook()</a></code> and <code><a href="list_datasets.html">list_datasets()</a></code>. The original 104-case table is on
+CRAN as <code><a href="https://rdrr.io/pkg/coin/man/jobsatisfaction.html" class="external-link">coin::jobsatisfaction</a></code>.</p></div>
     </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">satisfaction</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">satisfaction</span><span class="op">)</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">satisfaction</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 6 × 3</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   gender income satisfaction</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
@@ -105,15 +131,37 @@ ordinal probit models, and examining threshold (cut-point) estimates.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> F           4            1</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> M           1            1</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span> M           2            1</span>
-<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span><span class="va">satisfaction</span><span class="op">$</span><span class="va">satisfaction</span>, <span class="va">satisfaction</span><span class="op">$</span><span class="va">gender</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>      F  M</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   1  5  4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   2  9  6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   3 40 23</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   4 12 11</span>
-<span class="r-in"><span><span class="co"># Ordinal logistic regression (requires MASS package)</span></span></span>
-<span class="r-in"><span><span class="co"># MASS::polr(factor(satisfaction) ~ income + gender, data = satisfaction)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/with.html" class="external-link">with</a></span><span class="op">(</span><span class="va">satisfaction</span>, <span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span><span class="va">income</span>, <span class="va">satisfaction</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       satisfaction</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> income  1  2  3  4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      1  2  4 13  3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      2  3  6 22  4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      3  2  2 15  8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      4  2  3 13  8</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># Proportional odds model (requires the MASS package)</span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/ns-load.html" class="external-link">requireNamespace</a></span><span class="op">(</span><span class="st">"MASS"</span>, quietly <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="va">fit</span> <span class="op">&lt;-</span> <span class="fu">MASS</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/MASS/man/polr.html" class="external-link">polr</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">satisfaction</span><span class="op">)</span> <span class="op">~</span> <span class="va">income</span> <span class="op">+</span> <span class="va">gender</span>,</span></span>
+<span class="r-in"><span>                    data <span class="op">=</span> <span class="va">satisfaction</span>, Hess <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">fit</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Call:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> MASS::polr(formula = factor(satisfaction) ~ income + gender, </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     data = satisfaction, Hess = TRUE)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Coefficients:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           Value Std. Error t value</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> income   0.3436     0.1916   1.793</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> genderM -0.1082     0.4052  -0.267</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Intercepts:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     Value   Std. Error t value</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1|2 -1.6540  0.5359    -3.0864</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2|3 -0.5015  0.4753    -1.0550</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3|4  2.1779  0.5313     4.0993</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Residual Deviance: 243.6131 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> AIC: 253.6131 </span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

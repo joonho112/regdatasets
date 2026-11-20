@@ -1,0 +1,14 @@
+doi,datasets,status,matched_title,matched_year,checked_on,note
+10.1002/0471677566,faculty,verified,Regression with Social Data,2004,2026-11-20,DeMaris (2004)
+10.1007/b98832,grades,verified,Ordinal Data Modeling,1999,2026-11-20,Johnson & Albert (1999)
+10.1007/bf01792950,faculty,verified,Critical modeling principles when testing for gender equity in faculty salary,1996,2026-11-20,Balzer et al. (1996): earlier analysis of the BGSU salaries
+10.1023/a:1024946022857,faculty,verified,Should Faculty Rank Be Included as a Predictor Variable in Studies of Gender Equity in University Faculty Salaries?,1997,2026-11-20,Boudreau et al. (1997)
+10.1037/0003-066x.43.10.786,lambert,verified,Adolescent outcomes for hyperactive children: Perspectives on general and specific patterns of childhood risk for adolescent educational social and mental health problems,1988,2026-11-20,Lambert (1988)
+10.1080/0305498930190401,gcse,verified,A Multilevel Analysis of School Examination Results,1993,2026-11-20,Goldstein et al. (1993)
+10.1126/science.187.4175.398,berkeley;berk_sub,verified,Sex Bias in Graduate Admissions: Data from Berkeley,1975,2026-11-20,Bickel Hammel & O'Connell (1975)
+10.1177/002221949803100603,lambert,verified,Prospective Study of Tobacco Smoking and Substance Dependencies Among Samples of ADHD and Non-ADHD Participants,1998,2026-11-20,Lambert & Hartsough (1998): sample description
+10.1201/9781420010435,instruction,verified,Linear Mixed Models,2006,2026-11-20,West Welch & Galecki (2006)
+10.3102/00028312042002371,instruction,verified,Effects of Teachers' Mathematical Knowledge for Teaching on Student Achievement,2005,2026-11-20,Hill Rowan & Ball (2005)
+10.3886/icpsr03048.v1,individuals,verified,Current Population Survey: Annual Demographic File 2000,2000,2026-11-20,ICPSR 3048
+(none),penalty,no DOI,,,2026-11-20,Radelet & Pierce (1991) Florida Law Review 43(1): no registered DOI; rely on the University of Florida law repository page cited in provenance.csv
+(none),civic_ed,not in index,,,2026-11-20,Hartry & Porter (2004) ERIC ED485828: an ERIC report not covered by the citation index; rely on the ERIC record cited in provenance.csv

@@ -1,7 +1,11 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><title>List All Datasets in regdatasets — list_datasets • regdatasets</title><!-- favicons --><link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png"><link rel="icon" type="”image/svg+xml”" href="../favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png"><link rel="icon" sizes="any" href="../favicon.ico"><link rel="manifest" href="../site.webmanifest"><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet"><script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/Source_Sans_Pro-0.4.10/font.css" rel="stylesheet"><link href="../deps/Fira_Code-0.4.10/font.css" rel="stylesheet"><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet"><link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet"><script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="List All Datasets in regdatasets — list_datasets"><meta name="description" content="Returns a tibble summarizing all datasets in the package, including
-their dimensions, primary chapter usage, and a brief description."><meta property="og:description" content="Returns a tibble summarizing all datasets in the package, including
-their dimensions, primary chapter usage, and a brief description."><meta property="og:image" content="https://joonho112.github.io/regdatasets/logo.png"></head><body>
+<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><title>List the datasets in regdatasets — list_datasets • regdatasets</title><!-- favicons --><link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png"><link rel="icon" type="”image/svg+xml”" href="../favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png"><link rel="icon" sizes="any" href="../favicon.ico"><link rel="manifest" href="../site.webmanifest"><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link href="../deps/bootstrap-5.3.8/bootstrap.min.css" rel="stylesheet"><script src="../deps/bootstrap-5.3.8/bootstrap.bundle.min.js"></script><link href="../deps/Source_Sans_Pro-0.4.10/font.css" rel="stylesheet"><link href="../deps/Fira_Code-0.4.10/font.css" rel="stylesheet"><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet"><link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet"><script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="List the datasets in regdatasets — list_datasets"><meta name="description" content="Returns one row per dataset with its title, dimensions, regression topics
+and a one-sentence description. The information comes from the package
+registry, the same source that generates the help pages and README, so it
+always matches the data."><meta property="og:description" content="Returns one row per dataset with its title, dimensions, regression topics
+and a one-sentence description. The information comes from the package
+registry, the same source that generates the help pages and README, so it
+always matches the data."><meta property="og:image" content="https://joonho112.github.io/regdatasets/logo.png"></head><body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
 
 
@@ -9,7 +13,7 @@ their dimensions, primary chapter usage, and a brief description."><meta propert
 
     <a class="navbar-brand me-2" href="../index.html">regdatasets</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,11 +22,12 @@ their dimensions, primary chapter usage, and a brief description."><meta propert
 
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto"><li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
-<li class="active nav-item"><a class="nav-link" href="../reference/index.html">Datasets</a></li>
+<li class="active nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
 <li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-guides" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Guides</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-guides"><li><a class="dropdown-item" href="../articles/getting-started.html">Getting Started</a></li>
     <li><a class="dropdown-item" href="../articles/dataset-overview.html">Dataset Overview</a></li>
+    <li><a class="dropdown-item" href="../articles/data-provenance.html">How the Data Are Built</a></li>
   </ul></li>
 <li class="nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
       </ul><ul class="navbar-nav"><li class="nav-item"><form class="form-inline" role="search">
@@ -35,45 +40,87 @@ their dimensions, primary chapter usage, and a brief description."><meta propert
 </nav><div class="container template-reference-topic">
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
-      <img src="../logo.png" class="logo" alt=""><h1>List All Datasets in regdatasets</h1>
+      <img src="../logo.png" class="logo" alt=""><h1>List the datasets in regdatasets</h1>
       <small class="dont-index">Source: <a href="https://github.com/joonho112/regdatasets/blob/HEAD/R/list_datasets.R" class="external-link"><code>R/list_datasets.R</code></a></small>
       <div class="d-none name"><code>list_datasets.Rd</code></div>
     </div>
 
     <div class="ref-description section level2">
-    <p>Returns a tibble summarizing all datasets in the package, including
-their dimensions, primary chapter usage, and a brief description.</p>
+    <p>Returns one row per dataset with its title, dimensions, regression topics
+and a one-sentence description. The information comes from the package
+registry, the same source that generates the help pages and README, so it
+always matches the data.</p>
     </div>
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">list_datasets</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">list_datasets</span><span class="op">(</span>topic <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
+    <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
+
+
+<dl><dt id="arg-topic">topic<a class="anchor" aria-label="anchor" href="#arg-topic"></a></dt>
+<dd><p>Optional. Keep only datasets tagged with this topic, one of
+<code>"simple-regression"</code>, <code>"ancova"</code>, <code>"anova"</code>, <code>"continuous-predictors"</code>,
+<code>"interactions"</code>, <code>"nonlinear"</code>, <code>"model-building"</code>, <code>"diagnostics"</code>,
+<code>"logistic"</code>, <code>"glm-latent"</code>, <code>"ordinal"</code>, <code>"multilevel-longitudinal"</code>.</p></dd>
+
+</dl></div>
+    <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A tibble with columns: <code>dataset</code> (character), <code>rows</code>
-(integer), <code>cols</code> (integer), <code>chapter</code> (character), and
-<code>description</code> (character).</p>
+    <p>A tibble (with subclass <code>regdatasets_list</code>) with columns <code>dataset</code>,
+<code>title</code>, <code>rows</code>, <code>cols</code>, <code>topics</code> and <code>description</code>.</p>
+    </div>
+    <div class="section level2">
+    <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
+    <div class="dont-index"><p><code><a href="codebook.html">codebook()</a></code> for the variables of one dataset.</p></div>
     </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">list_datasets</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 24 × 5</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    dataset       rows  cols chapter       description                           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> alcohol1_pp    246     9 Supplementary Adolescent alcohol use (person-period…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> berk_sub      <span style="text-decoration: underline;">1</span>169     3 Ch 10         Berkeley admissions subset (2 departm…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> berkeley      <span style="text-decoration: underline;">3</span>593     3 Ch 10-11      UC Berkeley admissions (5 departments)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> civic_ed       794   237 Supplementary Civic education pre/post survey (16 s…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> classdata_07    44    12 Ch 1          Class survey data (study habits, heig…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> crime           67     5 Ch 4-5        Florida county crime rates            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> disc          <span style="text-decoration: underline;">2</span>000    15 Ch 9-13       NELS:88 school discipline (original N…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> disc2         <span style="text-decoration: underline;">2</span>000    15 Ch 9-13       NELS:88 school discipline (with SES a…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> faculty        514    10 Ch 4-8        Faculty salaries and experience       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> gcse          <span style="text-decoration: underline;">4</span>059     6 Ch 1-2, 5     GCSE and London Reading Test scores (…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 14 more rows</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 22 × 6</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    dataset      title                              rows  cols topics description</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> alcohol1_pp  Adolescent alcohol use (person-p…   246     9 multi… Alcohol us…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> berk_sub     Berkeley graduate admissions: tw…  <span style="text-decoration: underline;">1</span>169     3 logis… Applicant-…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> berkeley     Berkeley graduate admissions: fi…  <span style="text-decoration: underline;">3</span>593     3 logis… Applicant-…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> classdata_07 Simulated class survey               44    12 simpl… Simulated …</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> crime        Florida county crime rates           67     5 conti… Crime rate…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> disc         School discipline: NELS:88 origi…  <span style="text-decoration: underline;">2</span>000    15 logis… Whether 2,…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> disc2        School discipline: NELS:88 with …  <span style="text-decoration: underline;">2</span>000    15 logis… The same 2…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> faculty      Faculty salaries                    514    10 inter… Academic-y…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> gcse         GCSE and London Reading Test sco…  <span style="text-decoration: underline;">4</span>059     5 simpl… Exam score…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> grades       Essay grades and text features      198     8 ordin… Grades (4 …</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span> gss_1        General Social Survey 1998         <span style="text-decoration: underline;">2</span>832    16 logis… Attitudes,…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span> hsb_sub      High School and Beyond: five sch…   188     7 inter… Math achie…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span> hsbs1        High School and Beyond: 350 stud…   350    16 diagn… Test score…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">14</span> individuals  Earnings, education and job sect… <span style="text-decoration: underline;">55</span>899     6 inter… Annual ear…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">15</span> instruction  Teachers' math knowledge and fir…  <span style="text-decoration: underline;">1</span>190    12 anova… Math gains…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">16</span> nels_data    NELS:88 base year and first foll…  <span style="text-decoration: underline;">2</span>000   299 model… 299 questi…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">17</span> penalty      Death-penalty verdicts in Florida   674     3 logis… Defendant'…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">18</span> pisa2000     PISA 2000 reading: UK, Germany a…  <span style="text-decoration: underline;">4</span>528    15 anova… Reading sc…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">19</span> reading      Reading comprehension experiment     66     8 anova… Pre- and p…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">20</span> satisfaction Job satisfaction by income and g…   110     3 ordin… Job satisf…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">21</span> titanic      Titanic passenger survival         <span style="text-decoration: underline;">1</span>309     6 logis… Survival, …</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">22</span> womenlf      Canadian women's labour-force pa…   263     5 ordin… Work statu…</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># Datasets suited to logistic regression</span></span></span>
+<span class="r-in"><span><span class="fu">list_datasets</span><span class="op">(</span>topic <span class="op">=</span> <span class="st">"logistic"</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 9 × 6</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   dataset  title                                   rows  cols topics description</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> berk_sub Berkeley graduate admissions: two dep…  <span style="text-decoration: underline;">1</span>169     3 logis… Applicant-…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> berkeley Berkeley graduate admissions: five de…  <span style="text-decoration: underline;">3</span>593     3 logis… Applicant-…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> disc     School discipline: NELS:88 original i…  <span style="text-decoration: underline;">2</span>000    15 logis… Whether 2,…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> disc2    School discipline: NELS:88 with SES a…  <span style="text-decoration: underline;">2</span>000    15 logis… The same 2…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> gss_1    General Social Survey 1998              <span style="text-decoration: underline;">2</span>832    16 logis… Attitudes,…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span> penalty  Death-penalty verdicts in Florida        674     3 logis… Defendant'…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">7</span> pisa2000 PISA 2000 reading: UK, Germany and USA  <span style="text-decoration: underline;">4</span>528    15 anova… Reading sc…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">8</span> titanic  Titanic passenger survival              <span style="text-decoration: underline;">1</span>309     6 logis… Survival, …</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">9</span> womenlf  Canadian women's labour-force partici…   263     5 ordin… Work statu…</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>

@@ -1,66 +1,81 @@
-#' List All Datasets in regdatasets
+#' List the datasets in regdatasets
 #'
-#' Returns a tibble summarizing all datasets in the package, including
-#' their dimensions, primary chapter usage, and a brief description.
+#' Returns one row per dataset with its title, dimensions, regression topics
+#' and a one-sentence description. The information comes from the package
+#' registry, the same source that generates the help pages and README, so it
+#' always matches the data.
 #'
-#' @return A tibble with columns: \code{dataset} (character), \code{rows}
-#'   (integer), \code{cols} (integer), \code{chapter} (character), and
-#'   \code{description} (character).
+#' @param topic Optional. Keep only datasets tagged with this topic, one of
+#'   `"simple-regression"`, `"ancova"`, `"anova"`, `"continuous-predictors"`,
+#'   `"interactions"`, `"nonlinear"`, `"model-building"`, `"diagnostics"`,
+#'   `"logistic"`, `"glm-latent"`, `"ordinal"`, `"multilevel-longitudinal"`.
+#'
+#' @return A tibble (with subclass `regdatasets_list`) with columns `dataset`,
+#'   `title`, `rows`, `cols`, `topics` and `description`.
+#'
+#' @seealso [codebook()] for the variables of one dataset.
 #'
 #' @examples
 #' list_datasets()
 #'
+#' # Datasets suited to logistic regression
+#' list_datasets(topic = "logistic")
+#'
 #' @export
-list_datasets <- function() {
-  tibble::tibble(
-    dataset = c(
-      "alcohol1_pp", "berk_sub", "berkeley", "civic_ed", "classdata_07",
-      "crime", "disc", "disc2", "faculty", "gcse", "grades", "gss_1",
-      "hsb_sub", "hsbs1", "individuals", "instruction", "lambert",
-      "nels_data", "penalty", "pisa2000", "reading", "satisfaction",
-      "titanic", "womenlf"
-    ),
-    rows = c(
-      246L, 1169L, 3593L, 794L, 44L, 67L, 2000L, 2000L, 514L, 4059L,
-      198L, 2832L, 188L, 350L, 55899L, 1190L, 492L, 2000L, 674L,
-      4528L, 66L, 110L, 1309L, 263L
-    ),
-    cols = c(
-      9L, 3L, 3L, 237L, 12L, 5L, 15L, 15L, 10L, 6L, 8L, 16L, 7L,
-      16L, 6L, 12L, 109L, 299L, 3L, 15L, 8L, 3L, 6L, 5L
-    ),
-    chapter = c(
-      "Supplementary", "Ch 10", "Ch 10-11", "Supplementary", "Ch 1",
-      "Ch 4-5", "Ch 9-13", "Ch 9-13", "Ch 4-8", "Ch 1-2, 5",
-      "Ch 12", "Ch 9", "Ch 6-7", "Ch 8", "Ch 5", "Ch 2-3",
-      "Ch 12", "Ch 7-8", "Ch 11", "Ch 1", "Ch 3", "Ch 13",
-      "Ch 9-11", "Ch 13"
-    ),
-    description = c(
-      "Adolescent alcohol use (person-period longitudinal)",
-      "Berkeley admissions subset (2 departments, Simpson's paradox)",
-      "UC Berkeley admissions (5 departments)",
-      "Civic education pre/post survey (16 schools)",
-      "Class survey data (study habits, height, weight)",
-      "Florida county crime rates",
-      "NELS:88 school discipline (original NELS variable names)",
-      "NELS:88 school discipline (with SES and test scores)",
-      "Faculty salaries and experience",
-      "GCSE and London Reading Test scores (65 schools)",
-      "Essay grades and writing features",
-      "General Social Survey 1982/1994",
-      "High School and Beyond subset (5 schools, nested)",
-      "High School and Beyond (diagnostics focus)",
-      "BLS wage data by gender and sector",
-      "Math achievement gains (multilevel, classrooms in schools)",
-      "ADHD longitudinal study (childhood to adulthood)",
-      "NELS:88 full dataset (model building, diagnostics)",
-      "Death penalty sentencing by race",
-      "OECD PISA 2000 reading scores (3 countries)",
-      "Three-group reading instruction experiment",
-      "Ordinal satisfaction survey (simulated)",
-      "Titanic passenger survival",
-      "Canadian women's labour-force participation"
-    )
+list_datasets <- function(topic = NULL) {
+  reg <- read_meta("registry.csv")
+  out <- tibble::tibble(
+    dataset     = reg$dataset,
+    title       = reg$title,
+    rows        = as.integer(reg$n_rows),
+    cols        = as.integer(reg$n_cols),
+    topics      = gsub(";", ", ", reg$topics, fixed = TRUE),
+    description = reg$description
   )
+  if (!is.null(topic)) {
+    vocab <- c(
+      "simple-regression", "ancova", "anova", "continuous-predictors",
+      "interactions", "nonlinear", "model-building", "diagnostics",
+      "logistic", "glm-latent", "ordinal", "multilevel-longitudinal"
+    )
+    if (!is.character(topic) || length(topic) != 1L || is.na(topic)) {
+      stop(
+        "`topic` must be a single topic string. Valid topics: ",
+        paste(vocab, collapse = ", "), ".",
+        call. = FALSE
+      )
+    }
+    if (!topic %in% vocab) {
+      dists <- utils::adist(tolower(topic), vocab)[1, ]
+      best <- vocab[which.min(dists)]
+      hint <- if (min(dists) <= max(2L, floor(nchar(topic) / 3))) {
+        sprintf(" Did you mean \"%s\"?", best)
+      } else {
+        ""
+      }
+      stop(
+        sprintf(
+          "Unknown `topic` \"%s\".%s Valid topics: %s.",
+          topic, hint, paste(vocab, collapse = ", ")
+        ),
+        call. = FALSE
+      )
+    }
+    keep <- vapply(
+      strsplit(reg$topics, ";", fixed = TRUE),
+      function(t) topic %in% t,
+      logical(1)
+    )
+    out <- out[keep, ]
+  }
+  class(out) <- c("regdatasets_list", class(out))
+  out
+}
+
+#' @export
+print.regdatasets_list <- function(x, n = Inf, ...) {
+  shown <- x
+  class(shown) <- setdiff(class(shown), "regdatasets_list")
+  print(shown, n = n, ...)
+  invisible(x)
 }

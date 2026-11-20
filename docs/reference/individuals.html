@@ -1,17 +1,15 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><title>Bureau of Labor Statistics March 2000 CPS Individual Data — individuals • regdatasets</title><!-- favicons --><link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png"><link rel="icon" type="”image/svg+xml”" href="../favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png"><link rel="icon" sizes="any" href="../favicon.ico"><link rel="manifest" href="../site.webmanifest"><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet"><script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/Source_Sans_Pro-0.4.10/font.css" rel="stylesheet"><link href="../deps/Fira_Code-0.4.10/font.css" rel="stylesheet"><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet"><link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet"><script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Bureau of Labor Statistics March 2000 CPS Individual Data — individuals"><meta name="description" content="Individual-level data from the March 2000 Annual Demographic Supplement of
-the Current Population Survey (CPS), conducted by the Bureau of Labor
-Statistics (BLS). The sample includes 55,899 respondents with information on
-earnings, education, sex, age, and job sector. This large-scale survey
-dataset is used to illustrate interactions between dummy variables (sex and
-job sector) in predicting income, and to demonstrate two-way ANOVA via
-regression with unbalanced observational data."><meta property="og:description" content="Individual-level data from the March 2000 Annual Demographic Supplement of
-the Current Population Survey (CPS), conducted by the Bureau of Labor
-Statistics (BLS). The sample includes 55,899 respondents with information on
-earnings, education, sex, age, and job sector. This large-scale survey
-dataset is used to illustrate interactions between dummy variables (sex and
-job sector) in predicting income, and to demonstrate two-way ANOVA via
-regression with unbalanced observational data."><meta property="og:image" content="https://joonho112.github.io/regdatasets/logo.png"></head><body>
+<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><title>Earnings, education and job sector (CPS 2000) — individuals • regdatasets</title><!-- favicons --><link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png"><link rel="icon" type="”image/svg+xml”" href="../favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png"><link rel="icon" sizes="any" href="../favicon.ico"><link rel="manifest" href="../site.webmanifest"><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link href="../deps/bootstrap-5.3.8/bootstrap.min.css" rel="stylesheet"><script src="../deps/bootstrap-5.3.8/bootstrap.bundle.min.js"></script><link href="../deps/Source_Sans_Pro-0.4.10/font.css" rel="stylesheet"><link href="../deps/Fira_Code-0.4.10/font.css" rel="stylesheet"><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet"><link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet"><script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Earnings, education and job sector (CPS 2000) — individuals"><meta name="description" content="Income, education, sex, age and job sector of 55,899 adults aged 25 to 65
+from the March 2000 Current Population Survey (CPS), the survey of U.S.
+households that the Census Bureau conducts for the Bureau of Labor
+Statistics. Each row is a person. The six-variable extract of the CPS
+Annual Demographic Supplement was made by an unknown party, and the rule
+that selected these 55,899 people is not documented."><meta property="og:description" content="Income, education, sex, age and job sector of 55,899 adults aged 25 to 65
+from the March 2000 Current Population Survey (CPS), the survey of U.S.
+households that the Census Bureau conducts for the Bureau of Labor
+Statistics. Each row is a person. The six-variable extract of the CPS
+Annual Demographic Supplement was made by an unknown party, and the rule
+that selected these 55,899 people is not documented."><meta property="og:image" content="https://joonho112.github.io/regdatasets/logo.png"></head><body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
 
 
@@ -19,7 +17,7 @@ regression with unbalanced observational data."><meta property="og:image" conten
 
     <a class="navbar-brand me-2" href="../index.html">regdatasets</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,11 +26,12 @@ regression with unbalanced observational data."><meta property="og:image" conten
 
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto"><li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
-<li class="active nav-item"><a class="nav-link" href="../reference/index.html">Datasets</a></li>
+<li class="active nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
 <li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-guides" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Guides</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-guides"><li><a class="dropdown-item" href="../articles/getting-started.html">Getting Started</a></li>
     <li><a class="dropdown-item" href="../articles/dataset-overview.html">Dataset Overview</a></li>
+    <li><a class="dropdown-item" href="../articles/data-provenance.html">How the Data Are Built</a></li>
   </ul></li>
 <li class="nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
       </ul><ul class="navbar-nav"><li class="nav-item"><form class="form-inline" role="search">
@@ -45,19 +44,18 @@ regression with unbalanced observational data."><meta property="og:image" conten
 </nav><div class="container template-reference-topic">
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
-      <img src="../logo.png" class="logo" alt=""><h1>Bureau of Labor Statistics March 2000 CPS Individual Data</h1>
-      <small class="dont-index">Source: <a href="https://github.com/joonho112/regdatasets/blob/HEAD/R/data.R" class="external-link"><code>R/data.R</code></a></small>
+      <img src="../logo.png" class="logo" alt=""><h1>Earnings, education and job sector (CPS 2000)</h1>
+      <small class="dont-index">Source: <a href="https://github.com/joonho112/regdatasets/blob/HEAD/R/data-individuals.R" class="external-link"><code>R/data-individuals.R</code></a></small>
       <div class="d-none name"><code>individuals.Rd</code></div>
     </div>
 
     <div class="ref-description section level2">
-    <p>Individual-level data from the March 2000 Annual Demographic Supplement of
-the Current Population Survey (CPS), conducted by the Bureau of Labor
-Statistics (BLS). The sample includes 55,899 respondents with information on
-earnings, education, sex, age, and job sector. This large-scale survey
-dataset is used to illustrate interactions between dummy variables (sex and
-job sector) in predicting income, and to demonstrate two-way ANOVA via
-regression with unbalanced observational data.</p>
+    <p>Income, education, sex, age and job sector of 55,899 adults aged 25 to 65
+from the March 2000 Current Population Survey (CPS), the survey of U.S.
+households that the Census Bureau conducts for the Bureau of Labor
+Statistics. Each row is a person. The six-variable extract of the CPS
+Annual Demographic Supplement was made by an unknown party, and the rule
+that selected these 55,899 people is not documented.</p>
     </div>
 
     <div class="section level2">
@@ -67,67 +65,99 @@ regression with unbalanced observational data.</p>
 
     <div class="section level2">
     <h2 id="format">Format<a class="anchor" aria-label="anchor" href="#format"></a></h2>
-    <p>A tibble with 55,899 rows and 6 columns:</p><dl><dt>id</dt>
-<dd><p>Individual identifier. Type: numeric. Range: (1, 55899).</p></dd>
+    <p>A tibble with 55,899 rows and 6 variables.</p>
+<dl><dt><code>id</code></dt>
+<dd><p>Respondent ID. Type: integer.</p></dd>
 
-<dt>age</dt>
-<dd><p>Age in years. Type: numeric. Range: (25, 65).</p></dd>
+<dt><code>age</code></dt>
+<dd><p>Age. Units: years. Type: integer. The extract covers ages 25 to 65 only.</p></dd>
 
-<dt>educ</dt>
-<dd><p>Education level. Type: numeric. Values: 1 = less than high
-school, 2 = high school diploma, 3 = some college, 4 = bachelor's
-degree, 5 = master's degree, 6 = professional/doctoral degree.</p></dd>
+<dt><code>educ</code></dt>
+<dd><p>Education level. Values: 1 = no high school; 2 = some high school; 3 = high school diploma; 4 = some college; 5 = bachelor's degree; 6 = postgraduate degree. Type: integer. The v0.2.0 help page gave wrong meanings for these codes.</p></dd>
 
-<dt>sex</dt>
-<dd><p>Sex of respondent. Type: numeric. Values: 1 = male, 2 = female.</p></dd>
+<dt><code>sex</code></dt>
+<dd><p>Sex. Values: 1 = male; 2 = female. Type: integer.</p></dd>
 
-<dt>earn</dt>
-<dd><p>Total annual earnings from all sources, in U.S. dollars.
-Type: numeric. Range: (-24998, 425510). Mean approximately $37,865.</p></dd>
+<dt><code>earn</code></dt>
+<dd><p>Total annual income from all sources. Units: US dollars. Type: integer. Named earn, but the course materials describe it as total income from all sources. 170 values are negative, which is possible in CPS income (e.g., business losses).</p></dd>
 
-<dt>job</dt>
-<dd><p>Job sector. Type: numeric. Values: 5 = government,
-6 = private sector, 7 = self-employed.</p></dd>
+<dt><code>job</code></dt>
+<dd><p>Job sector. Values: 5 = private sector; 6 = government; 7 = self-employed. Type: integer. Codes start at 5. The v0.2.0 help page swapped codes 5 and 6.</p></dd>
 
 
-</dl></div>
+</dl><p>See <code>codebook("individuals")</code> for this table as a data frame.</p>
+    </div>
     <div class="section level2">
     <h2 id="source">Source<a class="anchor" aria-label="anchor" href="#source"></a></h2>
-    <p>U.S. Bureau of Labor Statistics. Current Population Survey, March
-2000 Annual Demographic Supplement. U.S. Census Bureau.
-Original data file: <code>individuals.dta</code></p>
+    <p>U.S. Census Bureau. (2000). Current Population Survey: Annual demographic file, 2000 (Data set). ICPSR 3048. <a href="https://doi.org/10.3886/ICPSR03048.v1" class="external-link">doi:10.3886/ICPSR03048.v1</a></p>
+<p>Extract of unknown authorship, via the UC Berkeley EDUC 275B course files. Provenance: probable.</p>
     </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-    <p>This dataset is used in Chapter 5 (Interactions) to demonstrate interactions
-between two dummy variables. The primary analysis focuses on respondents
-with postgraduate degrees aged 30-40 working in the private sector or
-government, examining how income depends on sex and job sector. Key concepts
-illustrated include: interaction between dummy variables, two-way ANOVA via
-regression, interaction diagrams, unbalanced designs and the distinction
-between Type II and Type III sums of squares, and interpretation of
-interaction coefficients as differences in differences.</p>
+    <p><strong>Coding.</strong> <code>educ</code>, <code>sex</code> and <code>job</code> are integer codes: wrap them in
+<code><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor()</a></code> (e.g. <code>factor(educ)</code>, <code>factor(job)</code>) or create 0/1 dummies so R
+does not treat category codes as numeric trends. <code>job</code> starts at 5:
+5 = private sector, 6 = government, 7 = self-employed. <code>sex</code> is 1 = male,
+2 = female, and <code>educ</code> runs from 1 = no high school to 6 = postgraduate
+degree (see the Format section). The v0.2.0 help page swapped <code>job</code> codes
+5 and 6 and gave wrong meanings for the <code>educ</code> codes, so code written for
+it may treat government workers as private-sector workers. Version 1.0.0
+corrected the documentation; the data are unchanged.</p>
+<p><strong>Income.</strong> Despite its name, <code>earn</code> is total annual income from all
+sources, in US dollars. Nobody has an income of exactly 0, and 170 values
+are negative (down to -24,998), which CPS income allows, for example
+through business losses; <code>log(earn)</code> is undefined for them. There are no
+missing values.</p>
+<p><strong>Suggested analyses.</strong></p><ul><li><p>interactions between two dummy variables, e.g. sex by private versus
+government sector, where the interaction coefficient is a difference in
+differences;</p></li>
+<li><p>two-way ANOVA as regression with unequal cell sizes, and the difference
+between sequential (Type I) and adjusted (Type II or III) sums of
+squares;</p></li>
+<li><p>dummy coding of the six education levels.</p></li>
+</ul></div>
+    <div class="section level2">
+    <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
+    <div class="dont-index"><p><code><a href="codebook.html">codebook()</a></code> for the variable table as a data frame, and
+<code><a href="list_datasets.html">list_datasets()</a></code>, e.g. <code>list_datasets(topic = "interactions")</code>, for
+other datasets suited to interactions.</p></div>
     </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">individuals</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="co"># Subset to postgraduate, ages 30-40, private/government</span></span></span>
-<span class="r-in"><span><span class="va">sub</span> <span class="op">&lt;-</span> <span class="va">individuals</span><span class="op">[</span><span class="va">individuals</span><span class="op">$</span><span class="va">educ</span> <span class="op">&gt;=</span> <span class="fl">5</span> <span class="op">&amp;</span></span></span>
-<span class="r-in"><span>                   <span class="va">individuals</span><span class="op">$</span><span class="va">age</span> <span class="op">&gt;=</span> <span class="fl">30</span> <span class="op">&amp;</span></span></span>
-<span class="r-in"><span>                   <span class="va">individuals</span><span class="op">$</span><span class="va">age</span> <span class="op">&lt;=</span> <span class="fl">40</span> <span class="op">&amp;</span></span></span>
-<span class="r-in"><span>                   <span class="va">individuals</span><span class="op">$</span><span class="va">job</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">5</span>, <span class="fl">6</span><span class="op">)</span>, <span class="op">]</span></span></span>
-<span class="r-in"><span><span class="va">sub</span><span class="op">$</span><span class="va">male</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html" class="external-link">ifelse</a></span><span class="op">(</span><span class="va">sub</span><span class="op">$</span><span class="va">sex</span> <span class="op">==</span> <span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">0</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="va">sub</span><span class="op">$</span><span class="va">private</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html" class="external-link">ifelse</a></span><span class="op">(</span><span class="va">sub</span><span class="op">$</span><span class="va">job</span> <span class="op">==</span> <span class="fl">6</span>, <span class="fl">1</span>, <span class="fl">0</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="co"># Interaction model for income</span></span></span>
-<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">earn</span> <span class="op">~</span> <span class="va">male</span> <span class="op">*</span> <span class="va">private</span>, data <span class="op">=</span> <span class="va">sub</span><span class="op">)</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">individuals</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 6 × 6</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      id   age  educ   sex  earn   job</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>     1    25     2     2  <span style="text-decoration: underline;">7</span>234     5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span>     2    25     5     1 <span style="text-decoration: underline;">37</span>413     5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span>     3    25     4     2 <span style="text-decoration: underline;">29</span>500     5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span>     4    25     3     2 <span style="text-decoration: underline;">13</span>500     5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span>     5    25     4     1 <span style="text-decoration: underline;">17</span>660     6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span>     6    25     4     1 <span style="text-decoration: underline;">37</span>250     5</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># Ages 30 to 39, postgraduate degree, private sector or government</span></span></span>
+<span class="r-in"><span><span class="va">sub</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html" class="external-link">subset</a></span><span class="op">(</span><span class="va">individuals</span>,</span></span>
+<span class="r-in"><span>              <span class="va">educ</span> <span class="op">==</span> <span class="fl">6</span> <span class="op">&amp;</span> <span class="va">age</span> <span class="op">&gt;=</span> <span class="fl">30</span> <span class="op">&amp;</span> <span class="va">age</span> <span class="op">&lt;=</span> <span class="fl">39</span> <span class="op">&amp;</span> <span class="va">job</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">5</span>, <span class="fl">6</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">sub</span><span class="op">$</span><span class="va">female</span>  <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/integer.html" class="external-link">as.integer</a></span><span class="op">(</span><span class="va">sub</span><span class="op">$</span><span class="va">sex</span> <span class="op">==</span> <span class="fl">2</span><span class="op">)</span>  <span class="co"># sex: 1 = male, 2 = female</span></span></span>
+<span class="r-in"><span><span class="va">sub</span><span class="op">$</span><span class="va">private</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/integer.html" class="external-link">as.integer</a></span><span class="op">(</span><span class="va">sub</span><span class="op">$</span><span class="va">job</span> <span class="op">==</span> <span class="fl">5</span><span class="op">)</span>  <span class="co"># job: 5 = private, 6 = government</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># Mean income in the four cells</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/with.html" class="external-link">with</a></span><span class="op">(</span><span class="va">sub</span>, <span class="fu"><a href="https://rdrr.io/r/base/tapply.html" class="external-link">tapply</a></span><span class="op">(</span><span class="va">earn</span>, <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>female <span class="op">=</span> <span class="va">female</span>, private <span class="op">=</span> <span class="va">private</span><span class="op">)</span>, <span class="va">mean</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       private</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> female        0        1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      0 50408.18 80003.42</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      1 41548.72 54588.71</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># The interaction coefficient is a difference in differences</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">earn</span> <span class="op">~</span> <span class="va">female</span> <span class="op">*</span> <span class="va">private</span>, data <span class="op">=</span> <span class="va">sub</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Call:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> lm(formula = earn ~ male * private, data = sub)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> lm(formula = earn ~ female * private, data = sub)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Coefficients:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  (Intercept)          male       private  male:private  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>        42283         23849         -6324        -12922  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    (Intercept)          female         private  female:private  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          50408           -8859           29595          -16555  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 </code></pre></div>
     </div>
